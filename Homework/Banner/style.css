@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.banner {
+  width: 1200px;
+  height: 80px;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.banner.opening {
+  -webkit-animation: bannerOpen ease-in-out both;
+          animation: bannerOpen ease-in-out both;
+}
+
+.banner.opened {
+  height: 300px;
+}
+
+.banner.closing {
+  -webkit-animation: bannerClose ease-in-out both;
+          animation: bannerClose ease-in-out both;
+}
+
+.banner.closed {
+  height: 80px;
+}
+
+.banner.transition {
+  -webkit-animation-duration: .72s;
+          animation-duration: .72s;
+}
+
+.banner .img {
+  width: 100%;
+  display: block;
+  position: relative;
+  top: 0;
+}
+
+.banner .img.nomove {
+  -webkit-animation: imgNoMove ease-in-out both;
+          animation: imgNoMove ease-in-out both;
+}
+
+.banner .img.move {
+  -webkit-animation: imgMove ease-in-out both;
+          animation: imgMove ease-in-out both;
+}
+
+.banner .img.transition {
+  -webkit-animation-duration: .72s;
+          animation-duration: .72s;
+}
+
+.banner .btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.fas {
+  color: #fff;
+  margin-left: 5px;
+}
+
+@-webkit-keyframes bannerOpen {
+  0% {
+    height: 80px;
+  }
+  100% {
+    height: 300px;
+  }
+}
+
+@keyframes bannerOpen {
+  0% {
+    height: 80px;
+  }
+  100% {
+    height: 300px;
+  }
+}
+
+@-webkit-keyframes bannerClose {
+  0% {
+    height: 300px;
+  }
+  100% {
+    height: 80px;
+  }
+}
+
+@keyframes bannerClose {
+  0% {
+    height: 300px;
+  }
+  100% {
+    height: 80px;
+  }
+}
+
+@-webkit-keyframes imgMove {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -300px;
+  }
+}
+
+@keyframes imgMove {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -300px;
+  }
+}
+
+@-webkit-keyframes imgNoMove {
+  0% {
+    top: -300px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes imgNoMove {
+  0% {
+    top: -300px;
+  }
+  100% {
+    top: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
