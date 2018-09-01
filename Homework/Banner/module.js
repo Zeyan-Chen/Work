@@ -38,7 +38,7 @@
 
   /* ==== 是否剛開始就開合 */
   Module.prototype.ifStartOpen = function() {
-    console.log("openAtStart狀態:" + this.option.openAtStart);
+    // console.log("openAtStart狀態:" + this.option.openAtStart);
     var self = this;
 
     if (this.option.openAtStart) {
@@ -106,7 +106,6 @@
   /* ==== btn 按下時 */
   Module.prototype.bannerToggle = function(module) {
     var $banner = $(module.data.$bannerModule.ele); // jQuery 選取
-
     var opened = module.data.$bannerModule.option.class.opened;
     var opening = module.data.$bannerModule.option.class.opening;
 
@@ -120,9 +119,10 @@
   };
 
   /* ==== 是否 + transition */
-  Module.prototype.ifTransition = function(params) {
-    console.log("transition狀態:" + this.option.transition);
+  Module.prototype.ifTransition = function() {
+    // console.log("transition狀態:" + this.option.transition);
     if (this.option.transition) {
+      this.option.whenTransition();
       this.$ele.addClass("transition");
       this.$ele.find(".img").addClass("transition");
     } else {
@@ -133,7 +133,7 @@
 
   /* ==== 是否自動開合 */
   Module.prototype.ifAutoOpen = function() {
-    console.log("autoToggle狀態:" + this.option.autoToggle);
+    // console.log("autoToggle狀態:" + this.option.autoToggle);
     var self = this;
     var countTime = 3; // 倒數秒數
     var nowClass = self.$ele[0].classList;
