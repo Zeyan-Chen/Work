@@ -1,0 +1,175 @@
+@import '_variables.scss';
+/**
+ * Define your classname
+ */
+$classname: 'FzTable';
+/*
+ * Start your css code
+ */
+ *, *:before, *:after { box-sizing: border-box; }
+ body {
+     margin: 0;
+     padding: 0;
+     font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
+ }
+
+$th-w: 15;
+.#{$classname} {
+    position: relative;
+    width: 100vw;
+    border-top: 3px solid #DFDBCF;
+    overflow: hidden;
+    @media screen and (min-width: $screen-tablet) {
+        max-width: 810px;
+        border-top: 2px solid #fff;
+    }
+    @for $i from 1 through 5 {
+        &.showcol-#{$i} {
+            td, th {
+                width: #{(100-$th-w)/$i}vw;
+                @media screen and (min-width: $screen-tablet) {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    table {
+        border-spacing: 0;
+        border: 1px inset #E2E2E2;
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+        font-size: 14px;
+    }
+    th, td {
+        position: relative;
+        height: 50px;
+        border: 1px inset #E2E2E2;
+        @media screen and (min-width: $screen-tablet) {
+            height: 64px;
+        }
+    }
+    th {
+        padding: 0 6px;
+        font-weight: normal;
+        &.th {
+            white-space: nowrap;
+            width: #{$th-w}vw;
+            span { display: block; }
+            @media screen and (min-width: $screen-tablet) {
+                width: 100px;
+                span { display: inline-block; }
+            }
+        }
+    }
+
+    .active {
+        //background-color: #F7F7F7;
+        z-index: 1;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: auto;
+            width: 100%;
+            height: 49px;
+            background-color: #F7F7F7;
+            z-index: -1;
+            @media screen and (min-width: $screen-tablet) {
+                height: 62px;
+            }
+        }
+        &This {
+            //background-color: #FFF9E3;
+            border: 1px solid #FE8B88;
+            &:before { background-color: #FFF9E3; }
+        }
+    }
+
+    .table-fixed {
+        position: absolute;
+        left: -2px;
+        z-index: 1;
+        background-color: #eee;
+        tr:first-of-type {
+            background-color: #EAEDF2;
+            th { border-bottom: 1px inset #EAEEF4; }
+            span {
+                display: block;
+                line-height: 1.8;
+                &:first-of-type { text-align: right; }
+                &:last-of-type { text-align: left; }
+            }
+        }
+        @media screen and (min-width: $screen-tablet) {
+            left: -1px;
+        }
+    }
+
+    .table-content {
+        table { width: 100%; }
+        thead {
+            background-color: #EAEEF4;
+            .th:first-of-type {
+                span { line-height: 1.4; }
+            }
+        }
+        th {
+            vertical-align: bottom;
+            padding-bottom: 12px;
+            border-bottom: 1px inset #EAEEF4;
+        }
+        span { letter-spacing: -0.6px; }
+    }
+    .fwb { font-weight: bold; }
+    i {
+        display: inline-block;
+        margin-left: 2px;
+        font-style: normal;
+        color: #9A9A9A;
+    }
+    .bargain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 26px;
+        font-size: 12px;
+        color: #FF8E24;
+        &:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -7px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 11px 11px 11px;
+            border-color: transparent transparent #ff8e24 transparent;
+            transform: rotate(-45deg);
+        }
+    }
+
+    .btn {
+        font-family: cursive;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 23px;
+        height: 46px;
+        line-height: 1.7;
+        background-color: rgba(#444, .4);
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2;
+        &-prev { left: #{$th-w}vw; }
+        &-next { right: 0; }
+        @media screen and (min-width: $screen-tablet) {
+            display: none;
+        }
+    }
+}

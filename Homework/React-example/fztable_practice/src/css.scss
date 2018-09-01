@@ -1,0 +1,62 @@
+$classname: "FzTable";
+
+$color-line: #e2e2e2;
+$bgc-top-month: #eaeef4;
+$bgc-column-month: #eee;
+$bgc-activeThis: #fff9e3;
+$bgc-active: #f7f7f7;
+$line-color-activeThis: #fe8b88;
+
+* {
+  list-style: none;
+  box-sizing: border-box;
+}
+
+##{$classname} {
+  // outline: 1px solid #f00;
+  table {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    border-collapse: collapse;
+    tr {
+      height: 64px;
+      th,
+      td {
+        outline: 1px solid $color-line;
+      }
+      td {
+        cursor: pointer;
+        &.activeThis {
+          outline: 1px solid $line-color-activeThis;
+          background-color: $bgc-activeThis;
+        }
+        &.active {
+          background-color: $bgc-active;
+        }
+      }
+    }
+    thead {
+      background-color: $bgc-top-month;
+    }
+    tbody {
+      th {
+        background-color: $bgc-column-month;
+      }
+    }
+    .BackAndGo {
+      position: relative;
+      span {
+        position: absolute;
+        &:nth-child(1) {
+          bottom: 5px;
+          left: 5px;
+        }
+        &:nth-child(2) {
+          top: 5px;
+          right: 5px;
+        }
+      }
+    }
+  }
+}
