@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>JS Bin</title>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+(function($) {
+'use strict';
+    var ModuleName = 'lbx_lnop';
+
+    var Module = function ( ele, options ) {
+        this.ele = ele;
+        this.$ele = $(ele);
+        this.option = options;
+    };
+
+    Module.DEFAULTS = {
+        style: 'classname',
+        whenClickCallback: function() {
+            console.log('whenClickCallback');
+        }
+    };
+
+    Module.prototype.func = function () {
+        console.log('this is a prototype function!!!');
+    };
+
+    Module.prototype.method = function () {
+        console.log('this is a prototype function!!!');
+    };
+
+    Module.prototype.newMethod = function ( opts ) {
+        console.log('this is a prototype function!!!:', opts);
+    };
+
+    $.fn[ModuleName] = function ( methods, options ) {
+        return this.each(function(){
+            var $this = $(this);
+            var module = $this.data( ModuleName );
+            var opts = null;
+            if ( !!module ) {
+                if ( typeof methods === 'string' &&  typeof options === 'undefined' ) {
+                    module[methods]();
+                } else if ( typeof methods === 'string' &&  typeof options === 'object' ) {
+                    module[methods](options);
+                } else {
+                    console.log('unsupported options!');
+                    throw 'unsupported options!';
+                }
+            } else {
+                opts = $.extend( {}, Module.DEFAULTS, ( typeof methods === 'object' && options ), ( typeof options === 'object' && options ) );
+                module = new Module(this, opts);
+                $this.data( ModuleName, module );
+                console.log($this.data(ModuleName));
+            }
+        });
+    };
+
+})(jQuery);
+</script>
+<a href="">123</a>
+<a href="">456</a>
+
+<script type="text/javascript">
+$(function() {
+    $( "a" ).lbx_lnop();
+
+    $( "a" ).lbx_lnop('method');
+
+    $( "a" ).lbx_lnop('newMethod', {
+        key: 'yes'
+    });
+
+});
+</script>
+</body>
+
+</html>

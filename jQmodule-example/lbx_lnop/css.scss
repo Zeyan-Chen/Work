@@ -1,0 +1,218 @@
+// -------------------------------------
+// Susy Import
+// -------------------------------------
+//@import "susy";
+// -------------------------------------
+// Core Mixins
+// -------------------------------------
+@import "../../core/mixins";
+// -------------------------------------
+// Variables Import
+// -------------------------------------
+// 載入全域變數
+@import "../../core/variables";
+// -------------------------------------
+// Components / Modules Setting
+// -------------------------------------
+// 請輸入您的ClassName
+$classname: 'lbx_lnop';
+// 請問是元件還是模組呢？若是元件，請輸入'components'（全小寫）；若是模組，請輸入'modules'（全小寫）
+$class-category: 'modules'; 
+// 編譯後的CSS所在位置，如果你的CSS有需要讀圖檔或字型，請在URL字串前加上'#{$resource-path}'
+$resource-path: resource-path($class-category,$classname);
+// -------------------------------------
+// 您的CSS Code
+// -------------------------------------
+//以下範例可以刪除，改為您自已的CSS Code
+$theme_red:#e10500;
+$theme_red_lighter:#ff8b88;
+$theme_red_darker:#bb0400;
+
+$theme_orange_lighter:#fff9e3;
+$theme_orange:#ff8400;
+$theme_orange_darker:#8e561a;
+
+$theme_aqua_lighter:#eaedf1;
+$theme_aqua:#00a7e1;
+$theme_aqua_darker:#0077b3;
+
+$theme_grass:#00ccce;
+
+$theme_turkeyblue_lighter:#00ccce;
+$theme_turkeyblue:#14b1b2;
+$theme_turkeyblue_darker:#1c9c9d;
+
+$theme_lakegreen_lighter:#e0f2ed;
+$theme_lakegreen_light:#cde4de;
+$theme_lakegreen:#69c1a8;
+$theme_lakegreen_darker:#24a07d;
+
+$theme_soilgray_lighter:#efece7;
+$theme_soilgray_light:#edeadc;
+$theme_soilgray:#c0bba3;
+$theme_soilgray_darker:#949289;
+
+$theme_gray_lighter:#f7f7f7;
+$theme_gray_light:#f1f1f1;
+$theme_gray:#999;
+$theme_gray_dark:#666;
+$theme_gray_darker:#444;
+
+.#{$classname} {
+	display: none;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	min-width: 320px;
+	.#{$classname}_dialog {
+		max-width: 429px;
+		margin: 30px auto;
+		position: relative;
+	}
+	.#{$classname}_content {
+		padding: 30px 45px;
+		margin-right: 29px;
+		background-color: #ffffff;
+		position: relative;
+		.closeBtn {
+			background-image: url("./img/close.png");
+			width: 29px;
+			height: 30px;
+			position: absolute;
+			top: 0px;
+			right: -29px;
+		}
+		> .wrap {
+			position: relative;
+			overflow: hidden;
+			margin: -30px -45px;
+			.section {
+				display: none;
+				@include transition(left 0.5s ease, top 0.5s ease);
+				.link {
+					cursor: pointer;
+				}
+				&.active {
+					display: block;
+					padding: 30px 45px;
+					left: 0%;
+					top: 0%;
+					@include clearfix;
+				}
+				&.middle,
+				&.left,
+				&.right,
+				&.top,
+				&.bottom {
+					display: block;
+					position: absolute;
+					width: 100%;
+					padding: 30px 45px;
+				}
+				&.middle {
+					left: 0%;
+					top: 0%;
+					margin-left: 0;
+					margin-top: 0;
+				}
+				&.right {
+					left: 100%;
+					top: 0%;
+					margin-left: 75px;
+				}
+				&.left {
+					left: -100%;
+					top: 0%;
+					margin-left: -75px;
+				}
+				&.top {
+					top: -100%;
+					left: 0%;
+					margin-top: -30px;
+				}
+				&.bottom {
+					top: 100%;
+					left: 0%;
+					margin-top: 30px;
+				}
+			}
+			iframe.section{
+				display: none;
+				border: none;
+				width: 100%;
+				&.active {
+					padding: 0;
+				}
+				&.middle,
+				&.left,
+				&.right,
+				&.top,
+				&.bottom {
+					padding: 0;
+				}
+			}
+			.placeholder {
+				margin: 30px 0;
+				@include transition(height 0.5s ease);
+			}
+		}
+	}
+	.msgSection,
+	.tipMsg {
+		display: none;
+		&.show {
+			display: block;
+		}
+	}
+	.need-read {
+		display: block;
+		padding:0 0 10px 1.4em;
+		text-indent: -1.4em;
+		&.l2 {
+			height: 38px;
+			overflow-y: auto;
+		}
+		&.l3 {
+			height: 70px;
+			overflow-y: auto;
+		}
+		> input[type=checkbox] {
+			margin-right: 0.4em;
+		}
+	}
+	&_mask {
+		opacity: 0;
+		filter: alpha(opacity = 0);
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 9998;
+		background-color: #000000;
+	}
+	&_iframe {
+		display: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: transparent;
+		&.open {
+			display: block;
+			z-index: 9999;
+		}
+	}
+	&_transparent {
+		background: transparent;
+		background-color: transparent;
+	}
+}
