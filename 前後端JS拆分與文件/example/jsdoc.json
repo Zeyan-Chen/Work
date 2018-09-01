@@ -1,0 +1,38 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": ["plugins/markdown"],
+    "markdown": {
+        "tags": ["markdown"]
+    },
+    "templates": {
+        "cleverLinks"     : false,
+        "systemName"            : "雄旅網機票3合1前端說明文件",
+        // "footer"                : "{string}",
+        // "copyright"             : "{string}",
+        // "includeDate"           : "{boolean}",
+        "navType"               : "vertical",
+        "theme"                 : "simplex",
+        "linenums"              : true,
+        "collapseSymbols"       : false,
+        "inverseNav"            : true,
+        // "outputSourceFiles"     : "{boolean}" ,
+        // "outputSourcePath"      : "{boolean}",
+        "dateFormat"            : "YYYY/MM/DD",
+        "syntaxTheme"           : "default",
+        "sort"                  : false,
+        "search"                : true 
+    },
+    "opts": {
+        "encoding": "utf8",
+        "destination": "./docs/",
+        "recurse": true,
+        "template": "./node_modules/ink-docstrap/template"
+    }
+}

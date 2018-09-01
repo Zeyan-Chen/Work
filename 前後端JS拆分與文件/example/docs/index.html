@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>雄旅網機票3合1前端說明文件 Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">雄旅網機票3合1前端說明文件</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="SearchPage.html">SearchPage</a></li><li><a href="SearchPage.PanelMobile.html">SearchPage.PanelMobile</a></li><li><a href="SearchPage.PanelDesktop.html">SearchPage.PanelDesktop</a></li><li><a href="SearchPage.PriceSort.html">SearchPage.PriceSort</a></li><li><a href="SearchPage.AirPlaneSort.html">SearchPage.AirPlaneSort</a></li><li><a href="ConfirmationPage.html">ConfirmationPage</a></li><li><a href="PassengerPage.html">PassengerPage</a></li><li><a href="CompletePage.html">CompletePage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html">Global</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="external-jQuery.html">jQuery</a></li><li><a href="external-_jQuery.fn_.html">jQuery.fn</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>雄旅網機票3合1前端說明文件</h1><h2>使用的外部 js 庫</h2><ul>
+<li>jquery v1.12.0</li>
+<li>moment.js v2.13.0</li>
+</ul>
+<h2>測試環境</h2><ul>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>IE10 up</li>
+<li>Andriod</li>
+<li>IOS Safari</li>
+</ul>
+<h2>根資料夾說明</h2><table>
+<thead>
+<tr>
+<th>名稱</th>
+<th style="text-align:center">類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docs</td>
+<td style="text-align:center">dir</td>
+<td>前端文件資料夾，請打開index.html</td>
+</tr>
+<tr>
+<td>release</td>
+<td style="text-align:center">dir</td>
+<td>打包後的資料夾，包括所有相關資源與html檔</td>
+</tr>
+<tr>
+<td>server.js</td>
+<td style="text-align:center">js</td>
+<td>此資料夾的臨時測試用的web server，詳情請看Run Start</td>
+</tr>
+<tr>
+<td>package.json</td>
+<td style="text-align:center">json</td>
+<td>npm package.json檔記錄相關相依套件</td>
+</tr>
+</tbody>
+</table>
+<h2>release資料夾說明</h2><table>
+<thead>
+<tr>
+<th>名稱</th>
+<th style="text-align:center">類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_shared</td>
+<td style="text-align:center">dir</td>
+<td>所有的相關資源都放在這</td>
+</tr>
+<tr>
+<td>lightbox</td>
+<td style="text-align:center">dir</td>
+<td>lightbox範例內容html都放在這，上線後不需要此資料夾</td>
+</tr>
+<tr>
+<td>compare.html</td>
+<td style="text-align:center">html</td>
+<td>產品比較 / 收藏</td>
+</tr>
+<tr>
+<td>completed.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)完成頁</td>
+</tr>
+<tr>
+<td>completed_BFM.html</td>
+<td style="text-align:center">html</td>
+<td>(BFM)完成頁</td>
+</tr>
+<tr>
+<td>completed_cn.html</td>
+<td style="text-align:center">html</td>
+<td>(大陸國內機票)完成頁</td>
+</tr>
+<tr>
+<td>completed_LCC.html</td>
+<td style="text-align:center">html</td>
+<td>(TF)完成頁</td>
+</tr>
+<tr>
+<td>completed_req.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)完成頁(需求單)</td>
+</tr>
+<tr>
+<td>completed_twks.html</td>
+<td style="text-align:center">html</td>
+<td>(金廈小三通)完成頁</td>
+</tr>
+<tr>
+<td>confirmation_baby.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)確認明細_含嬰兒</td>
+</tr>
+<tr>
+<td>confirmation_BFM_mutidest.html</td>
+<td style="text-align:center">html</td>
+<td>(BFM)確認明細_多個目的地</td>
+</tr>
+<tr>
+<td>confirmation_BFM_oneway.html</td>
+<td style="text-align:center">html</td>
+<td>(BFM)確認明細_單程</td>
+</tr>
+<tr>
+<td>confirmation_BFM_round.html</td>
+<td style="text-align:center">html</td>
+<td>(BFM)確認明細_來回</td>
+</tr>
+<tr>
+<td>confirmation_cn.html</td>
+<td style="text-align:center">html</td>
+<td>(大陸國內機票)確認明細</td>
+</tr>
+<tr>
+<td>confirmation_LCC_oneway.html</td>
+<td style="text-align:center">html</td>
+<td>(TF)確認明細_單程</td>
+</tr>
+<tr>
+<td>confirmation_LCC_round.html</td>
+<td style="text-align:center">html</td>
+<td>(TF)確認明細_來回</td>
+</tr>
+<tr>
+<td>confirmation_oneway.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)確認明細_單程</td>
+</tr>
+<tr>
+<td>confirmation_req.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)確認明細_需求單</td>
+</tr>
+<tr>
+<td>confirmation_round.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)確認明細_來回不同點進出</td>
+</tr>
+<tr>
+<td>confirmation_twks.html</td>
+<td style="text-align:center">html</td>
+<td>(金廈小三通)確認票價與旅客人數</td>
+</tr>
+<tr>
+<td>giftinfo.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果光箱-禮品明細(L)</td>
+</tr>
+<tr>
+<td>passenger.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)填寫旅客資料</td>
+</tr>
+<tr>
+<td>passenger_BFM.html</td>
+<td style="text-align:center">html</td>
+<td>(BFM)填寫旅客資料</td>
+</tr>
+<tr>
+<td>passenger_cn.html</td>
+<td style="text-align:center">html</td>
+<td>(大陸國內機票)旅客資料頁</td>
+</tr>
+<tr>
+<td>passenger_LCC.html</td>
+<td style="text-align:center">html</td>
+<td>(TF)填寫旅客資料</td>
+</tr>
+<tr>
+<td>passenger_req.html</td>
+<td style="text-align:center">html</td>
+<td>(一般機票)填寫旅客資料_需求單</td>
+</tr>
+<tr>
+<td>passenger_twks.html</td>
+<td style="text-align:center">html</td>
+<td>(金廈小三通)填寫旅客資料</td>
+</tr>
+<tr>
+<td>rule.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果光箱(一般機票)票規</td>
+</tr>
+<tr>
+<td>rule_BFM.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果光箱(BFM)票規(L)</td>
+</tr>
+<tr>
+<td>rule_LCC.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果光箱(TF)票規</td>
+</tr>
+<tr>
+<td>search_cn.html</td>
+<td style="text-align:center">html</td>
+<td>大陸國內機票_搜尋結果</td>
+</tr>
+<tr>
+<td>search_cn_na.html</td>
+<td style="text-align:center">html</td>
+<td>大陸國內機票<em>搜尋結果</em>找不到結果</td>
+</tr>
+<tr>
+<td>search_mutidest.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果_多個目的地</td>
+</tr>
+<tr>
+<td>search_na.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果_找不到結果</td>
+</tr>
+<tr>
+<td>search_na_oneway.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果<em>單程</em>找不到結果</td>
+</tr>
+<tr>
+<td>search_na_round.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果<em>來回</em>找不到結果</td>
+</tr>
+<tr>
+<td>search_oneway.html</td>
+<td style="text-align:center">html</td>
+<td>尋結果_單程</td>
+</tr>
+<tr>
+<td>search_round.html</td>
+<td style="text-align:center">html</td>
+<td>搜尋結果_來回</td>
+</tr>
+</tbody>
+</table>
+<h2>release/_shared 資料夾說明</h2><p>跟前端有關的資源，都會放在<code>_shared</code>，上線時也是如此，記得將<code>_shared</code>改為大寫<code>_Shared</code>，並放在主機的<code>root</code>目錄下</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th style="text-align:center">類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>json</td>
+<td style="text-align:center">dir</td>
+<td>目的地選單/補字的資料格式範例(假資料)，上線時，這個資料夾將不會需要，因為會介接正式資料來源，請後端再提供資料來源url</td>
+</tr>
+<tr>
+<td>LightSpeed</td>
+<td style="text-align:center">dir</td>
+<td>此為光速版所有資前端資源放置的資料夾</td>
+</tr>
+</tbody>
+</table>
+<h2>release/_shared/json 資料夾說明</h2><p>本資料夾在上測試機或正式機時不需要存在，以下三個檔案會改為其他的路徑，此部分會由雄資F2E組執行</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th style="text-align:center">類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filterTransfer.js</td>
+<td style="text-align:center">js</td>
+<td>排除轉機城國家範例資料</td>
+</tr>
+<tr>
+<td>flightsInternationalDestinationCsutomMenu.js</td>
+<td style="text-align:center">js</td>
+<td>目的地選單範例資料</td>
+</tr>
+<tr>
+<td>GetArrayTkt6.js</td>
+<td style="text-align:center">js</td>
+<td>目的地補字範例資料</td>
+</tr>
+</tbody>
+</table>
+<h2>release/_shared/LightSpeed 資料夾說明</h2><table>
+<thead>
+<tr>
+<th>名稱</th>
+<th style="text-align:center">類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>files</td>
+<td style="text-align:center">dir</td>
+<td>相關圖片、字型資源檔</td>
+</tr>
+<tr>
+<td>lib</td>
+<td style="text-align:center">dir</td>
+<td>相依的外部套件資源檔</td>
+</tr>
+<tr>
+<td>SubSiteBundles</td>
+<td style="text-align:center">dir</td>
+<td>各子網域的css、js資源檔</td>
+</tr>
+</tbody>
+</table>
+<h2>release/_shared/LightSpeed/SubSiteBundles/Flights 資料夾說明</h2><table>
+<thead>
+<tr>
+<th>名稱</th>
+<th style="text-align:center">類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td style="text-align:center">dir</td>
+<td>提供給後續接手人員的js檔存放地</td>
+</tr>
+<tr>
+<td>lib</td>
+<td style="text-align:center">dir</td>
+<td>相依的外部套件資源檔</td>
+</tr>
+<tr>
+<td>compare.bundle.js</td>
+<td style="text-align:center">js</td>
+<td>產品比較頁js</td>
+</tr>
+<tr>
+<td>compare.css</td>
+<td style="text-align:center">css</td>
+<td>產品比較頁css</td>
+</tr>
+<tr>
+<td>completed.bundle.js</td>
+<td style="text-align:center">js</td>
+<td>訂購完成頁js</td>
+</tr>
+<tr>
+<td>completed.css</td>
+<td style="text-align:center">css</td>
+<td>訂購完成頁css</td>
+</tr>
+<tr>
+<td>confirmation.bundle.js</td>
+<td style="text-align:center">js</td>
+<td>訂購確認頁js</td>
+</tr>
+<tr>
+<td>confirmation.css</td>
+<td style="text-align:center">css</td>
+<td>訂購確認頁css</td>
+</tr>
+<tr>
+<td>lightbox.bundle.js</td>
+<td style="text-align:center">js</td>
+<td>lightbox展示頁js</td>
+</tr>
+<tr>
+<td>lightbox.css</td>
+<td style="text-align:center">css</td>
+<td>lightbox展示頁css</td>
+</tr>
+<tr>
+<td>passenger.bundle.js</td>
+<td style="text-align:center">js</td>
+<td>填寫旅客資料頁js</td>
+</tr>
+<tr>
+<td>passenger.css</td>
+<td style="text-align:center">css</td>
+<td>填寫旅客資料頁css</td>
+</tr>
+<tr>
+<td>search.bundle.js</td>
+<td style="text-align:center">js</td>
+<td>搜尋結果頁js</td>
+</tr>
+<tr>
+<td>search.css</td>
+<td style="text-align:center">css</td>
+<td>搜尋結果頁css</td>
+</tr>
+</tbody>
+</table>
+<h2>release/_shared/LightSpeed/SubSiteBundles/Flights/Backend 資料夾說明</h2><p>請後續接手的人員，將您的js腳本寫在本資料夾中找尋你要編寫頁面對應到的js檔，並參考該檔的相關說明，將你的js寫在適合的執行流程上</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th style="text-align:center">類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>completepage.js</td>
+<td style="text-align:center">js</td>
+<td>訂購完成頁後續js編寫檔，詳見<a href="./CompletePage.html">CompletePage</a></td>
+</tr>
+<tr>
+<td>confirmationpage.js</td>
+<td style="text-align:center">js</td>
+<td>訂購確認頁js編寫檔，詳見<a href="./ConfirmationPage.html">ConfirmationPage</a></td>
+</tr>
+<tr>
+<td>passengerpage.js</td>
+<td style="text-align:center">js</td>
+<td>填寫旅客資料頁後續js編寫檔，詳見<a href="./PassengerPage.html">PassengerPage</a></td>
+</tr>
+<tr>
+<td>searchpage.js</td>
+<td style="text-align:center">js</td>
+<td>產品比較頁後續js編寫檔，詳見<a href="./SearchPage.html">SearchPage</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Run Start</h2><p>執行以下命令安裝相關套件</p>
+<pre class="prettyprint source"><code>npm i</code></pre><p>開啟專案自帶<code>web server</code>，並使用<code>browser</code>開啟<code>localhost:2291</code></p>
+<pre class="prettyprint source"><code>npm run start</code></pre></article>
+    </section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+		on 2018/03/29
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

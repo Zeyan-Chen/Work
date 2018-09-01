@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    @font-face {
+      font-family: octicons-anchor;
+      src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 980px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    body .markdown-body {
+      padding: 45px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      word-wrap: break-word;
+    }
+
+    pre {
+      font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+
+    .markdown-body {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      color: #333;
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+
+    .markdown-body a {
+      background-color: transparent;
+    }
+
+    .markdown-body a:active,
+    .markdown-body a:hover {
+      outline: 0;
+    }
+
+    .markdown-body strong {
+      font-weight: bold;
+    }
+
+    .markdown-body h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    .markdown-body img {
+      border: 0;
+    }
+
+    .markdown-body hr {
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    .markdown-body pre {
+      overflow: auto;
+    }
+
+    .markdown-body code,
+    .markdown-body kbd,
+    .markdown-body pre {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    .markdown-body input {
+      color: inherit;
+      font: inherit;
+      margin: 0;
+    }
+
+    .markdown-body html input[disabled] {
+      cursor: default;
+    }
+
+    .markdown-body input {
+      line-height: normal;
+    }
+
+    .markdown-body input[type="checkbox"] {
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    .markdown-body table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .markdown-body td,
+    .markdown-body th {
+      padding: 0;
+    }
+
+    .markdown-body input {
+      font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .markdown-body a {
+      color: #4078c0;
+      text-decoration: none;
+    }
+
+    .markdown-body a:hover,
+    .markdown-body a:active {
+      text-decoration: underline;
+    }
+
+    .markdown-body hr {
+      height: 0;
+      margin: 15px 0;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .markdown-body hr:before {
+      display: table;
+      content: "";
+    }
+
+    .markdown-body hr:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    .markdown-body h1 {
+      font-size: 30px;
+    }
+
+    .markdown-body h2 {
+      font-size: 21px;
+    }
+
+    .markdown-body h3 {
+      font-size: 16px;
+    }
+
+    .markdown-body h4 {
+      font-size: 14px;
+    }
+
+    .markdown-body h5 {
+      font-size: 12px;
+    }
+
+    .markdown-body h6 {
+      font-size: 11px;
+    }
+
+    .markdown-body blockquote {
+      margin: 0;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: lower-roman;
+    }
+
+    .markdown-body ul ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ol ol ol {
+      list-style-type: lower-alpha;
+    }
+
+    .markdown-body dd {
+      margin-left: 0;
+    }
+
+    .markdown-body code {
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 12px;
+    }
+
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+
+    .markdown-body .select::-ms-expand {
+      opacity: 0;
+    }
+
+    .markdown-body .octicon {
+      font: normal normal normal 16px/1 octicons-anchor;
+      display: inline-block;
+      text-decoration: none;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .markdown-body .octicon-link:before {
+      content: '\f05c';
+    }
+
+    .markdown-body:before {
+      display: table;
+      content: "";
+    }
+
+    .markdown-body:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .markdown-body>*:first-child {
+      margin-top: 0 !important;
+    }
+
+    .markdown-body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .markdown-body a:not([href]) {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .markdown-body .anchor {
+      display: inline-block;
+      padding-right: 2px;
+      margin-left: -18px;
+    }
+
+    .markdown-body .anchor:focus {
+      outline: none;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 1em;
+      margin-bottom: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .markdown-body h1 .octicon-link,
+    .markdown-body h2 .octicon-link,
+    .markdown-body h3 .octicon-link,
+    .markdown-body h4 .octicon-link,
+    .markdown-body h5 .octicon-link,
+    .markdown-body h6 .octicon-link {
+      color: #000;
+      vertical-align: middle;
+      visibility: hidden;
+    }
+
+    .markdown-body h1:hover .anchor,
+    .markdown-body h2:hover .anchor,
+    .markdown-body h3:hover .anchor,
+    .markdown-body h4:hover .anchor,
+    .markdown-body h5:hover .anchor,
+    .markdown-body h6:hover .anchor {
+      text-decoration: none;
+    }
+
+    .markdown-body h1:hover .anchor .octicon-link,
+    .markdown-body h2:hover .anchor .octicon-link,
+    .markdown-body h3:hover .anchor .octicon-link,
+    .markdown-body h4:hover .anchor .octicon-link,
+    .markdown-body h5:hover .anchor .octicon-link,
+    .markdown-body h6:hover .anchor .octicon-link {
+      visibility: visible;
+    }
+
+    .markdown-body h1 {
+      padding-bottom: 0.3em;
+      font-size: 2.25em;
+      line-height: 1.2;
+      border-bottom: 1px solid #eee;
+    }
+
+    .markdown-body h1 .anchor {
+      line-height: 1;
+    }
+
+    .markdown-body h2 {
+      padding-bottom: 0.3em;
+      font-size: 1.75em;
+      line-height: 1.225;
+      border-bottom: 1px solid #eee;
+    }
+
+    .markdown-body h2 .anchor {
+      line-height: 1;
+    }
+
+    .markdown-body h3 {
+      font-size: 1.5em;
+      line-height: 1.43;
+    }
+
+    .markdown-body h3 .anchor {
+      line-height: 1.2;
+    }
+
+    .markdown-body h4 {
+      font-size: 1.25em;
+    }
+
+    .markdown-body h4 .anchor {
+      line-height: 1.2;
+    }
+
+    .markdown-body h5 {
+      font-size: 1em;
+    }
+
+    .markdown-body h5 .anchor {
+      line-height: 1.1;
+    }
+
+    .markdown-body h6 {
+      font-size: 1em;
+      color: #777;
+    }
+
+    .markdown-body h6 .anchor {
+      line-height: 1.1;
+    }
+
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .markdown-body hr {
+      height: 4px;
+      padding: 0;
+      margin: 16px 0;
+      background-color: #e7e7e7;
+      border: 0 none;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 2em;
+    }
+
+    .markdown-body ul ul,
+    .markdown-body ul ol,
+    .markdown-body ol ol,
+    .markdown-body ol ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .markdown-body li>p {
+      margin-top: 16px;
+    }
+
+    .markdown-body dl {
+      padding: 0;
+    }
+
+    .markdown-body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .markdown-body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    .markdown-body blockquote {
+      padding: 0 15px;
+      color: #777;
+      border-left: 4px solid #ddd;
+    }
+
+    .markdown-body blockquote>:first-child {
+      margin-top: 0;
+    }
+
+    .markdown-body blockquote>:last-child {
+      margin-bottom: 0;
+    }
+
+    .markdown-body table {
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all;
+    }
+
+    .markdown-body table th {
+      font-weight: bold;
+    }
+
+    .markdown-body table th,
+    .markdown-body table td {
+      padding: 6px 13px;
+      border: 1px solid #ddd;
+    }
+
+    .markdown-body table tr {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    .markdown-body table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    .markdown-body img {
+      max-width: 100%;
+      box-sizing: content-box;
+      background-color: #fff;
+    }
+
+    .markdown-body code {
+      padding: 0;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      margin: 0;
+      font-size: 85%;
+      background-color: rgba(0, 0, 0, 0.04);
+      border-radius: 3px;
+    }
+
+    .markdown-body code:before,
+    .markdown-body code:after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+
+    .markdown-body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+
+    .markdown-body .highlight {
+      margin-bottom: 16px;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+    }
+
+    .markdown-body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+
+    .markdown-body pre {
+      word-wrap: normal;
+    }
+
+    .markdown-body pre code {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .markdown-body pre code:before,
+    .markdown-body pre code:after {
+      content: normal;
+    }
+
+    .markdown-body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font-size: 11px;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+
+    .markdown-body .pl-c {
+      color: #969896;
+    }
+
+    .markdown-body .pl-c1,
+    .markdown-body .pl-s .pl-v {
+      color: #0086b3;
+    }
+
+    .markdown-body .pl-e,
+    .markdown-body .pl-en {
+      color: #795da3;
+    }
+
+    .markdown-body .pl-s .pl-s1,
+    .markdown-body .pl-smi {
+      color: #333;
+    }
+
+    .markdown-body .pl-ent {
+      color: #63a35c;
+    }
+
+    .markdown-body .pl-k {
+      color: #a71d5d;
+    }
+
+    .markdown-body .pl-pds,
+    .markdown-body .pl-s,
+    .markdown-body .pl-s .pl-pse .pl-s1,
+    .markdown-body .pl-sr,
+    .markdown-body .pl-sr .pl-cce,
+    .markdown-body .pl-sr .pl-sra,
+    .markdown-body .pl-sr .pl-sre {
+      color: #183691;
+    }
+
+    .markdown-body .pl-v {
+      color: #ed6a43;
+    }
+
+    .markdown-body .pl-id {
+      color: #b52a1d;
+    }
+
+    .markdown-body .pl-ii {
+      background-color: #b52a1d;
+      color: #f8f8f8;
+    }
+
+    .markdown-body .pl-sr .pl-cce {
+      color: #63a35c;
+      font-weight: bold;
+    }
+
+    .markdown-body .pl-ml {
+      color: #693a17;
+    }
+
+    .markdown-body .pl-mh,
+    .markdown-body .pl-mh .pl-en,
+    .markdown-body .pl-ms {
+      color: #1d3e81;
+      font-weight: bold;
+    }
+
+    .markdown-body .pl-mq {
+      color: #008080;
+    }
+
+    .markdown-body .pl-mi {
+      color: #333;
+      font-style: italic;
+    }
+
+    .markdown-body .pl-mb {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .markdown-body .pl-md {
+      background-color: #ffecec;
+      color: #bd2c00;
+    }
+
+    .markdown-body .pl-mi1 {
+      background-color: #eaffea;
+      color: #55a532;
+    }
+
+    .markdown-body .pl-mdr {
+      color: #795da3;
+      font-weight: bold;
+    }
+
+    .markdown-body .pl-mo {
+      color: #1d3e81;
+    }
+
+    .markdown-body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+
+    .markdown-body .plan-price-unit {
+      color: #767676;
+      font-weight: normal;
+    }
+
+    .markdown-body .task-list-item {
+      list-style-type: none;
+    }
+
+    .markdown-body .task-list-item+.task-list-item {
+      margin-top: 3px;
+    }
+
+    .markdown-body .task-list-item input {
+      margin: 0 0.35em 0.25em -1.6em;
+      vertical-align: middle;
+    }
+
+    .markdown-body .plan-choice {
+      padding: 15px;
+      padding-left: 40px;
+      display: block;
+      border: 1px solid #e0e0e0;
+      position: relative;
+      font-weight: normal;
+      background-color: #fafafa;
+    }
+
+    .markdown-body .plan-choice.open {
+      background-color: #fff;
+    }
+
+    .markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+      display: block;
+    }
+
+    .markdown-body .plan-choice-free {
+      border-radius: 3px 3px 0 0;
+    }
+
+    .markdown-body .plan-choice-paid {
+      border-radius: 0 0 3px 3px;
+      border-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .markdown-body .plan-choice-radio {
+      position: absolute;
+      left: 15px;
+      top: 18px;
+    }
+
+    .markdown-body .plan-choice-exp {
+      color: #999;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .markdown-body .plan-choice-seat-breakdown {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .markdown-body :checked+.radio-label {
+      z-index: 1;
+      position: relative;
+      border-color: #4078c0;
+    }
+  </style>
+  <title>模組開發前所需JS基本觀念ES6</title>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1>
+      <a id="user-content-模組開發前所需js觀念-es6" class="anchor" href="#%E6%A8%A1%E7%B5%84%E9%96%8B%E7%99%BC%E5%89%8D%E6%89%80%E9%9C%80js%E8%A7%80%E5%BF%B5-es6"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>模組開發前所需JS觀念 ES6</h1>
+    <h1>
+      <a id="user-content-let-const" class="anchor" href="#let-const" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>let,
+      const
+    </h1>
+    <p>let與const無疑是要取代原本的使用var語句來定義變數與常數。在ES6之前，並沒有"常數"這個東西，只有"變數"而已，也就是用var所宣告的識別名稱。在這份舊的<a href="http://alloyteam.github.io/JX/doc/specification/google-javascript.xml">Google
+        JavaScript
+      </a>樣式風格指引中，會告訴你要用全大寫英文字元來作為常數定義，像是var MAX_HEIGHT = 10這種定義方式。</p>
+    <p>實際上在多年的只有var可用，加上其他亂用亂寫的語法下，在JavaScript中共有4種宣告變數的方式，它們分別是:</p>
+    <div class="highlight highlight-source-js">
+      <pre>a <span class="pl-k">=</span> <span class="pl-c1">10</span>
+<span class="pl-c1">this</span>.<span class="pl-smi">a</span> <span class="pl-k">=</span> <span class="pl-c1">10</span>
+<span class="pl-c1">window</span>.<span class="pl-smi">a</span> <span class="pl-k">=</span> <span class="pl-c1">10</span>
+<span class="pl-k">var</span> a <span class="pl-k">=</span> <span class="pl-c1">10</span></pre>
+    </div>
+    <p>let與const是區塊作用域(block scope)，而var是函式作用域(function scope)，這是第一個我們會看到的差異性。區塊作用域與函式作用域會差在什麼地方？</p>
+    <p>var是函式作用域的設計，也就是說它只能以函式為變數作用域的分界，在一些使用了區塊語句(用花括號的語句)的像if, else, for, while等等區塊語句中，在這裡面用var宣告的變數仍然是會曝露到全域之中可被存取，例如:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">function</span> <span class="pl-en">test</span>(){
+  <span class="pl-k">var</span> a <span class="pl-k">=</span> <span class="pl-c1">10</span>
+}
+
+<span class="pl-k">if</span>(<span class="pl-c1">true</span>){
+  <span class="pl-k">var</span> b <span class="pl-k">=</span> <span class="pl-c1">20</span>
+}
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(a) <span class="pl-c"><span class="pl-c">//</span> a is not defined 存取不到</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(b) <span class="pl-c"><span class="pl-c">//</span> 存取得到</span></pre>
+    </div>
+    <p>這對初學者容易造成誤解外，如果再搭配到隱藏的提升特性(最下面有說明)，整個程式碼經常會有出人意表的結果。在許多撰寫風格指引通常會提醒這點，而且叫你一定要把<code>var</code>語句寫在程式碼檔案的最上面。(甚至連for語句中的<code>var</code>宣告也要寫到最上面)</p>
+    <p>如果使用了<code>let</code>或<code>const</code>來宣告，就是以區塊語句為分界的作用域，它會比較明確而且不易發生錯誤。一些之前對於<code>var</code>語句的麻煩撰寫風格，就可以不需要了。從下面的例子可以看得到：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">function</span> <span class="pl-en">test</span>() {
+  <span class="pl-k">let</span> a <span class="pl-k">=</span> <span class="pl-c1">10</span>
+}
+
+<span class="pl-k">if</span> (<span class="pl-c1">true</span>) {
+  <span class="pl-k">const</span> <span class="pl-c1">b</span> <span class="pl-k">=</span> <span class="pl-c1">20</span>
+}
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(a) <span class="pl-c"><span class="pl-c">//</span> a is not defined 存取不到</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(b) <span class="pl-c"><span class="pl-c">//</span> b is not defined 存取不到</span></pre>
+    </div>
+    <h1>
+      <a id="user-content-const" class="anchor" href="#const" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>const</h1>
+    <p><code>const</code>針對是常數的定義，常數在一宣告時就必定要指定給值，不然會產生錯誤。而對於常數在ES6的定義是:</p>
+    <blockquote>
+      <p>不可再指定(can't re-assignment)</p>
+    </blockquote>
+    <p>指定的意思就是用等號(=)作指定運算，像下面這例子就是再指定值(或重覆指定值)，所以會產生錯誤:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">a</span> <span class="pl-k">=</span> <span class="pl-c1">10</span>
+a <span class="pl-k">=</span> <span class="pl-c1">20</span>  <span class="pl-c"><span class="pl-c">//</span> TypeError: Assignment to constant variable. 錯誤</span></pre>
+    </div>
+    <blockquote>
+      <p>註: JS中的指定運算符除了等號(=)外，還有多種等號(=)與其他運算符組合而成的指定運算符，請參考MDN上面的這篇<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">Assignment_Operators</a></p>
+    </blockquote>
+    <p>宣告了一個常數，代表這個識別名稱的參照(reference)是唯讀的(read-only)，並不代表這個參照指定到的值是不可改變的(immutable)。這是在講什麼？這是在講如果你宣告的常數是一個物件或陣列類型，像這種參照類型的值，裡面的值是可以作改變的。像下面的例子都是合法的使用:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">a</span> <span class="pl-k">=</span> []
+a[<span class="pl-c1">0</span>] <span class="pl-k">=</span> <span class="pl-c1">1</span>
+
+<span class="pl-k">const</span> <span class="pl-c1">b</span> <span class="pl-k">=</span> {}
+<span class="pl-smi">b</span>.<span class="pl-smi">foo</span> <span class="pl-k">=</span> <span class="pl-c1">123</span></pre>
+    </div>
+    <p>所以對於物件、陣列、函式來說，使用<code>const</code>常數來宣告就可以，除非你有需要再指定這個陣列或物件的參照。</p>
+    <h1>
+      <a id="user-content-提升hoisting" class="anchor" href="#%E6%8F%90%E5%8D%87hoisting" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>提升(Hoisting)</h1>
+    <p>有些人會認為<code>let</code>與<code>const</code>不會被提升，實際上是會的。因為它們被定義有一段時間是無法存取的，這是在被宣告與進入作用域之間時，這段時間稱為<code>Temporal Dead Zone</code>(TDZ,
+      時間死區)，所以不同於
+      <code>var</code>或<code>function</code>，存取<code>let</code>或<code>const</code>提升的變數/常數會產生錯誤<code>ReferenceError</code>，而不是<code>undefined</code>。</p>
+    <blockquote>
+      <p>註: dead zone在英文裡是專有名詞，是指"電波達不到的地區"。</p>
+    </blockquote>
+    <p>要理解<code>let</code>, <code>const</code>是否會被提升，可以用下面的簡單例子來看。第一個例子，是正常可以輸出<code>x</code>變數的值：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">let</span> x <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>outer scope<span class="pl-pds">'</span></span>;
+
+(<span class="pl-k">function</span>() {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(x)
+}())</pre>
+    </div>
+    <p>第二個例子，會產生錯誤<code>ReferenceError</code>。這是因為函數中的那個用let宣告的x變數被提升到函數中區塊的最上面，因此造成錯誤:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">let</span> x <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>outer scope<span class="pl-pds">'</span></span>;
+
+(<span class="pl-k">function</span>() {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(x)
+    <span class="pl-k">let</span> x <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>inner scope<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span>多加這行程式碼，這行被提升到函式區塊中的最上面一行</span>
+}())</pre>
+    </div>
+    <h1>
+      <a id="user-content-arrow-function箭頭函式" class="anchor" href="#arrow-function%E7%AE%AD%E9%A0%AD%E5%87%BD%E5%BC%8F" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>Arrow Function(箭頭函式)</h1>
+    <p>根據網路上統計的統計資料，箭頭函式(Arrow Functions)是ES6標準中，是最受歡迎的其中一種ES6新特性。它會受歡迎的原因是好處多多，只要注意在某些情況下不要用過頭就行了。有什麼好處呢？大致上有以下幾點:</p>
+    <ul>
+      <li>語法簡單，少打很多字元</li>
+      <li>可以讓程式碼的可閱讀性提高</li>
+      <li>可以綁定詞法上的<code>this</code>值</li>
+    </ul>
+    <h2>
+      <a id="user-content-語法介紹" class="anchor" href="#%E8%AA%9E%E6%B3%95%E4%BB%8B%E7%B4%B9" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>語法介紹</h2>
+    <p>箭頭函式的語法如下，出自<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions">箭頭函數(MDN)</a>：</p>
+    <div class="highlight highlight-source-js">
+      <pre>([<span class="pl-smi">param</span>] [, <span class="pl-smi">param</span>]) <span class="pl-k">=&gt;</span> {
+   statements
+}
+
+<span class="pl-smi">param</span> <span class="pl-k">=&gt;</span> expression</pre>
+    </div>
+    <p>簡單的說明如下:</p>
+    <ul>
+      <li>符號是肥箭頭符號(=&gt;) (註: "-&gt;"是瘦箭頭)</li>
+      <li>基本上是"函式表達式(FE)的簡短寫法"</li>
+    </ul>
+    <p>一個簡單的範例是：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">func</span> <span class="pl-k">=</span> (<span class="pl-smi">x</span>) <span class="pl-k">=&gt;</span> x <span class="pl-k">+</span> <span class="pl-c1">1</span></pre>
+    </div>
+    <p>相當於</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">func</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">x</span>) { <span class="pl-k">return</span> x <span class="pl-k">+</span> <span class="pl-c1">1</span> }</pre>
+    </div>
+    <p>所以你可以少打很多英文字元與一些標點符號之類的，函式是個匿名的函式。基本上的使用如下說明：</p>
+    <ul>
+      <li>花括號({})是有意義的，如果函式有多行語句(表達式)時就要使用花括號，花括號中的<code>return</code>回傳值語句要自己寫。例如 <code>() =&gt; {}</code>
+      </li>
+      <li>只有單一個傳入參數時，可以不需要左邊(前面)作為傳入參數使用的圓括號(())符號，例如 <code>x =&gt; x*x</code>
+      </li>
+    </ul>
+    <p>因此，初學者最容易搞混的是下面這個例子，因為有花括號({})與沒有是兩碼子事:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">funcA</span> <span class="pl-k">=</span> <span class="pl-smi">x</span> <span class="pl-k">=&gt;</span> x <span class="pl-k">+</span> <span class="pl-c1">1</span>
+<span class="pl-k">const</span> <span class="pl-c1">funcB</span> <span class="pl-k">=</span> <span class="pl-smi">x</span> <span class="pl-k">=&gt;</span> { x <span class="pl-k">+</span> <span class="pl-c1">1</span> }
+
+<span class="pl-en">funcA</span>(<span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">//</span>2</span>
+<span class="pl-en">funcB</span>(<span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">//</span>undefined</span></pre>
+    </div>
+    <p>當沒使用花括號({})時，代表要會使用自動有<code>return</code>的作用，所以它也只能用在單一行的表達式的時候使用。使用花括號({})則是可以加入多行的語句，不過<code>return</code>不會自動加，有需要你要自己加上，沒加這個函式最後等於<code>return undefined</code></p>
+    <blockquote>
+      <p>註: 表達式與語句仍然有一些差異，像<code>throw "Error2"</code>是一個只有單一行的語句，但它並不能用於箭頭函式中無花括號的情況。</p>
+    </blockquote>
+    <blockquote>
+      <p>註: JS語言中函式的設計，必有回傳值，沒寫相當於回傳undefined</p>
+    </blockquote>
+    <p>第二個會容易造成混亂與誤解的是，在肥箭頭符號(=&gt;)的後面可以直接換行，下面指的是單行回傳表達式的情況，雖然不會造成錯誤但很難閱讀，所以不建議這樣寫。像下面這幾個的例子都是合法語法:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-c"><span class="pl-c">//</span> !! 不建議這樣寫 !!</span>
+<span class="pl-k">const</span> <span class="pl-c1">funcA</span> <span class="pl-k">=</span> <span class="pl-smi">x</span> <span class="pl-k">=&gt;</span>
+x <span class="pl-k">+</span> <span class="pl-c1">1</span>
+
+<span class="pl-c"><span class="pl-c">//</span> !! 不建議這樣寫 !!</span>
+<span class="pl-k">const</span> <span class="pl-c1">funcB</span> <span class="pl-k">=</span>
+<span class="pl-smi">x</span> <span class="pl-k">=&gt;</span>
+x <span class="pl-k">+</span> <span class="pl-c1">1</span></pre>
+    </div>
+    <p>在這裡容易造成誤解，理由是肥箭頭符號(=&gt;)的後面可以用換行，但"前面"不能直接接到換行，這個會造成編譯器無法編譯，瀏覽器也無法執行。我想主要原因是，畢竟這個符號是等號(=)與大於符號(&gt;)組合而成的一個新符號，等號還有其他的用途。放在語句的前面應該就是等號的作用，再加上一個大於符號會造成語法錯誤。不管如何，別亂寫語法就對了，按照一般的你所看到的正常語法來寫就對了。</p>
+    <h2>
+      <a id="user-content-綁定this值" class="anchor" href="#%E7%B6%81%E5%AE%9Athis%E5%80%BC" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>綁定this值</h2>
+    <p>箭頭函式可以取代原有使用var self = this或.bind(this)的情況，它可以在詞彙上綁定this變數。</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">obj</span> <span class="pl-k">=</span> {a<span class="pl-k">:</span><span class="pl-c1">1</span>}
+
+<span class="pl-k">function</span> <span class="pl-en">func</span>(){
+  <span class="pl-k">const</span> <span class="pl-c1">that</span> <span class="pl-k">=</span> <span class="pl-c1">this</span>
+
+  <span class="pl-c1">setTimeout</span>(
+    <span class="pl-k">function</span>(){
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(that)
+    },
+    <span class="pl-c1">2000</span>
+  )
+}
+
+<span class="pl-smi">func</span>.<span class="pl-c1">call</span>(obj) <span class="pl-c"><span class="pl-c">//</span>Object {a: 1}</span></pre>
+    </div>
+    <p>可以改用箭頭函式：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">obj</span> <span class="pl-k">=</span> {a<span class="pl-k">:</span><span class="pl-c1">1</span>}
+
+<span class="pl-k">function</span> <span class="pl-en">func</span>(){
+  <span class="pl-c1">setTimeout</span>( () <span class="pl-k">=&gt;</span> { <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>) }, <span class="pl-c1">2000</span>)
+}
+
+<span class="pl-smi">func</span>.<span class="pl-c1">call</span>(obj)</pre>
+    </div>
+    <p>另外</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">var</span> o <span class="pl-k">=</span> {
+  <span class="pl-en">f1</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+    
+    <span class="pl-k">var</span> <span class="pl-en">f2</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+    };
+    <span class="pl-en">f2</span>(); 
+  }
+}
+
+<span class="pl-smi">o</span>.<span class="pl-en">f1</span>()</pre>
+    </div>
+    <p>可改為：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">var</span> o <span class="pl-k">=</span> {
+  <span class="pl-en">f1</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+    
+    <span class="pl-k">var</span> <span class="pl-en">f3</span> <span class="pl-k">=</span> () <span class="pl-k">=&gt;</span> {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+    };
+    
+    <span class="pl-en">f3</span>();
+  }
+}
+
+<span class="pl-smi">o</span>.<span class="pl-en">f1</span>();</pre>
+    </div>
+    <p>用bind方法的來回傳一個部份函式的語法，也可以用箭頭函式來取代，範例出自<a href="http://www.2ality.com/2016/02/arrow-functions-vs-bind.html">Arrow functions
+        vs. bind()</a>：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">function</span> <span class="pl-en">add</span>(<span class="pl-smi">x</span>, <span class="pl-smi">y</span>) {
+       <span class="pl-k">return</span> x <span class="pl-k">+</span> y
+   }
+
+<span class="pl-k">const</span> <span class="pl-c1">plus1</span> <span class="pl-k">=</span> <span class="pl-smi">add</span>.<span class="pl-en">bind</span>(<span class="pl-c1">undefined</span>, <span class="pl-c1">1</span>)</pre>
+    </div>
+    <p>箭頭函式的寫法如下:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">plus1</span> <span class="pl-k">=</span> <span class="pl-smi">y</span> <span class="pl-k">=&gt;</span> <span class="pl-en">add</span>(<span class="pl-c1">1</span>, y)</pre>
+    </div>
+    <h2>
+      <a id="user-content-不可使用箭頭函式的情況" class="anchor" href="#%E4%B8%8D%E5%8F%AF%E4%BD%BF%E7%94%A8%E7%AE%AD%E9%A0%AD%E5%87%BD%E5%BC%8F%E7%9A%84%E6%83%85%E6%B3%81"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>不可使用箭頭函式的情況</h2>
+    <p>以下這幾個範例都是與<code>this</code>值有關，所以如果你的箭頭函式裡有用到<code>this</code>值要特別小心。以下的範例都只能用一般的函式定義方式，"不可"使用箭頭函式。</p>
+    <h3>
+      <a id="user-content-物件中屬性為箭頭函式" class="anchor" href="#%E7%89%A9%E4%BB%B6%E4%B8%AD%E5%B1%AC%E6%80%A7%E7%82%BA%E7%AE%AD%E9%A0%AD%E5%87%BD%E5%BC%8F"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>物件中屬性為箭頭函式</h3>
+    <p>箭頭函式會以定義當下的<code>this</code>值為<code>this</code>值，也就是<code>window</code>物件(或是在嚴格模式的undefined)，所以是存取不到物件中的this.array值的。</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">calculate</span> <span class="pl-k">=</span> {
+  array<span class="pl-k">:</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>],
+  <span class="pl-en">sum</span><span class="pl-k">:</span> () <span class="pl-k">=&gt;</span> {
+    <span class="pl-k">return</span> <span class="pl-c1">this</span>.<span class="pl-smi">array</span>.<span class="pl-en">reduce</span>((<span class="pl-smi">result</span>, <span class="pl-smi">item</span>) <span class="pl-k">=&gt;</span> result <span class="pl-k">+</span> item)
+  }
+}
+
+<span class="pl-c"><span class="pl-c">//</span>TypeError: Cannot read property 'array' of undefined</span>
+<span class="pl-smi">calculate</span>.<span class="pl-en">sum</span>()</pre>
+    </div>
+    <p>應該改為：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">calculate</span> <span class="pl-k">=</span> {
+  array<span class="pl-k">:</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>],
+  <span class="pl-en">sum</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+  }
+}
+
+<span class="pl-smi">calculate</span>.<span class="pl-en">sum</span>()</pre>
+    </div>
+    <h3>
+      <a id="user-content-物件的prototype屬性中定義方法時" class="anchor" href="#%E7%89%A9%E4%BB%B6%E7%9A%84prototype%E5%B1%AC%E6%80%A7%E4%B8%AD%E5%AE%9A%E7%BE%A9%E6%96%B9%E6%B3%95%E6%99%82"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>物件的prototype屬性中定義方法時</h3>
+    <p>這種情況也是像上面的類似，箭頭函式的<code>this</code>值，也就是<code>window</code>物件(或是在嚴格模式的<code>undefined</code>)。</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">function</span> <span class="pl-en">MyCat</span>(<span class="pl-smi">name</span>) {
+  <span class="pl-c1">this</span>.<span class="pl-smi">catName</span> <span class="pl-k">=</span> name
+}
+
+<span class="pl-smi">MyCat</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayCatName</span> <span class="pl-k">=</span> () <span class="pl-k">=&gt;</span> {
+  <span class="pl-k">return</span> <span class="pl-c1">this</span>.<span class="pl-smi">catName</span>
+}
+
+cat <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MyCat</span>(<span class="pl-s"><span class="pl-pds">'</span>Mew<span class="pl-pds">'</span></span>)
+<span class="pl-c"><span class="pl-c">//</span> ReferenceError: cat is not defined</span>
+<span class="pl-smi">cat</span>.<span class="pl-en">sayCatName</span>()</pre>
+    </div>
+    <h3>
+      <a id="user-content-dom事件處理的監聽者事件處理函式" class="anchor" href="#dom%E4%BA%8B%E4%BB%B6%E8%99%95%E7%90%86%E7%9A%84%E7%9B%A3%E8%81%BD%E8%80%85%E4%BA%8B%E4%BB%B6%E8%99%95%E7%90%86%E5%87%BD%E5%BC%8F"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DOM事件處理的監聽者(事件處理函式)</h3>
+    <p>箭頭函式的<code>this</code>值，也就是<code>window</code>物件(或是在嚴格模式的<code>undefined</code>)。這裡的<code>this</code>值如果用一般函式定義的寫法，應該就是DOM元素本身，才是正確的值。</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">button</span> <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>myButton<span class="pl-pds">'</span></span>)
+
+<span class="pl-smi">button</span>.<span class="pl-c1">addEventListener</span>(<span class="pl-s"><span class="pl-pds">'</span>click<span class="pl-pds">'</span></span>, () <span class="pl-k">=&gt;</span> {
+  <span class="pl-c1">this</span>.<span class="pl-smi">innerHTML</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Clicked button<span class="pl-pds">'</span></span>
+})
+<span class="pl-c"><span class="pl-c">//</span>TypeError: Cannot set property 'innerHTML' of undefined</span></pre>
+    </div>
+    <h3>
+      <a id="user-content-建構函式" class="anchor" href="#%E5%BB%BA%E6%A7%8B%E5%87%BD%E5%BC%8F" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>建構函式</h3>
+    <p>這會直接在用<code>new</code>運算符時拋出例外，根本不能用。</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">Message</span> <span class="pl-k">=</span> (<span class="pl-smi">text</span>) <span class="pl-k">=&gt;</span> {
+  <span class="pl-c1">this</span>.<span class="pl-c1">text</span> <span class="pl-k">=</span> text;
+}
+<span class="pl-c"><span class="pl-c">//</span> Throws "TypeError: Message is not a constructor"</span>
+<span class="pl-k">const</span> <span class="pl-c1">helloMessage</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Message</span>(<span class="pl-s"><span class="pl-pds">'</span>Hello World!<span class="pl-pds">'</span></span>);</pre>
+    </div>
+    <h3>
+      <a id="user-content-其他注意的限制或陷阱" class="anchor" href="#%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E7%9A%84%E9%99%90%E5%88%B6%E6%88%96%E9%99%B7%E9%98%B1"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>其他注意的限制或陷阱</h3>
+    <ul>
+      <li>函式物件中的<code>call</code>、<code>apply</code>、<code>bind</code>三個方法，無法"覆蓋"箭頭函式中的<code>this</code>值。</li>
+      <li>箭頭函式沒有原本(傳統)的函式有的隱藏arguments物件。</li>
+      <li>箭頭函式不能當作generators使用，使用<code>yield</code>會產生錯誤。</li>
+      <li>在一些函式庫像jQuery、underscore函式庫有些有使用callback(回調, 回呼)的API中不一定可以用。</li>
+    </ul>
+    <h2>
+      <a id="user-content-撰寫風格建議" class="anchor" href="#%E6%92%B0%E5%AF%AB%E9%A2%A8%E6%A0%BC%E5%BB%BA%E8%AD%B0" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>撰寫風格建議</h2>
+    <ul>
+      <li>callback(回調, 回呼)優先使用箭頭函式。 (Airbnb 8.1, Google 5.5.3)</li>
+      <li>雖然箭頭函式的左邊(傳入參數)只有一個時可以省略圓括號(<code>()</code>)，但建議你還是不論幾個都用圓括號框起來。(Google 5.5.3, eslint: <a href="http://eslint.org/docs/rules/arrow-parens.html">arrow-parens</a>)</li>
+      <li>避免合併使用箭頭函式與其他的比較運算符(&gt;=, &lt;=)，這會造成閱讀上不使與混亂。(Airbnb 8.5)</li>
+      <li>肥箭頭符號的前後要加一個空格，不要黏在一起。另外，不要直接在符號前後換行。(前面不行，後面要用圓括號或花括號，上面有說明) (eslint: <a href="http://eslint.org/docs/rules/arrow-spacing.html">arrow-spacing</a>)</li>
+    </ul>
+    <h1>
+      <a id="user-content-class類別" class="anchor" href="#class%E9%A1%9E%E5%88%A5" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>Class(類別)</h1>
+    <p>在ES6中的Class(類別)語法，並不是真的是以類別為基礎(class-based)的物件導向，在骨子裡仍然是以原型為基礎(prototype-based)的物件導向，它只是個語法糖(syntactical sugar)。加入Class(類別)語法的目的，並不是要建立另一套物件導向的繼承模型，而是為了提供更簡潔的語法來作物件建立與繼承，當然，一部份的原因是，讓已經熟悉以類別為基礎的物件導向程式語言的開發者使用，以此提供另一種在物件導向語法上的選擇。</p>
+    <h2>
+      <a id="user-content-在es6之前" class="anchor" href="#%E5%9C%A8es6%E4%B9%8B%E5%89%8D" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>在ES6之前</h2>
+    <p>對於已經熟悉JS的開發者而言，在JS中原本就有設計一個四不像的物件導向語法，也就是以建構函式來作為類別，然後用new運算符來實體化物件的這種語法。以下是個簡單的例子:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">function</span> <span class="pl-en">Player</span>(<span class="pl-smi">fullName</span>, <span class="pl-smi">age</span>) {
+  <span class="pl-c1">this</span>.<span class="pl-smi">fullName</span> <span class="pl-k">=</span> fullName;
+  <span class="pl-c1">this</span>.<span class="pl-smi">age</span> <span class="pl-k">=</span> age;
+}
+
+<span class="pl-smi">Player</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">sayHi</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Hi! <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-smi">fullName</span>);
+}
+
+<span class="pl-k">const</span> <span class="pl-c1">inori</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Player</span>(<span class="pl-s"><span class="pl-pds">'</span>Inori<span class="pl-pds">'</span></span>, <span class="pl-c1">16</span>);
+<span class="pl-smi">inori</span>.<span class="pl-en">sayHi</span>();</pre>
+    </div>
+    <h2>
+      <a id="user-content-類別class介紹" class="anchor" href="#%E9%A1%9E%E5%88%A5class%E4%BB%8B%E7%B4%B9" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>類別（Class）介紹</h2>
+    <p>類別(Class)是先裡面定義好物件的整體結構藍圖(blue print)，然後再用這個類別定義，以此來產生相同結構的多個的物件實例，類別在定義時並不會直接產生出物件，要經過實體化的過程(<code>new</code>運算符)，才會產生真正的物件實體。另外，目前因為類別定義方式還是個很新的語法，在實作時除了比較新的函式庫或框架，才會開始用它來撰寫。以下的為一個簡單範例：</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">class</span> <span class="pl-en">Player</span> {
+    <span class="pl-en">constructor</span>(<span class="pl-smi">fullName</span>, <span class="pl-smi">age</span>, <span class="pl-smi">gender</span>, <span class="pl-smi">hairColor</span>) {
+        <span class="pl-c1">this</span>.<span class="pl-smi">fullName</span> <span class="pl-k">=</span> fullName
+        <span class="pl-c1">this</span>.<span class="pl-smi">age</span> <span class="pl-k">=</span> age
+        <span class="pl-c1">this</span>.<span class="pl-smi">gender</span> <span class="pl-k">=</span> gender
+        <span class="pl-c1">this</span>.<span class="pl-smi">hairColor</span> <span class="pl-k">=</span> hairColor
+    }
+
+    <span class="pl-en">toString</span>() {
+        <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>Name: <span class="pl-pds">'</span></span><span class="pl-k">+</span><span class="pl-c1">this</span>.<span class="pl-smi">fullName</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>, Age:<span class="pl-pds">'</span></span><span class="pl-k">+</span><span class="pl-c1">this</span>.<span class="pl-smi">age</span>
+    }
+}
+
+<span class="pl-k">const</span> <span class="pl-c1">inori</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Player</span>(<span class="pl-s"><span class="pl-pds">'</span>Inori<span class="pl-pds">'</span></span>, <span class="pl-c1">16</span>, <span class="pl-s"><span class="pl-pds">'</span>girl<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>pink<span class="pl-pds">'</span></span>)
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">inori</span>.<span class="pl-c1">toString</span>())
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">inori</span>.<span class="pl-smi">fullName</span>)
+
+<span class="pl-k">const</span> <span class="pl-c1">tsugumi</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Player</span>(<span class="pl-s"><span class="pl-pds">'</span>Tsugumi<span class="pl-pds">'</span></span>, <span class="pl-c1">14</span>, <span class="pl-s"><span class="pl-pds">'</span>girl<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>purple<span class="pl-pds">'</span></span>)
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">tsugumi</span>.<span class="pl-c1">toString</span>())</pre>
+    </div>
+    <blockquote>
+      <p>註: 注意類別名稱命名時要使用大駝峰(ClassName)的寫法</p>
+    </blockquote>
+    <blockquote>
+      <p>註: 類別目前在ES6標準中與函式(Functions)屬同一章節。</p>
+    </blockquote>
+    <p>下面分別說明一些這個例子中用到的語法與關鍵字的重要概念，以及類別延伸的一些語法。</p>
+    <h3>
+      <a id="user-content-this" class="anchor" href="#this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>this</h3>
+    <p><code>this</code>簡單的說來，是物件實體專屬的指向變數，<code>this</code>指向的就是"這個物件實體"，以上面的例子來說，也就是當物件真正實體化時，<code>this</code>變數會指向這個物件實體。<code>this</code>是怎麼知道要指到哪一個物件實體？是因為<code>new</code>運算符造成的結果。</p>
+    <p><code>this</code>變數是JavaScript的一個特性，當函式呼叫或物件實體化(用new運算符)時，都會以這個<code>this</code>變數的指向對象，作為執行期間的依據。我們在函式中，使用作用範圍(Scope)來說明以函式為基礎的檢視角度，在函式區塊中可見的變數與函式的領域的概念。而JavaScript中，另外也有一種上下文環境(Context)的概念，就是對於<code>this</code>的在執行期間所依據的影響，即是以物件為基礎的的檢視角度。</p>
+    <p><code>this</code>也就是執行上下文可以簡單用三個情況來區分:</p>
+    <ol>
+      <li>函式呼叫: 在一般情況下的函式呼叫，<code>this</code>通常都指向window(或全域)物件。這也是預設情況。</li>
+      <li>建構式(constructor)呼叫: 透過<code>new</code>運算符建立物件實體，等於呼叫類型的建構式，<code>this</code>會指向新建立的物件實例</li>
+      <li>物件對其中的方法呼叫: <code>this</code>指向呼叫這個方法的物件實體</li>
+    </ol>
+    <p>所以當建構式呼叫時，也就是使用<code>new</code>運算符建立物件時，<code>this</code>會指向新建立的物件，也就是下面這段程式碼:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">const</span> <span class="pl-c1">inori</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Player</span>(<span class="pl-s"><span class="pl-pds">'</span>Inori<span class="pl-pds">'</span></span>, <span class="pl-c1">16</span>, <span class="pl-s"><span class="pl-pds">'</span>girl<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>pink<span class="pl-pds">'</span></span>)</pre>
+    </div>
+    <p>因此在建構式中的指定值的語句，裡面的<code>this</code>值就會指向是這個新建立的物件，也就是<code>inori</code>:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-en">constructor</span>(<span class="pl-smi">fullName</span>, <span class="pl-smi">age</span>, <span class="pl-smi">gender</span>, <span class="pl-smi">hairColor</span>) {
+        <span class="pl-c1">this</span>.<span class="pl-smi">fullName</span> <span class="pl-k">=</span> fullName
+        <span class="pl-c1">this</span>.<span class="pl-smi">age</span> <span class="pl-k">=</span> age
+        <span class="pl-c1">this</span>.<span class="pl-smi">gender</span> <span class="pl-k">=</span> gender
+        <span class="pl-c1">this</span>.<span class="pl-smi">hairColor</span> <span class="pl-k">=</span> hairColor
+    }</pre>
+    </div>
+    <p>也就是說在建立物件後，經建構式的執行語句，這個<code>inori</code>物件中的屬性值就會被指定完成，所以可以用像下面的語法來存取屬性:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-smi">inori</span>.<span class="pl-smi">fullName</span>
+<span class="pl-smi">inori</span>.<span class="pl-smi">age</span></pre>
+    </div>
+    <p>第3種情況是呼叫物件中的方法，也就是像下面的程式碼中，<code>this</code>會指向這個呼叫toString方法的物件，也就是<code>inori</code>:</p>
+    <pre><code>inori.toString()
+</code></pre>
+    <p>對於<code>this</code>的說明大致上就是這樣而已，這裡都是很直覺的說明。<code>this</code>還有一部份的細節與應用情況，<code>this</code>的概念在JavaScript中十分重要，初學者真的需要多花點時間才能真正搞懂。</p>
+    <h3>
+      <a id="user-content-建構式constructor" class="anchor" href="#%E5%BB%BA%E6%A7%8B%E5%BC%8Fconstructor" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>建構式(constructor)</h3>
+    <p>建構式是特別的物件方法，它必會在物件建立時被呼叫一次，通常用於建構新物件中的屬性，以及呼叫上層父母類別(如果有繼承的話)之用。用類別(class)的定義時，物件的屬性都只能在建構式中定義，這與用物件字面的定義方式不同，這一點是要特別注意的。如果物件在初始化時不需要任何語句，那麼就不要寫出這個建構式，實際上類別自己有預設的建構式，它會自動幫你作建構的工作。</p>
+    <p>關於建構式或物件方法的多形(polymorphism)或覆蓋(Overriding)，在JavaScript中<strong>沒有</strong>這種特性。建構式是會被限制只能有一個，而在原本在物件中的方法也沒這個特性，在物件中定義同識別名稱的方法只會有一個定義被使用，這與傳入參數有或沒有，或是有幾個無關。</p>
+    <p>所以如果你需要定義不同的建構式在物件中，因應不同的物件實體的情況，只能用函式的不定傳入參數方式，或是加上傳入參數的預設值來想辦法改寫，請參考函式其它內容中的說明。以下為一個範例:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">class</span> <span class="pl-en">Option</span> {
+    <span class="pl-en">constructor</span>(<span class="pl-smi">key</span>, <span class="pl-smi">value</span>, <span class="pl-smi">autoLoad</span> <span class="pl-k">=</span> <span class="pl-c1">false</span>) {
+        <span class="pl-k">if</span> (<span class="pl-k">typeof</span> key <span class="pl-k">!=</span> <span class="pl-s"><span class="pl-pds">'</span>undefined<span class="pl-pds">'</span></span>) {
+            <span class="pl-c1">this</span>[key] <span class="pl-k">=</span> value
+        }
+        <span class="pl-c1">this</span>.<span class="pl-smi">autoLoad</span> <span class="pl-k">=</span> autoLoad
+    }
+}
+
+<span class="pl-k">const</span> <span class="pl-c1">op1</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Option</span>(<span class="pl-s"><span class="pl-pds">'</span>color<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>)
+<span class="pl-k">const</span> <span class="pl-c1">op2</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Option</span>(<span class="pl-s"><span class="pl-pds">'</span>color<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>blue<span class="pl-pds">'</span></span>, <span class="pl-c1">true</span>)</pre>
+    </div>
+    <blockquote>
+      <p>註: 此處講的"建構式(constructor)"，與上一節中的"建構函式(constructor function)"是不同的東西，要特別注意。</p>
+    </blockquote>
+    <h3>
+      <a id="user-content-繼承" class="anchor" href="#%E7%B9%BC%E6%89%BF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>繼承</h3>
+    <p>用extends關鍵字可以作類別的繼承，而在建構式中會多呼叫一個<code>super()</code>方法，用於執行上層父母類別的建構式之用。<code>super</code>也可以用於指向上層父母類別，呼叫其中的方法或存取屬性。</p>
+    <p>繼承時還有有幾個注意的事項:</p>
+    <ul>
+      <li>繼承的子類別中的建構式，<code>super()</code>需要放在建構式第一行，這是標準的呼叫方式。如果有需要傳入參數可以傳入。</li>
+      <li>繼承的子類別中的屬性與方法，都會覆蓋掉原有的在父母類別中的同名稱屬性或方法，要區為不同的屬性或方法要用<code>super</code>關鍵字來存取父母類別中的屬性或方法，例如<code>super.toString()</code>
+      </li>
+    </ul>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">class</span> <span class="pl-en">Point</span> {
+    <span class="pl-en">constructor</span>(<span class="pl-smi">x</span>, <span class="pl-smi">y</span>) {
+        <span class="pl-c1">this</span>.<span class="pl-c1">x</span> <span class="pl-k">=</span> x
+        <span class="pl-c1">this</span>.<span class="pl-c1">y</span> <span class="pl-k">=</span> y
+    }
+    <span class="pl-en">toString</span>() {
+        <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>(<span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">x</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>, <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">y</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>)<span class="pl-pds">'</span></span>;
+    }
+}
+
+<span class="pl-k">class</span> <span class="pl-en">ColorPoint</span> <span class="pl-k">extends</span> <span class="pl-e">Point</span> {
+    <span class="pl-en">constructor</span>(<span class="pl-smi">x</span>, <span class="pl-smi">y</span>, <span class="pl-smi">color</span>) {
+        <span class="pl-c1">super</span>(x, y)
+        <span class="pl-c1">this</span>.<span class="pl-c1">color</span> <span class="pl-k">=</span> color
+    }
+    <span class="pl-en">toString</span>() {
+        <span class="pl-k">return</span> <span class="pl-c1">super</span>.<span class="pl-c1">toString</span>() <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> in <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">color</span>
+    }
+}</pre>
+    </div>
+    <h3>
+      <a id="user-content-類別中的箭頭函式" class="anchor" href="#%E9%A1%9E%E5%88%A5%E4%B8%AD%E7%9A%84%E7%AE%AD%E9%A0%AD%E5%87%BD%E5%BC%8F"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>類別中的箭頭函式</h3>
+    <p>在類別中使用箭頭函式來取代裡面原有方法的定義，這在React的元件撰寫時，也是很常見的一種語法。這個語法是有其目的的，主要是為了要作this的綁定。例如以下的例子，範例來自<a href="https://babeljs.io/blog/2015/06/07/react-on-es6-plus">這裡</a>:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">class</span> <span class="pl-en">PostInfo</span> <span class="pl-k">extends</span> <span class="pl-e">React</span>.<span class="pl-smi">Component</span> {
+  <span class="pl-en">handleOptionsButtonClick</span> <span class="pl-k">=</span> (<span class="pl-smi">e</span>) <span class="pl-k">=&gt;</span> {
+    <span class="pl-c1">this</span>.<span class="pl-en">setState</span>({showOptionsModal<span class="pl-k">:</span> <span class="pl-c1">true</span>});
+  }
+}</pre>
+    </div>
+    <p>因為在React元件使用ES6 Class的語法來定義元件時，官方取消了原有的Autobind(自動綁定)功能，所以在現在新式的元件寫法中，開發者必須自行綁定類別中的方法。有兩種方法可以進行綁定，第二種像上面的例子這樣，第一種是在建構式中使用函式的bind方法，有些時候會使用第一種語法。像下面這個例子:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">class</span> <span class="pl-en">PostInfo</span> <span class="pl-k">extends</span> <span class="pl-e">React</span>.<span class="pl-smi">Component</span> {
+  <span class="pl-en">constructor</span>(<span class="pl-smi">props</span>) {
+    <span class="pl-c1">super</span>(props);
+    <span class="pl-c"><span class="pl-c">//</span> 手動綁定的語法，綁定this到元件的實體...</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">handleOptionsButtonClick</span> <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">handleOptionsButtonClick</span>.<span class="pl-en">bind</span>(<span class="pl-c1">this</span>);
+  }
+  <span class="pl-en">handleOptionsButtonClick</span>(<span class="pl-smi">e</span>) {
+    <span class="pl-c"><span class="pl-c">//</span> ...確保'this'可以參照到元件的實體</span>
+    <span class="pl-c1">this</span>.<span class="pl-en">setState</span>({showOptionsModal<span class="pl-k">:</span> <span class="pl-c1">true</span>});
+  }
+}</pre>
+    </div>
+    <p>這個語法也不是ES6標準的語法，它是正在訂定中的新標準語法，是屬於Class Properties(<a href="https://github.com/tc39/proposal-class-public-fields">Class
+        Fields &amp; Static Properties</a>)。不過babel編譯工具透過外掛，可以正確編譯就是。</p>
+    <blockquote>
+      <p>註: ES7+的靜態(或類別)屬性的轉換，要使用bebal的<a href="https://babeljs.io/docs/plugins/transform-class-properties/">babel-plugin-transform-class-properties</a>外掛。</p>
+    </blockquote>
+    <blockquote>
+      <p>註: 你可能會好奇，為何babel編譯工具都可以正確支持編譯React中的JSX與一些超出ES6標準的語法？因為這babel工具專案實際上是Facebook贊助(出錢養的)的專案。</p>
+    </blockquote>
+    <h1>
+      <a id="user-content-module-system模組系統" class="anchor" href="#module-system%E6%A8%A1%E7%B5%84%E7%B3%BB%E7%B5%B1" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>Module System(模組系統)</h1>
+    <p>本章的目標是對模組系統(Module System)提供一些使用上的簡單說明。模組系統是一個重要的ES6特性，搭配目前的NPM相依性管理工具，可以說是目前JavaScript發展的一個重大的改變，也是目前開發JavaScript應用的主要方式。對開發者來說，語法很簡單就可以開始使用，其他的工作會交由打包與編譯工具來幫你作。</p>
+    <blockquote>
+      <p>註: 本文章同步放置於<a href="https://github.com/eyesofkids/ironman2017/tree/master/day11_module_system">Github庫的這裡</a>。</p>
+    </blockquote>
+    <blockquote>
+      <p>特別注意: 截至目前為止(2016.12)，所有的瀏覽器都沒有原生(內建)完整支援import/export語法，就算有支援也是實驗性質(需額外開啟)或是功能不完整。你必須使用如babel編譯工具來作預編譯的工作。如果你有需要在瀏覽器上直接執行，也可以<a
+          href="https://github.com/ModuleLoader/es-module-loader">打填充(polyfill)</a>來讓瀏覽器可以使用這個語法。</p>
+    </blockquote>
+    <blockquote>
+      <p>註: ES6標準中雖然定義了模組的語法，但卻沒定義如何載入模組(只有抽象的表達字詞)，但這也是最複雜的一部份，未來可能會因為環境而實作不同。</p>
+    </blockquote>
+    <h2>
+      <a id="user-content-模組系統是什麼" class="anchor" href="#%E6%A8%A1%E7%B5%84%E7%B3%BB%E7%B5%B1%E6%98%AF%E4%BB%80%E9%BA%BC" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>模組系統是什麼？</h2>
+    <p>當程式碼愈寫愈多，應用程式的規模愈來愈大時，我們需要一個用於組織與管理程式碼的方式，這個需求相當明確，或許不只是應用程式發展到一定程度才會考慮這些，而是應該在開發程式之前的規劃就需要考量進來。JavaScript語言是一個沒有命名空間設計的程式語言，也沒有支援類似的組織與程式碼分離的設計。有些人認為使用物件定義的字面文字，可以定義出物件的方法與屬性，但如果你看過"物件"、"this"與"原型物件導向"的章節內容，就知道物件中並沒有區分私有、公開成員或方法的特性，這個組織方式頂多只是把方法或屬性整理集中而已。</p>
+    <p>在應用程式規模化的階段，我們需要一種機制，能夠區分出每個獨立檔案的作用域，而不會影響到全域的作用域，也就是不會任意的污染到全域。而在很早之前(2003)在社群上發展出一個稱之為模組樣式(module pattern)，以及之後的變型如
+      暴露模組樣式(Revealing Module Pattern)，就是第一代的程式碼組織管理方式。模組樣式實作相當簡單，有許多早期開始發展的函式庫或框架採用這個樣式，甚至到今天也可以看到它的使用身影。一個簡單的範例如下(以下範例來自<a
+        href="https://learn.jquery.com/code-organization/concepts/">jQuery</a>):</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-c"><span class="pl-c">//</span> 模組樣式</span>
+<span class="pl-k">var</span> feature <span class="pl-k">=</span> (<span class="pl-k">function</span>() {
+
+    <span class="pl-c"><span class="pl-c">//</span> 私有的變數與函式</span>
+    <span class="pl-k">var</span> privateThing <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>secret<span class="pl-pds">"</span></span>
+    <span class="pl-k">var</span> publicThing <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>not secret<span class="pl-pds">"</span></span>
+
+    <span class="pl-k">var</span> <span class="pl-en">changePrivateThing</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+        privateThing <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>super secret<span class="pl-pds">"</span></span>
+    };
+
+    <span class="pl-k">var</span> <span class="pl-en">sayPrivateThing</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>( privateThing )
+        <span class="pl-en">changePrivateThing</span>()
+    };
+
+    <span class="pl-c"><span class="pl-c">//</span> 公開的API</span>
+    <span class="pl-k">return</span> {
+        publicThing<span class="pl-k">:</span> publicThing,
+        sayPrivateThing<span class="pl-k">:</span> sayPrivateThing
+    }
+})()
+
+<span class="pl-smi">feature</span>.<span class="pl-smi">publicThing</span> <span class="pl-c"><span class="pl-c">//</span> 公開部份的存取</span>
+
+<span class="pl-c"><span class="pl-c">//</span> 透過公開的API來存取私有的變數</span>
+<span class="pl-smi">feature</span>.<span class="pl-en">sayPrivateThing</span>()</pre>
+    </div>
+    <p>模組樣式使用了IIFE函式的特性，區分出作用域，不過它並沒有辦法徹底解決問題，它在小型的應用程式可以用得很好，但在複雜的程式中仍然有很大的問題，例如以下的問題:</p>
+    <ul>
+      <li>沒辦法在程式中作模組載入</li>
+      <li>模組之間的相依性不易管理</li>
+      <li>異步地載入模組</li>
+      <li>除錯與測試都不容易</li>
+      <li>在大型專案中不易管理</li>
+    </ul>
+    <p>模組樣式似乎是一個暫時性的解決方案，但不得不說它的確是上一代很重要的程式碼組織方式。第二代的模組系統，是在2009年之後的CommonJS與AMD(Asynchronous Module Definition)專案，它們實作出真正完整的模組系統，CommonJS是專門設計給伺服器端的Node.js使用的，而AMD的目標則是瀏覽器端。當然它們兩者的設計有所不同，也不相容，使用時也可能需要搭配載入工具來一併使用，不過這個階段的模組系統已經是較前一代完善許多，在相依性與模組輸出與匯入，都有相對的解決方式，程式碼的管理與組織方便了許多。</p>
+    <p>CommonJS與AMD並不會在這裡討論，我們的重點是是ES6中的模組系統，ES6中加入了模組系統的支援，它採用了CommonJS與AMD的優點，是一個語言內建的模組系統，而且它可以使用於瀏覽器與伺服器端，這是一個相當重大的新特性，可以讓你的開發日子更輕鬆許多。</p>
+    <h2>
+      <a id="user-content-模組如何開始使用" class="anchor" href="#%E6%A8%A1%E7%B5%84%E5%A6%82%E4%BD%95%E9%96%8B%E5%A7%8B%E4%BD%BF%E7%94%A8"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>模組如何開始使用</h2>
+    <p>ES6的模組系統使用上相當簡單，各模組有自己的獨立的作用域，所以你必須指示要在應用程式中匯入或輸出哪一些模組。使用上大致上只有三個重點:</p>
+    <ul>
+      <li>ES6的模組程式碼會自動變成<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Strict mode</a>(嚴格模式)，不論你有沒有使用"use
+        strict"在程式碼中。
+      </li>
+      <li>ES6的模組的分隔原則是一個檔案一個模組</li>
+      <li>ES6模組使用export進行輸出，與import語句來進行匯入。通常匯入語句位於程式碼檔案中最前面，輸出則可以位於識別名稱處，或是位於程式碼檔案最後。</li>
+    </ul>
+    <h3>
+      <a id="user-content-模組的名稱" class="anchor" href="#%E6%A8%A1%E7%B5%84%E7%9A%84%E5%90%8D%E7%A8%B1" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>模組的名稱</h3>
+    <p>模組的名稱是由目錄與檔案名稱的組合，而省略掉副檔名(.js或.jsx)。如果是由NPM工具所安裝的模組，則是只需要模組的名稱即可，不需要有路徑部份。</p>
+    <ul>
+      <li>如果你要匯入的檔案名稱是utils.js，而且是在同目錄下，則使用import(匯入)這個檔案的名稱，例如<code>./utils</code>
+      </li>
+      <li>如果你要匯入的檔案名稱是在相對目錄components下，則加上目錄的相對路徑來作匯入，例如<code>./components/utils</code>
+      </li>
+    </ul>
+    <h2>
+      <a id="user-content-模組輸出與匯入" class="anchor" href="#%E6%A8%A1%E7%B5%84%E8%BC%B8%E5%87%BA%E8%88%87%E5%8C%AF%E5%85%A5" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>模組輸出與匯入</h2>
+    <p>有使用模組輸出語句的程式碼檔案，才能讓其他程式碼檔案進行匯入的工作。模組輸出可以使用<code>export</code>關鍵字，在想要輸出(也就是變為公開部份)加在前面，物件、類別、函式定義(function 或 function*)與原始資料類型(變數與常數)都可以輸出，例如以下的範例:</p>
+    <h3>
+      <a id="user-content-多個輸出名稱" class="anchor" href="#%E5%A4%9A%E5%80%8B%E8%BC%B8%E5%87%BA%E5%90%8D%E7%A8%B1" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>多個輸出名稱</h3>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">export</span> <span class="pl-k">const</span> <span class="pl-c1">aString</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>test<span class="pl-pds">'</span></span>
+
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">aFunction</span>(){
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>function test<span class="pl-pds">'</span></span>)
+}
+
+<span class="pl-k">export</span> <span class="pl-k">const</span> <span class="pl-c1">aObject</span> <span class="pl-k">=</span> {a<span class="pl-k">:</span> <span class="pl-c1">1</span>}
+
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">aClass</span> {
+  <span class="pl-en">constructor</span>(<span class="pl-smi">name</span>, <span class="pl-smi">age</span>){
+    <span class="pl-c1">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> name
+    <span class="pl-c1">this</span>.<span class="pl-smi">age</span> <span class="pl-k">=</span> age
+  }
+}</pre>
+    </div>
+    <p>上面稱之為多個輸出名稱的情況，有兩種方式可以進行匯入，一種是每個要匯入的名稱都需要定義在花括號({})之中，這在匯入模組部份的內容時很常用到。例如以下的範例:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">import</span> {<span class="pl-smi">aString</span>, <span class="pl-smi">aObject</span>, <span class="pl-smi">aFunction</span>, <span class="pl-smi">aClass</span>} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./lib<span class="pl-pds">'</span></span>
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(aString)
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(aObject)</pre>
+    </div>
+    <p>另一種是使用萬用字元(*)，代表要匯入所有的輸出定義的值，不過你需要加上一個模組名稱，例如下面程式碼中的<code>myModule</code>，這是為了防止命名空間的衝突之用的，之後的程式碼中都需要用這個模組名稱來存取輸出模組中的值，這個作法不常使用:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">import</span> <span class="pl-c1">*</span> <span class="pl-k">as</span> <span class="pl-smi">myModule</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./lib<span class="pl-pds">'</span></span>
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">myModule</span>.<span class="pl-smi">aString</span>)
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">myModule</span>.<span class="pl-smi">aObject</span>)
+
+<span class="pl-smi">myModule</span>.<span class="pl-en">aFunction</span>()
+<span class="pl-k">const</span> <span class="pl-c1">newObj</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">myModule.aClass</span>(<span class="pl-s"><span class="pl-pds">'</span>Inori<span class="pl-pds">'</span></span>, <span class="pl-c1">16</span>)
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(newObj)</pre>
+    </div>
+    <h3>
+      <a id="user-content-單一預設輸出識別名稱" class="anchor" href="#%E5%96%AE%E4%B8%80%E9%A0%90%E8%A8%AD%E8%BC%B8%E5%87%BA%E8%AD%98%E5%88%A5%E5%90%8D%E7%A8%B1"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>單一(預設)輸出識別名稱</h3>
+    <p>這個要輸出成為模組的程式碼檔案中，只會有一個輸出的變數/常數、函式、類別或物件時，或是用於作為最低使用情況的預設輸出時，通常會加上<code>default</code>關鍵詞。如果要使用有回傳值的函式，通常也是用單一輸出的方式。例如以下的範例:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">function</span> <span class="pl-en">aFunction</span>(<span class="pl-smi">param</span>){
+  <span class="pl-k">return</span> param <span class="pl-k">*</span> param
+}
+
+<span class="pl-k">export</span> <span class="pl-c1">default</span> <span class="pl-smi">aFunction</span></pre>
+    </div>
+    <p>對單一輸出的模組來進行匯入就不需要用花括號，這代表只匯入以<code>default</code>值定義的輸出語句:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">import</span> <span class="pl-smi">aFunction</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./lib2<span class="pl-pds">'</span></span>
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">aFunction</span>(<span class="pl-c1">5</span>))</pre>
+    </div>
+    <p>這是最特別的，可以在匯入時改變匯入值的名稱，這樣可以讓作匯入檔案中，確保不會有名稱衝突的情況:</p>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">import</span> <span class="pl-smi">square</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./lib2<span class="pl-pds">'</span></span>
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">square</span>(<span class="pl-c1">5</span>))</pre>
+    </div>
+    <blockquote>
+      <p>特別注意: 當使用var, let 或 const時，"不能"使用<code>export default</code></p>
+    </blockquote>
+    <h2>
+      <a id="user-content-輸出與匯入的語法參考" class="anchor" href="#%E8%BC%B8%E5%87%BA%E8%88%87%E5%8C%AF%E5%85%A5%E7%9A%84%E8%AA%9E%E6%B3%95%E5%8F%83%E8%80%83"
+        aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>輸出與匯入的語法參考</h2>
+    <p>輸出與匯入的語法實際看例子會比較快。不過常用的就是那幾種而已。如果你有看到不同的語法，可以再對照一下MDN上的相關說明，這裡只有列出常見的幾個。</p>
+    <h3>
+      <a id="user-content-合法的輸出語法" class="anchor" href="#%E5%90%88%E6%B3%95%E7%9A%84%E8%BC%B8%E5%87%BA%E8%AA%9E%E6%B3%95" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>合法的輸出語法</h3>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">export</span> <span class="pl-k">var</span> x <span class="pl-k">=</span> <span class="pl-c1">42</span>;                      <span class="pl-c"><span class="pl-c">//</span> 輸出一個變數識別名稱</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">foo</span>() {};               <span class="pl-c"><span class="pl-c">//</span> 輸出一個函式識別名稱</span>
+
+<span class="pl-k">export</span> <span class="pl-c1">default</span> <span class="pl-c1">42</span>;                      <span class="pl-c"><span class="pl-c">//</span> 輸出一個預設值</span>
+<span class="pl-k">export</span> <span class="pl-c1">default</span> <span class="pl-k">function</span> <span class="pl-en">foo</span>() {};       <span class="pl-c"><span class="pl-c">//</span> 輸出一個預設值，是個函式定義</span>
+
+<span class="pl-k">export</span> { <span class="pl-smi">encrypt</span> };                     <span class="pl-c"><span class="pl-c">//</span> 輸出一個已存在的變數</span>
+<span class="pl-k">export</span> { <span class="pl-smi">decrypt</span> <span class="pl-k">as</span> <span class="pl-smi">dec</span> };              <span class="pl-c"><span class="pl-c">//</span> 輸出一個已存在的變數，改用新的識別名稱</span>
+<span class="pl-k">export</span> { <span class="pl-smi">encrypt</span> <span class="pl-k">as</span> <span class="pl-smi">en</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>crypto<span class="pl-pds">'</span></span>; <span class="pl-c"><span class="pl-c">//</span> 從另一個模組，輸出一個已存在的變數，改用新的識別名稱</span>
+<span class="pl-k">export</span> <span class="pl-c1">*</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>crypto<span class="pl-pds">'</span></span>;                 <span class="pl-c"><span class="pl-c">//</span> 從另一個模組，輸出所有要輸出的</span></pre>
+    </div>
+    <h3>
+      <a id="user-content-合法的匯入語法" class="anchor" href="#%E5%90%88%E6%B3%95%E7%9A%84%E5%8C%AF%E5%85%A5%E8%AA%9E%E6%B3%95" aria-hidden="true"><span
+          aria-hidden="true" class="octicon octicon-link"></span></a>合法的匯入語法</h3>
+    <div class="highlight highlight-source-js">
+      <pre><span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>;                        <span class="pl-c"><span class="pl-c">//</span> 匯入一個模組，整個匯入</span>
+<span class="pl-k">import</span> $ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>;                 <span class="pl-c"><span class="pl-c">//</span> 匯入模組的預設的輸出部份</span>
+<span class="pl-k">import</span> { $ } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>;             <span class="pl-c"><span class="pl-c">//</span> 匯入模組的一個識別名稱</span>
+<span class="pl-k">import</span> { $ <span class="pl-smi">as</span> <span class="pl-smi">jQuery</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>;   <span class="pl-c"><span class="pl-c">//</span> 匯入模組的一個識別名稱，用不同的識別名稱取代</span>
+<span class="pl-k">import</span> <span class="pl-c1">*</span> <span class="pl-k">as</span> <span class="pl-smi">crypto</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>crypto<span class="pl-pds">'</span></span>;    <span class="pl-c"><span class="pl-c">//</span> 匯入整個模組，改用不同的識別名稱</span></pre>
+    </div>
+    <h2>
+      <a id="user-content-撰寫風格" class="anchor" href="#%E6%92%B0%E5%AF%AB%E9%A2%A8%E6%A0%BC" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>撰寫風格</h2>
+    <h1>
+      <a id="user-content-參考資料" class="anchor" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" aria-hidden="true"><span aria-hidden="true"
+          class="octicon octicon-link"></span></a>參考資料</h1>
+    <p><a href="http://javascript.ruanyifeng.com/#introduction">Javascript 標準參程教程</a></p>
+    <p><a href="http://ithelp.ithome.com.tw/articles/10185142">Day 05: ES6篇 - let與const</a></p>
+    <p>(<a href="http://google.github.io/styleguide/jsguide.html">http://google.github.io/styleguide/jsguide.html</a>)</p>
+  </article>
+  <button class="test"></button>
+</body>
+<script type="text/javascript">
+  let elBtn = document.querySelector('.test');
+  
+  elBtn.addEventListener('click', (e) => {
+    console.log(e);
+    
+  })
+
+</script>
+
+</html>

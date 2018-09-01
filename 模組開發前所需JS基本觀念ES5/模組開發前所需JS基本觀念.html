@@ -1,0 +1,1340 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>模組開發前所需JS基本觀念</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-模組開發前所需js觀念" class="anchor" href="#%E6%A8%A1%E7%B5%84%E9%96%8B%E7%99%BC%E5%89%8D%E6%89%80%E9%9C%80js%E8%A7%80%E5%BF%B5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>模組開發前所需JS觀念</h1>
+<h1>
+<a id="user-content-變數提升变量提升" class="anchor" href="#%E8%AE%8A%E6%95%B8%E6%8F%90%E5%8D%87%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>變數提升（变量提升）</h1>
+<p>JavaScript引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-en">console</span>.<span class="pl-c1">log</span>(a);
+<span class="pl-k">var</span> a <span class="pl-k">=</span> <span class="pl-c1">1</span>;</pre></div>
+<p>上面代码首先使用console.log方法，在控制台（console）显示变量a的值。这时变量a还没有声明和赋值，所以这是一种错误的做法，但是实际上不会报错。因为存在变量提升，真正运行的是下面的代码。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> a;
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(a);
+a <span class="pl-k">=</span> <span class="pl-c1">1</span>;</pre></div>
+<p>最后的结果是显示undefined，表示变量a已声明，但还未赋值。</p>
+<blockquote>
+<p>所以在開發js時，盡量不要隨寫隨宣告變數，而是先規劃好你要哪一些變數而宣告在作用域的開頭，或是…事後修改到作用域開頭</p>
+</blockquote>
+<h1>
+<a id="user-content-物件引用对象的引用" class="anchor" href="#%E7%89%A9%E4%BB%B6%E5%BC%95%E7%94%A8%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BC%95%E7%94%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>物件引用（对象的引用）</h1>
+<p>如果不同的变量名指向同一个对象，那么它们都是这个对象的引用，也就是说指向同一个内存地址。修改其中一个变量，会影响到其他所有变量。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> o1 <span class="pl-k">=</span> {};
+<span class="pl-k">var</span> o2 <span class="pl-k">=</span> o1;
+
+<span class="pl-smi">o1</span>.<span class="pl-smi">a</span> <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">o2</span>.<span class="pl-smi">a</span> ) <span class="pl-c"><span class="pl-c">//</span> 1</span>
+
+<span class="pl-smi">o2</span>.<span class="pl-smi">b</span> <span class="pl-k">=</span> <span class="pl-c1">2</span>;
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">o1</span>.<span class="pl-smi">b</span> ) <span class="pl-c"><span class="pl-c">//</span> 2</span></pre></div>
+<p>上面代码中，o1和o2指向同一个对象，因此为其中任何一个变量添加属性，另一个变量都可以读写该属性。</p>
+<p>此时，如果取消某一个变量对于原对象的引用，不会影响到另一个变量。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> o1 <span class="pl-k">=</span> {};
+<span class="pl-k">var</span> o2 <span class="pl-k">=</span> o1;
+
+o1 <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( o2 ) <span class="pl-c"><span class="pl-c">//</span> {}</span></pre></div>
+<h1>
+<a id="user-content-函式作用域函数作用域" class="anchor" href="#%E5%87%BD%E5%BC%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>函式作用域（函数作用域）</h1>
+<p>作用域（scope）指的是变量存在的范围。Javascript只有两种作用域：一种是全局作用域，变量在整个程序中一直存在，所有地方都可以读取；另一种是函数作用域，变量只在函数内部存在。</p>
+<p>在函数外部声明的变量就是全局变量（global variable），它可以在函数内部读取。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+
+<span class="pl-k">function</span> <span class="pl-en">f</span>(){
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(v);
+}
+
+<span class="pl-en">f</span>()
+<span class="pl-c"><span class="pl-c">//</span> 1</span></pre></div>
+<p>上面的代码表明，函数f内部可以读取全局变量v。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f</span>(){
+  <span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+}
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(v) <span class="pl-c"><span class="pl-c">//</span> ReferenceError: v is not defined</span></pre></div>
+<p>上面代码中，变量v在函数内部定义，所以是一个局部变量，函数之外就无法读取。</p>
+<p>函数内部定义的变量，会在该作用域内覆盖同名全局变量。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+
+<span class="pl-k">function</span> <span class="pl-en">f</span>(){
+  <span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-c1">2</span>;
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(v);
+}
+
+<span class="pl-en">f</span>() <span class="pl-c"><span class="pl-c">//</span> 2</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(v) <span class="pl-c"><span class="pl-c">//</span> 1</span></pre></div>
+<p>上面代码中，变量v同时在函数的外部和内部有定义。结果，在函数内部定义，局部变量v覆盖了全局变量v。</p>
+<h1>
+<a id="user-content-函式內容變數提升函数内部的变量提升" class="anchor" href="#%E5%87%BD%E5%BC%8F%E5%85%A7%E5%AE%B9%E8%AE%8A%E6%95%B8%E6%8F%90%E5%8D%87%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E7%9A%84%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>函式內容變數提升（函数内部的变量提升）</h1>
+<p>与全局作用域一样，函数作用域内部也会产生“变量提升”现象。var命令声明的变量，不管在什么位置，变量声明都会被提升到函数体的头部。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> x <span class="pl-k">=</span> <span class="pl-c1">100</span>;
+<span class="pl-k">function</span> <span class="pl-en">foo</span>() {
+	<span class="pl-en">console</span>.<span class="pl-c1">log</span>(x);
+    <span class="pl-k">var</span> x <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+}
+<span class="pl-en">foo</span>();<span class="pl-c"><span class="pl-c">//</span> undefined</span></pre></div>
+<h1>
+<a id="user-content-函数本身的作用域" class="anchor" href="#%E5%87%BD%E6%95%B0%E6%9C%AC%E8%BA%AB%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>函数本身的作用域</h1>
+<p>函数本身也是一个值，也有自己的作用域。它的作用域与变量一样，就是其声明时所在的作用域，与其运行时所在的作用域无关。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> a <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+<span class="pl-k">var</span> <span class="pl-en">x</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(a);
+};
+
+<span class="pl-k">function</span> <span class="pl-en">f</span>() {
+  <span class="pl-k">var</span> a <span class="pl-k">=</span> <span class="pl-c1">2</span>;
+  <span class="pl-en">x</span>();
+}
+
+<span class="pl-en">f</span>() <span class="pl-c"><span class="pl-c">//</span> 1</span></pre></div>
+<p>上面代码中，函数x是在函数f的外部声明的，所以它的作用域绑定外层，内部变量a不会到函数f体内取值，所以输出1，而不是2。</p>
+<p>总之，函数执行时所在的作用域，是定义时的作用域，而不是调用时所在的作用域。</p>
+<h1>
+<a id="user-content-閉包" class="anchor" href="#%E9%96%89%E5%8C%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>閉包</h1>
+<p>闭包（closure）是Javascript语言的一个难点，也是它的特色，很多高级应用都要依靠闭包实现。</p>
+<p>要理解闭包，首先必须理解变量作用域。前面提到，JavaScript有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。</p>
+<p>在函数外部无法读取函数内部声明的变量。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f1</span>() {
+  <span class="pl-k">var</span> n <span class="pl-k">=</span> <span class="pl-c1">999</span>;
+}
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(n)
+<span class="pl-c"><span class="pl-c">//</span> Uncaught ReferenceError: n is not defined</span></pre></div>
+<p>上面代码中，函数f1内部声明的变量n，函数外是无法读取的。</p>
+<p>所以，闭包的另一个用处，是封装对象的私有属性和私有方法。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">Person</span>(<span class="pl-smi">name</span>) {
+  <span class="pl-k">var</span> _age;
+  <span class="pl-k">function</span> <span class="pl-en">setAge</span>(<span class="pl-smi">n</span>) {
+    _age <span class="pl-k">=</span> n;
+  }
+  <span class="pl-k">function</span> <span class="pl-en">getAge</span>() {
+    <span class="pl-k">return</span> _age;
+  }
+
+  <span class="pl-k">return</span> {
+    name<span class="pl-k">:</span> name,
+    getAge<span class="pl-k">:</span> getAge,
+    setAge<span class="pl-k">:</span> setAge
+  };
+}
+
+<span class="pl-k">var</span> p1 <span class="pl-k">=</span> <span class="pl-en">Person</span>(<span class="pl-s"><span class="pl-pds">'</span>张三<span class="pl-pds">'</span></span>);
+<span class="pl-smi">p1</span>.<span class="pl-en">setAge</span>(<span class="pl-c1">25</span>);
+<span class="pl-smi">p1</span>.<span class="pl-en">getAge</span>() <span class="pl-c"><span class="pl-c">//</span> 25</span></pre></div>
+<h1>
+<a id="user-content-立即调用的函数表达式iife" class="anchor" href="#%E7%AB%8B%E5%8D%B3%E8%B0%83%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8Fiife" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>立即调用的函数表达式（IIFE）</h1>
+<p>通常情况下，只对匿名函数使用这种“立即执行的函数表达式”。它的目的有两个：一是不必为函数命名，避免了污染全局变量；二是IIFE内部形成了一个单独的作用域，可以封装一些外部无法读取的私有变量。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> 写法一</span>
+<span class="pl-k">var</span> tmp <span class="pl-k">=</span> newData;
+<span class="pl-en">processData</span>(tmp);
+<span class="pl-en">storeData</span>(tmp);
+
+<span class="pl-c"><span class="pl-c">//</span> 写法二</span>
+(<span class="pl-k">function</span> (){
+  <span class="pl-k">var</span> tmp <span class="pl-k">=</span> newData;
+  <span class="pl-en">processData</span>(tmp);
+  <span class="pl-en">storeData</span>(tmp);
+}());</pre></div>
+<h1>
+<a id="user-content-构造函数" class="anchor" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>构造函数</h1>
+<p>典型的面向对象编程语言（比如 C++ 和 Java），存在“类”（class）这个概念。所谓“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。</p>
+<p>JavaScript语言使用构造函数（constructor）作为对象的模板。所谓“构造函数”，就是专门用来生成“对象”的函数。它提供模板，描述对象的基本结构。一个构造函数，可以生成多个对象，这些对象都有相同的结构。</p>
+<p>构造函数的写法就是一个普通的函数，但是有自己的特征和用法。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-en">Vehicle</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {
+  <span class="pl-c1">this</span>.<span class="pl-smi">price</span> <span class="pl-k">=</span> <span class="pl-c1">1000</span>;
+};</pre></div>
+<p>上面代码中，Vehicle就是构造函数，它提供模板，用来生成对象实例。为了与普通函数区别，构造函数名字的第一个字母通常大写。</p>
+<h1>
+<a id="user-content-new-命令" class="anchor" href="#new-%E5%91%BD%E4%BB%A4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>new 命令</h1>
+<p>new命令的作用，就是执行构造函数，返回一个实例对象。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-en">Vehicle</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (){
+  <span class="pl-c1">this</span>.<span class="pl-smi">price</span> <span class="pl-k">=</span> <span class="pl-c1">1000</span>;
+};
+
+<span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Vehicle</span>();
+<span class="pl-smi">v</span>.<span class="pl-smi">price</span> <span class="pl-c"><span class="pl-c">//</span> 1000</span></pre></div>
+<p>上面代码通过new命令，让构造函数Vehicle生成一个实例对象，保存在变量v中。这个新生成的实例对象，从构造函数Vehicle继承了price属性。在new命令执行时，构造函数内部的this，就代表了新生成的实例对象，this.price表示实例对象有一个price属性，它的值是1000。</p>
+<p>使用new命令时，根据需要，构造函数也可以接受参数。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-en">Vehicle</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">p</span>) {
+  <span class="pl-c1">this</span>.<span class="pl-smi">price</span> <span class="pl-k">=</span> p;
+};
+
+<span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Vehicle</span>(<span class="pl-c1">500</span>);</pre></div>
+<p>new命令本身就可以执行构造函数，所以后面的构造函数可以带括号，也可以不带括号。下面两行代码是等价的。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Vehicle</span>();
+<span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Vehicle</span>;</pre></div>
+<p>一个很自然的问题是，如果忘了使用new命令，直接调用构造函数会发生什么事？</p>
+<p>这种情况下，构造函数就变成了普通函数，并不会生成实例对象。而且由于后面会说到的原因，this这时代表全局对象，将造成一些意想不到的结果。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-en">Vehicle</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (){
+  <span class="pl-c1">this</span>.<span class="pl-smi">price</span> <span class="pl-k">=</span> <span class="pl-c1">1000</span>;
+};
+
+<span class="pl-k">var</span> v <span class="pl-k">=</span> <span class="pl-en">Vehicle</span>();
+<span class="pl-smi">v</span>.<span class="pl-smi">price</span>
+<span class="pl-c"><span class="pl-c">//</span> Uncaught TypeError: Cannot read property 'price' of undefined</span>
+
+price
+<span class="pl-c"><span class="pl-c">//</span> 1000</span></pre></div>
+<p>上面代码中，调用Vehicle构造函数时，忘了加上new命令。结果，price属性变成了全局变量，而变量v变成了undefined。</p>
+<p>因此，应该非常小心，避免出现不使用new命令、直接调用构造函数的情况。为了保证构造函数必须与new命令一起使用，一个解决办法是，在构造函数内部使用严格模式，即第一行加上use strict。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">Fubar</span>(<span class="pl-smi">foo</span>, <span class="pl-smi">bar</span>){
+  <span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+  <span class="pl-c1">this</span>.<span class="pl-smi">_foo</span> <span class="pl-k">=</span> foo;
+  <span class="pl-c1">this</span>.<span class="pl-smi">_bar</span> <span class="pl-k">=</span> bar;
+}
+
+<span class="pl-en">Fubar</span>()
+<span class="pl-c"><span class="pl-c">//</span> TypeError: Cannot set property '_foo' of undefined</span></pre></div>
+<h1>
+<a id="user-content-new命令的原理" class="anchor" href="#new%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8E%9F%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>new命令的原理</h1>
+<p>使用new命令时，它后面的函数调用就不是正常的调用，而是依次执行下面的步骤。</p>
+<blockquote>
+<p>创建一个空对象，作为将要返回的对象实例
+将这个空对象的原型，指向构造函数的prototype属性
+将这个空对象赋值给函数内部的this关键字
+开始执行构造函数内部的代码</p>
+</blockquote>
+<h1>
+<a id="user-content-构造函数的缺点" class="anchor" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%BC%BA%E7%82%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>构造函数的缺点</h1>
+<p>JavaScript通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">Cat</span> (<span class="pl-smi">name</span>, <span class="pl-smi">color</span>) {
+  <span class="pl-c1">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> name;
+  <span class="pl-c1">this</span>.<span class="pl-c1">color</span> <span class="pl-k">=</span> color;
+}
+
+<span class="pl-k">var</span> cat1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Cat</span>(<span class="pl-s"><span class="pl-pds">'</span>大毛<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>白色<span class="pl-pds">'</span></span>);
+
+<span class="pl-smi">cat1</span>.<span class="pl-c1">name</span> <span class="pl-c"><span class="pl-c">//</span> '大毛'</span>
+<span class="pl-smi">cat1</span>.<span class="pl-c1">color</span> <span class="pl-c"><span class="pl-c">//</span> '白色'</span></pre></div>
+<p>上面代码的Cat函数是一个构造函数，函数内部定义了name属性和color属性，所有实例对象都会生成这两个属性。但是，这样做是对系统资源的浪费，因为同一个构造函数的对象实例之间，无法共享属性。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">Cat</span>(<span class="pl-smi">name</span>, <span class="pl-smi">color</span>) {
+  <span class="pl-c1">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> name;
+  <span class="pl-c1">this</span>.<span class="pl-c1">color</span> <span class="pl-k">=</span> color;
+  <span class="pl-c1">this</span>.<span class="pl-en">meow</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>mew, mew, mew...<span class="pl-pds">'</span></span>);
+  };
+}
+
+<span class="pl-k">var</span> cat1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Cat</span>(<span class="pl-s"><span class="pl-pds">'</span>大毛<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>白色<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> cat2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Cat</span>(<span class="pl-s"><span class="pl-pds">'</span>二毛<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>黑色<span class="pl-pds">'</span></span>);
+
+<span class="pl-smi">cat1</span>.<span class="pl-smi">meow</span> <span class="pl-k">===</span> <span class="pl-smi">cat2</span>.<span class="pl-smi">meow</span>
+<span class="pl-c"><span class="pl-c">//</span> false</span></pre></div>
+<p>上面代码中，cat1和cat2是同一个构造函数的实例。但是，它们的meow方法是不一样的，就是说每新建一个实例，就会新建一个meow方法。这既没有必要，又浪费系统资源，因为所有meow方法都是同样的行为，完全应该共享。</p>
+<h1>
+<a id="user-content-prototype属性的作用--原型链" class="anchor" href="#prototype%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%9C%E7%94%A8--%E5%8E%9F%E5%9E%8B%E9%93%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>prototype属性的作用 &amp; 原型链</h1>
+<p>JavaScript的每个对象都继承另一个对象，后者称为“原型”（prototype）对象。只有null除外，它没有自己的原型对象。</p>
+<p>原型对象上的所有属性和方法，都能被派生对象共享。这就是JavaScript继承机制的基本设计。</p>
+<p>通过构造函数生成实例对象时，会自动为实例对象分配原型对象。每一个构造函数都有一个prototype属性，这个属性就是实例对象的原型对象。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">Animal</span> (<span class="pl-smi">name</span>) {
+  <span class="pl-c1">this</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> name;
+}
+
+<span class="pl-smi">Animal</span>.<span class="pl-c1">prototype</span>.<span class="pl-c1">color</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">var</span> cat1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Animal</span>(<span class="pl-s"><span class="pl-pds">'</span>大毛<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> cat2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Animal</span>(<span class="pl-s"><span class="pl-pds">'</span>二毛<span class="pl-pds">'</span></span>);
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">cat1</span>.<span class="pl-c1">color</span>) <span class="pl-c"><span class="pl-c">//</span> 'white'</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">cat2</span>.<span class="pl-c1">color</span>) <span class="pl-c"><span class="pl-c">//</span> 'white'</span></pre></div>
+<p>上面代码中，构造函数Animal的prototype对象，就是实例对象cat1和cat2的原型对象。在原型对象上添加一个color属性。结果，实例对象都能读取该属性。</p>
+<p>原型对象的属性不是实例对象自身的属性。只要修改原型对象，变动就立刻会体现在所有实例对象上。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">Animal</span>.<span class="pl-c1">prototype</span>.<span class="pl-c1">color</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>yellow<span class="pl-pds">'</span></span>;
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">cat1</span>.<span class="pl-c1">color</span>) <span class="pl-c"><span class="pl-c">//</span> "yellow"</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">cat2</span>.<span class="pl-c1">color</span>) <span class="pl-c"><span class="pl-c">//</span> "yellow"</span></pre></div>
+<p>上面代码中，原型对象的color属性的值变为yellow，两个实例对象的color属性立刻跟着变了。这是因为实例对象其实没有color属性，都是读取原型对象的color属性。也就是说，当实例对象本身没有某个属性或方法的时候，它会到构造函数的prototype属性指向的对象，去寻找该属性或方法。这就是原型对象的特殊之处。</p>
+<p>如果实例对象自身就有某个属性或方法，它就不会再去原型对象寻找这个属性或方法。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">cat1</span>.<span class="pl-c1">color</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>;
+<span class="pl-smi">Animal</span>.<span class="pl-c1">prototype</span>.<span class="pl-c1">color</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>yellow<span class="pl-pds">'</span></span>;
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">cat1</span>.<span class="pl-c1">color</span>) <span class="pl-c"><span class="pl-c">//</span> "black"</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">cat2</span>.<span class="pl-c1">color</span>) <span class="pl-c"><span class="pl-c">//</span> "yellow"</span></pre></div>
+<p>上面代码中，实例对象cat1的color属性改为black，就使得它不再去原型对象读取color属性，后者的值依然为yellow。</p>
+<p>对象的属性和方法，有可能是定义在自身，也有可能是定义在它的原型对象。由于原型本身也是对象，又有自己的原型，所以形成了一条原型链（prototype chain）。比如，a对象是b对象的原型，b对象是c对象的原型，以此类推。</p>
+<p>“原型链”的作用是，读取对象的某个属性时，JavaScript引擎先寻找对象本身的属性，如果找不到，就到它的原型去找，如果还是找不到，就到原型的原型去找。如果直到最顶层的Object.prototype还是找不到，则返回undefined。</p>
+<p>如果对象自身和它的原型，都定义了一个同名属性，那么优先读取对象自身的属性，这叫做“覆盖”（overiding）。</p>
+<p>需要注意的是，一级级向上，在原型链寻找某个属性，对性能是有影响的。所寻找的属性在越上层的原型对象，对性能的影响越大。如果寻找某个不存在的属性，将会遍历整个原型链。</p>
+<h1>
+<a id="user-content-this關鍵字" class="anchor" href="#this%E9%97%9C%E9%8D%B5%E5%AD%97" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>this關鍵字</h1>
+<p>this关键字是一个非常重要的语法点。不理解它的含义，大部分开发任务都无法完成。</p>
+<p>下面是一个实际的例子。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> person <span class="pl-k">=</span> {
+  name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jive<span class="pl-pds">'</span></span>,
+  <span class="pl-en">describe</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>Name: <span class="pl-pds">'</span></span><span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">name</span>;
+  }
+};
+
+<span class="pl-smi">person</span>.<span class="pl-en">describe</span>()
+<span class="pl-c"><span class="pl-c">//</span> "Name: Jive"</span></pre></div>
+<p>上面代码中，this.name表示describe方法所在的当前对象的name属性。调用person.describe方法时，describe方法所在的当前对象是person，所以就是调用person.name。</p>
+<p>由于对象的属性可以赋给另一个对象，所以属性所在的当前对象是可变的，即this的指向是可变的。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-c1">A</span> <span class="pl-k">=</span> {
+  name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jive<span class="pl-pds">'</span></span>,
+  <span class="pl-en">describe</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>Name: <span class="pl-pds">'</span></span><span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">name</span>;
+  }
+};
+
+<span class="pl-k">var</span> <span class="pl-c1">B</span> <span class="pl-k">=</span> {
+  name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>James<span class="pl-pds">'</span></span>
+};
+
+<span class="pl-c1">B</span>.<span class="pl-smi">describe</span> <span class="pl-k">=</span> <span class="pl-c1">A</span>.<span class="pl-smi">describe</span>;
+<span class="pl-c1">B</span>.<span class="pl-en">describe</span>()
+<span class="pl-c"><span class="pl-c">//</span> "Name: James"</span></pre></div>
+<p>上面代码中，A.describe属性被赋给B，于是B.describe就表示describe方法所在的当前对象是B，所以this.name就指向B.name。</p>
+<p>稍稍重构这个例子，this的动态指向就能看得更清楚。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f</span>() {
+  <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>姓名：<span class="pl-pds">'</span></span><span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">name</span>;
+}
+
+<span class="pl-k">var</span> <span class="pl-c1">A</span> <span class="pl-k">=</span> {
+  name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>张三<span class="pl-pds">'</span></span>,
+  describe<span class="pl-k">:</span> f
+};
+
+<span class="pl-k">var</span> <span class="pl-c1">B</span> <span class="pl-k">=</span> {
+  name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>李四<span class="pl-pds">'</span></span>,
+  describe<span class="pl-k">:</span> f
+};
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">A</span>.<span class="pl-en">describe</span>()) <span class="pl-c"><span class="pl-c">//</span> "姓名：张三"</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">B</span>.<span class="pl-en">describe</span>()) <span class="pl-c"><span class="pl-c">//</span> "姓名：李四"</span></pre></div>
+<p>上面代码中，函数f内部使用了this关键字，随着f所在的对象不同，this的指向也不同。</p>
+<h1>
+<a id="user-content-this-使用情境" class="anchor" href="#this-%E4%BD%BF%E7%94%A8%E6%83%85%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>this 使用情境</h1>
+<h2>
+<a id="user-content-全局环境" class="anchor" href="#%E5%85%A8%E5%B1%80%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>全局环境</h2>
+<p>在全局环境使用this，它指的就是顶层对象window。</p>
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span> <span class="pl-k">===</span> <span class="pl-c1">window</span>); <span class="pl-c"><span class="pl-c">//</span> true</span>
+</pre></div>
+<p>上面代码说明，不管是不是在函数内部，只要是在全局环境下运行，this就是指顶层对象window。</p>
+<h2>
+<a id="user-content-构造函数-1" class="anchor" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>构造函数</h2>
+<p>构造函数中的this，指的是实例对象。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-en">Obj</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">p</span>) {
+  <span class="pl-c1">this</span>.<span class="pl-smi">p</span> <span class="pl-k">=</span> p;
+};
+
+<span class="pl-smi">Obj</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">m</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+  <span class="pl-k">return</span> <span class="pl-c1">this</span>.<span class="pl-smi">p</span>;
+};
+
+<span class="pl-k">var</span> o <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Obj</span>(<span class="pl-s"><span class="pl-pds">'</span>Hello World!<span class="pl-pds">'</span></span>);
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">o</span>.<span class="pl-smi">p</span>) <span class="pl-c"><span class="pl-c">//</span> "Hello World!"</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">o</span>.<span class="pl-en">m</span>()) <span class="pl-c"><span class="pl-c">//</span> "Hello World!"</span></pre></div>
+<p>上面代码定义了一个构造函数Obj。由于this指向实例对象，所以在构造函数内部定义this.p，就相当于定义实例对象有一个p属性；然后m方法可以返回这个p属性。</p>
+<h2>
+<a id="user-content-对象的方法" class="anchor" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>对象的方法</h2>
+<p>当A对象的方法被赋予B对象，该方法中的this就从指向A对象变成了指向B对象。所以要特别小心，将某个对象的方法赋值给另一个对象，会改变this的指向。</p>
+<p>请看下面的代码。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span>{
+  <span class="pl-en">foo</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+  }
+};
+
+<span class="pl-smi">obj</span>.<span class="pl-en">foo</span>() <span class="pl-c"><span class="pl-c">//</span> obj</span></pre></div>
+<h1>
+<a id="user-content-使用注意点" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E7%82%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用注意点</h1>
+<p>由于this的指向是不确定的，所以切勿在函数中包含多层的this。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> o <span class="pl-k">=</span> {
+  <span class="pl-en">f1</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+    <span class="pl-k">var</span> <span class="pl-en">f2</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+    }();
+  }
+}
+
+<span class="pl-smi">o</span>.<span class="pl-en">f1</span>()
+<span class="pl-c"><span class="pl-c">//</span> Object</span>
+<span class="pl-c"><span class="pl-c">//</span> Window</span></pre></div>
+<p>上面代码包含两层this，结果运行后，第一层指向该对象，第二层指向全局对象。实际执行的是下面的代码。</p>
+<p>一个解决方法是在第二层改用一个指向外层this的变量。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> o <span class="pl-k">=</span> {
+  <span class="pl-en">f1</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>);
+    <span class="pl-k">var</span> self <span class="pl-k">=</span> <span class="pl-c1">this</span>;
+    <span class="pl-k">var</span> <span class="pl-en">f2</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(self);
+    }();
+  }
+}
+
+<span class="pl-smi">o</span>.<span class="pl-en">f1</span>()
+<span class="pl-c"><span class="pl-c">//</span> Object</span>
+<span class="pl-c"><span class="pl-c">//</span> Object</span></pre></div>
+<p>上面代码定义了变量self，固定指向外层的this，然后在内层使用self，就不会发生this指向的改变。</p>
+<p>事实上，使用一个变量固定this的值，然后内层函数调用这个变量，是非常常见的做法，有大量应用，请务必掌握。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">0</span>
+};
+<span class="pl-smi">counter</span>.<span class="pl-en">inc</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {
+  <span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+  <span class="pl-c1">this</span>.<span class="pl-smi">count</span><span class="pl-k">++</span>
+};
+<span class="pl-k">var</span> f <span class="pl-k">=</span> <span class="pl-smi">counter</span>.<span class="pl-smi">inc</span>;
+<span class="pl-en">f</span>()
+<span class="pl-c"><span class="pl-c">//</span> TypeError: Cannot read property 'count' of undefined</span></pre></div>
+<p>上面代码中，inc方法通过'use strict'声明采用严格模式，这时内部的this一旦指向顶层对象，就会报错。</p>
+<h1>
+<a id="user-content-绑定-this-的方法callapplybind" class="anchor" href="#%E7%BB%91%E5%AE%9A-this-%E7%9A%84%E6%96%B9%E6%B3%95callapplybind" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>绑定 this 的方法：call、apply、bind</h1>
+<p>this的动态切换，固然为JavaScript创造了巨大的灵活性，但也使得编程变得困难和模糊。有时，需要把this固定下来，避免出现意想不到的情况。JavaScript提供了call、apply、bind这三个方法，来切换/固定this的指向。</p>
+<h2>
+<a id="user-content-functionprototypecall" class="anchor" href="#functionprototypecall" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>function.prototype.call()</h2>
+<p>函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span> {};
+
+<span class="pl-k">var</span> <span class="pl-en">f</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {
+  <span class="pl-k">return</span> <span class="pl-c1">this</span>;
+};
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">f</span>() <span class="pl-k">===</span> <span class="pl-c1">window</span>);
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">f</span>.<span class="pl-c1">call</span>(obj) <span class="pl-k">===</span> obj);</pre></div>
+<p>上面代码中，在全局环境运行函数f时，this指向全局环境；call方法可以改变this的指向，指定this指向对象obj，然后在对象obj的作用域中运行函数f</p>
+<p>call方法的参数，应该是一个对象。如果参数为空、null和undefined，则默认传入全局对象。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> n <span class="pl-k">=</span> <span class="pl-c1">123</span>;
+<span class="pl-k">var</span> obj <span class="pl-k">=</span> { n<span class="pl-k">:</span> <span class="pl-c1">456</span> };
+
+<span class="pl-k">function</span> <span class="pl-en">a</span>() {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>.<span class="pl-smi">n</span>);
+}
+
+<span class="pl-smi">a</span>.<span class="pl-c1">call</span>() <span class="pl-c"><span class="pl-c">//</span> 123</span>
+<span class="pl-smi">a</span>.<span class="pl-c1">call</span>(<span class="pl-c1">null</span>) <span class="pl-c"><span class="pl-c">//</span> 123</span>
+<span class="pl-smi">a</span>.<span class="pl-c1">call</span>(<span class="pl-c1">undefined</span>) <span class="pl-c"><span class="pl-c">//</span> 123</span>
+<span class="pl-smi">a</span>.<span class="pl-c1">call</span>(<span class="pl-c1">window</span>) <span class="pl-c"><span class="pl-c">//</span> 123</span>
+<span class="pl-smi">a</span>.<span class="pl-c1">call</span>(obj) <span class="pl-c"><span class="pl-c">//</span> 456</span></pre></div>
+<p>上面代码中，a函数中的this关键字，如果指向全局对象，返回结果为123。如果使用call方法将this关键字指向obj对象，返回结果为456。可以看到，如果call方法没有参数，或者参数为null或undefined，则等同于指向全局对象。</p>
+<p>call方法还可以接受多个参数。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">func</span>.<span class="pl-c1">call</span>(thisValue, arg1, arg2, <span class="pl-k">...</span>)</pre></div>
+<p>call的第一个参数就是this所要指向的那个对象，后面的参数则是函数调用时所需的参数。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">add</span>(<span class="pl-smi">a</span>, <span class="pl-smi">b</span>) {
+  <span class="pl-k">return</span> a <span class="pl-k">+</span> b;
+}
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">add</span>.<span class="pl-c1">call</span>(<span class="pl-c1">this</span>, <span class="pl-c1">1</span>, <span class="pl-c1">2</span>)) <span class="pl-c"><span class="pl-c">//</span> 3</span></pre></div>
+<h2>
+<a id="user-content-functionprototypeapply" class="anchor" href="#functionprototypeapply" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>function.prototype.apply()</h2>
+<p>apply方法的作用与call方法类似，也是改变this指向，然后再调用该函数。唯一的区别就是，它接收一个数组作为函数执行时的参数，使用格式如下。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">func</span>.<span class="pl-c1">apply</span>(thisValue, [arg1, arg2, <span class="pl-k">...</span>])</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f</span>(<span class="pl-smi">x</span>,<span class="pl-smi">y</span>){
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(x<span class="pl-k">+</span>y);
+}
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">f</span>.<span class="pl-c1">call</span>(<span class="pl-c1">null</span>,<span class="pl-c1">1</span>,<span class="pl-c1">1</span>)); <span class="pl-c"><span class="pl-c">//</span> 2</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">f</span>.<span class="pl-c1">apply</span>(<span class="pl-c1">null</span>,[<span class="pl-c1">1</span>,<span class="pl-c1">1</span>])) <span class="pl-c"><span class="pl-c">//</span> 2</span></pre></div>
+<p>上面的f函数本来接受两个参数，使用apply方法以后，就变成可以接受一个数组作为参数。</p>
+<h2>
+<a id="user-content-functionprototypebind" class="anchor" href="#functionprototypebind" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>function.prototype.bind()</h2>
+<p>bind方法用于将函数体内的this绑定到某个对象，然后返回一个新函数。</p>
+<p>下面是一个清晰的例子。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+  <span class="pl-en">inc</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">count</span><span class="pl-k">++</span>;
+  }
+};
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">counter</span>.<span class="pl-smi">count</span> ); <span class="pl-c"><span class="pl-c">//</span> 0</span>
+<span class="pl-smi">counter</span>.<span class="pl-en">inc</span>()
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">counter</span>.<span class="pl-smi">count</span> ); <span class="pl-c"><span class="pl-c">//</span> 1</span></pre></div>
+<p>上面代码中，counter.inc内部的this，默认指向counter对象。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+  <span class="pl-en">inc</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">count</span><span class="pl-k">++</span>;
+  }
+};
+
+<span class="pl-k">var</span> func <span class="pl-k">=</span> <span class="pl-smi">counter</span>.<span class="pl-smi">inc</span>;
+<span class="pl-en">func</span>();
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">counter</span>.<span class="pl-smi">count</span> );<span class="pl-c"><span class="pl-c">//</span> 0</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( count );<span class="pl-c"><span class="pl-c">//</span> NaN</span></pre></div>
+<p>上面代码中，函数func是在全局环境中运行的，这时inc内部的this指向顶层对象window，所以counter.count是不会变的，反而创建了一个全局变量count。因为window.count原来等于undefined，进行递增运算后undefined++就等于NaN。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+  <span class="pl-en">inc</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">count</span><span class="pl-k">++</span>;
+  }
+};
+
+<span class="pl-k">var</span> func <span class="pl-k">=</span> <span class="pl-smi">counter</span>.<span class="pl-smi">inc</span>.<span class="pl-en">bind</span>(counter);
+<span class="pl-en">func</span>();
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">counter</span>.<span class="pl-smi">count</span> );<span class="pl-c"><span class="pl-c">//</span> 1</span></pre></div>
+<p>上面代码中，bind方法将inc方法绑定到counter以后，再运行func就会得到正确结果。</p>
+<p>this绑定到其他对象也是可以的。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+  <span class="pl-en">inc</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">count</span><span class="pl-k">++</span>;
+  }
+};
+
+<span class="pl-k">var</span> obj <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">100</span>
+};
+
+<span class="pl-k">var</span> func <span class="pl-k">=</span> <span class="pl-smi">counter</span>.<span class="pl-smi">inc</span>.<span class="pl-en">bind</span>( obj );
+<span class="pl-en">func</span>();
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">obj</span>.<span class="pl-smi">count</span> );<span class="pl-c"><span class="pl-c">//</span> 1</span></pre></div>
+<p>上面代码中，bind方法将inc方法内部的this，绑定到obj对象。结果调用func函数以后，递增的就是obj内部的count属性。</p>
+<p>bind比call方法和apply方法更进一步的是，除了绑定this以外，还可以绑定原函数的参数。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-en">add</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">x</span>, <span class="pl-smi">y</span>) {
+  <span class="pl-k">return</span> x <span class="pl-k">*</span> <span class="pl-c1">this</span>.<span class="pl-smi">m</span> <span class="pl-k">+</span> y <span class="pl-k">*</span> <span class="pl-c1">this</span>.<span class="pl-smi">n</span>;
+}
+
+<span class="pl-k">var</span> obj <span class="pl-k">=</span> {
+  m<span class="pl-k">:</span> <span class="pl-c1">2</span>,
+  n<span class="pl-k">:</span> <span class="pl-c1">2</span>
+};
+
+<span class="pl-k">var</span> newAdd <span class="pl-k">=</span> <span class="pl-smi">add</span>.<span class="pl-en">bind</span>(obj, <span class="pl-c1">5</span>);
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-en">newAdd</span>(<span class="pl-c1">4</span>) ) <span class="pl-c"><span class="pl-c">//</span> 18;</span></pre></div>
+<p>上面代码中，bind方法除了绑定this对象，还将add函数的第一个参数x绑定成5，然后返回一个新函数newAdd，这个函数只要再接受一个参数y就能运行了。</p>
+<p>如果bind方法的第一个参数是null或undefined，等于将this绑定到全局对象，函数运行时this指向顶层对象（在浏览器中为window）。</p>
+<ul>
+<li>结合回调函数使用</li>
+</ul>
+<p>回调函数是JavaScript最常用的模式之一，但是一个常见的错误是，将包含this的方法直接当作回调函数。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+  <span class="pl-en">inc</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+    <span class="pl-c1">this</span>.<span class="pl-smi">count</span><span class="pl-k">++</span>;
+  }
+};
+
+<span class="pl-k">function</span> <span class="pl-en">callIt</span>(<span class="pl-smi">callback</span>) {
+  <span class="pl-en">callback</span>();
+}
+
+<span class="pl-en">callIt</span>(<span class="pl-smi">counter</span>.<span class="pl-smi">inc</span>)
+<span class="pl-c"><span class="pl-c">//</span> TypeError: Cannot read property 'count' of undefined</span></pre></div>
+<p>上面代码中，counter.inc方法被当作回调函数，传入了callIt，调用时其内部的this指向callIt运行时所在的对象，即顶层对象window，所以得不到预想结果。注意，上面的counter.inc方法内部使用了严格模式，在该模式下，this指向顶层对象时会报错，一般模式不会。</p>
+<p>解决方法就是使用bind方法，将counter.inc绑定counter。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> {
+  count<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+  <span class="pl-en">inc</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+    <span class="pl-c1">this</span>.<span class="pl-smi">count</span><span class="pl-k">++</span>;
+  }
+};
+
+<span class="pl-k">function</span> <span class="pl-en">callIt</span>(<span class="pl-smi">callback</span>) {
+  <span class="pl-en">callback</span>();
+}
+
+<span class="pl-en">callIt</span>(<span class="pl-smi">counter</span>.<span class="pl-smi">inc</span>.<span class="pl-en">bind</span>(counter));
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>( <span class="pl-smi">counter</span>.<span class="pl-smi">count</span> ) <span class="pl-c"><span class="pl-c">//</span> 1</span></pre></div>
+<p>还有一种情况比较隐蔽，就是某些数组方法可以接受一个函数当作参数。这些函数内部的this指向，很可能也会出错。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span> {
+  name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jive<span class="pl-pds">'</span></span>,
+  times<span class="pl-k">:</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>],
+  <span class="pl-en">print</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">times</span>.<span class="pl-c1">forEach</span>(<span class="pl-k">function</span> (<span class="pl-smi">n</span>) {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>.<span class="pl-c1">name</span>);
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span> <span class="pl-k">===</span> <span class="pl-c1">window</span>);
+    });
+  }
+};
+
+<span class="pl-smi">obj</span>.<span class="pl-c1">print</span>()
+<span class="pl-c"><span class="pl-c">//</span> ''</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-c"><span class="pl-c">//</span> ''</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-c"><span class="pl-c">//</span> ''</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span></pre></div>
+<p>上面代码中，obj.print内部this.times的this是指向obj的，这个没有问题。但是，forEach方法的回调函数内部的this.name却是指向全局对象，导致没有办法取到值。稍微改动一下，就可以看得更清楚。</p>
+<ul>
+<li>window物件下本來就有name這個屬性的存在，一般來說其實是undefined</li>
+</ul>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span> {
+  namename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jive<span class="pl-pds">'</span></span>,
+  times<span class="pl-k">:</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>],
+  <span class="pl-en">print</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">times</span>.<span class="pl-c1">forEach</span>(<span class="pl-k">function</span> (<span class="pl-smi">n</span>) {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>.<span class="pl-smi">namename</span>);
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span> <span class="pl-k">===</span> <span class="pl-c1">window</span>);
+    }.<span class="pl-en">bind</span>(<span class="pl-c1">this</span>));
+  }
+};
+
+<span class="pl-smi">obj</span>.<span class="pl-c1">print</span>();
+<span class="pl-c"><span class="pl-c">//</span> undefined</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-c"><span class="pl-c">//</span> undefined</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-c"><span class="pl-c">//</span> undefined</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span></pre></div>
+<p>解决这个问题，也是通过bind方法绑定this。</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span> {
+  namename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jive<span class="pl-pds">'</span></span>,
+  times<span class="pl-k">:</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>],
+  <span class="pl-en">print</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">times</span>.<span class="pl-c1">forEach</span>(<span class="pl-k">function</span> (<span class="pl-smi">n</span>) {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>.<span class="pl-smi">namename</span>);
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span> <span class="pl-k">===</span> <span class="pl-c1">window</span>);
+    }.<span class="pl-en">bind</span>(<span class="pl-c1">this</span>));
+  }
+};
+
+<span class="pl-smi">obj</span>.<span class="pl-c1">print</span>();
+<span class="pl-c"><span class="pl-c">//</span> 'Jive'</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-c"><span class="pl-c">//</span> 'Jive'</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-c"><span class="pl-c">//</span> 'Jive'</span>
+<span class="pl-c"><span class="pl-c">//</span> true</span></pre></div>
+<h1>
+<a id="user-content-鏈試呼叫function寫法" class="anchor" href="#%E9%8F%88%E8%A9%A6%E5%91%BC%E5%8F%ABfunction%E5%AF%AB%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>鏈試呼叫function寫法</h1>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span> {
+  namename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jive<span class="pl-pds">'</span></span>,
+  times<span class="pl-k">:</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>],
+  <span class="pl-en">print</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-c1">this</span>.<span class="pl-smi">times</span>.<span class="pl-c1">forEach</span>(<span class="pl-k">function</span> (<span class="pl-smi">n</span>) {
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>.<span class="pl-smi">namename</span>);
+    }.<span class="pl-en">bind</span>(<span class="pl-c1">this</span>));
+    <span class="pl-k">return</span> <span class="pl-c1">this</span>;
+  },
+  <span class="pl-en">count</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>this is count<span class="pl-pds">'</span></span>);
+    <span class="pl-k">return</span> <span class="pl-c1">this</span>;
+  },
+  <span class="pl-en">append</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>this is append<span class="pl-pds">'</span></span>);
+    <span class="pl-k">return</span> <span class="pl-c1">this</span>;
+  }
+};
+
+<span class="pl-smi">obj</span>.<span class="pl-c1">print</span>().<span class="pl-en">count</span>().<span class="pl-c1">append</span>();</pre></div>
+<h1>
+<a id="user-content-參考資料" class="anchor" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>參考資料</h1>
+<p><a href="http://javascript.ruanyifeng.com/#introduction">Javascript 標準參程教程</a></p>
+</article></body></html>
