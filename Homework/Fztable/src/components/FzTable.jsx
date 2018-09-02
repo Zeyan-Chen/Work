@@ -1,36 +1,30 @@
 import React, { Component } from "react";
 import "../style/css.min.css";
 import FzDefault from "./FzDefault";
-// import FzRel from "./FzRel";
+import FzRel from "./FzRel";
 
 class FzTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataList: props.dataList
+      default: {
+        dataList: props.defaultList,
+        item: { itemULW: 100, itemLIW: 100 }
+      },
+      rel: { dataList: props.relList }
     };
   }
 
   render() {
     return (
-      <div>
-        <FzDefault
-          dataList={this.state.dataList}
-          count={{
-            // M版時每次點擊往前往後移動幾格儲存格
-            slide: 1, // [number]
-            // M版時一個畫面show幾格儲存格
-            show: 4 // [number]
-          }}
-          // 設定花多久時間移動完成
-          speed={0.5} // [number]
-          // 每次點擊儲存格時會執行此callback，並帶入所點擊的儲存格jquery物件
-          whenClick={function($element) {
-            // console.log($element)
-          }}
-        />
-        {/* <FzRel /> */}
-      </div>
+      // <div>
+      <React.Fragment>
+        <h1>style: default</h1>
+        <FzDefault dataList={this.state.default.dataList} className="default" />
+        <h1>style: rel</h1>
+        <FzDefault dataList={this.state.rel.dataList} className="rel" />
+      </React.Fragment>
+      // </div>
     );
   }
 }

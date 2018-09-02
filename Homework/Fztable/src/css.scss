@@ -2,14 +2,12 @@ $classname: "Fztable";
 @import "_variables.scss";
 // $table-inside-width: (100% / 8);
 // $table-inside-heigth: 65px;
-
 $color-line: #e2e2e2;
 $bgc-top-month: #eaeef4;
 $bgc-column-month: #eee;
 $bgc-activeThis: #fff9e3;
 $bgc-active: #f7f7f7;
 $line-color-activeThis: #fe8b88;
-
 * {
   list-style: none;
   box-sizing: border-box;
@@ -18,13 +16,16 @@ $line-color-activeThis: #fe8b88;
 }
 
 body {
-  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體",
-    "Microsoft YaHei";
+  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
 }
 
+
+
+// mobile
 ##{$classname} {
-  // mobile
-  .default {
+  width: 100%;
+  margin: 0 auto; // mobile
+  .default, .rel {
     position: relative;
     width: 100%;
     margin: auto;
@@ -57,8 +58,7 @@ body {
     .left {
       .BackAndGo {
         width: 80px;
-        height: 65px;
-        // width: $table-inside-width;
+        height: 65px; // width: $table-inside-width;
         // height: $table-inside-heigth;
         outline: 1px solid $color-line;
         position: relative;
@@ -74,12 +74,11 @@ body {
           }
         }
       } // BackAndGo end
-      > ul {
+      >ul {
         li {
           width: 80px;
           height: 65px;
-          line-height: 65px;
-          // width: $table-inside-width;
+          line-height: 65px; // width: $table-inside-width;
           // height: $table-inside-heigth;
           outline: 1px solid $color-line;
         }
@@ -88,16 +87,15 @@ body {
     .right {
       position: relative;
       flex: 1;
-      overflow: auto;
-      // min-width: 600px;
+      overflow: hidden; // min-width: 600px;
       .slider-move {
         position: relative;
-        > ul {
+        // transition: all 1s ease-in-out;
+        >ul {
           display: flex;
           li {
             height: 65px;
-            outline: 1px solid $color-line;
-            // flex: 1;
+            outline: 1px solid $color-line; // flex: 1;
           }
         } // right ul end
       }
@@ -105,9 +103,8 @@ body {
   } // default end
   // pc
   @media screen and (min-width: $screen-tablet) {
-    .default {
-      width: 767px;
-      // outline: 1px solid red;
+    width: 90%;
+    .default, .rel {
       .right {
         ul,
         li {
