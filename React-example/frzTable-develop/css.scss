@@ -1,0 +1,351 @@
+// -------------------------------------
+// Susy Import
+// -------------------------------------
+//@import "susy";
+// -------------------------------------
+// Core Mixins
+// -------------------------------------
+@import "../core/core/mixins";
+// -------------------------------------
+// Variables Import
+// -------------------------------------
+// 載入全域變數
+@import "../core/core/variables";
+// -------------------------------------
+// Components / Modules Setting
+// -------------------------------------
+// 請輸入您的ClassName
+$classname: 'frzTable';
+// -------------------------------------
+// 您的CSS Code
+// -------------------------------------
+//以下範例可以刪除，改為您自已的CSS Code
+
+.#{$classname} {
+	position: relative;
+	*{
+		margin: 0;
+		padding:0; 
+		box-sizing: border-box;
+	}
+
+	.container{
+		// max-width: 1200px;
+		margin: 0;
+		padding:0; 
+		box-sizing: border-box;
+	}
+	.dot{
+		position: absolute;
+		top: -20px;
+		right: 10px;
+		z-index: 99;
+		padding:5px; 
+		ul>li{
+			list-style: none;
+			float: left;
+			margin-left: 3px;
+			width: 10px;
+			height: 10px;
+			border-radius:50%;
+			background: #eaedf2;
+			cursor: pointer; 
+		}
+		.dotSelect{
+			background: #ff8e25;
+		}
+	}
+	// td{
+	// 	overflow: hidden;
+	// }
+	
+	.grayBox{
+		font-size: 10px;
+		min-width: 60px;
+		position: relative;
+		color: #737373;
+		text-align: center;
+		line-height: 70px;
+		height: 70px;
+		background: #f1f1f1;
+		border: 1px solid #e2e2e2;
+		
+	}
+	.grayBox_rel{
+		text-align: left;
+		p{
+			text-align: left;
+			margin-top:30px;
+			margin-left: 5px;
+			font-size: 12px;
+			line-height: 16px;
+			span{
+				display: block;
+				float: left;
+				text-align: center;
+				font-size: 16px;
+				margin:0 auto; 
+			} 
+		}
+		.airPort{
+			top: 8px;
+			left: 6px;
+			position: absolute;
+			line-height: 16px;
+			color: #666666;
+			font-size: 16px;
+		}
+		.plane1{
+
+			position: absolute;
+			font-weight: bolder;
+			height: 22px;
+			display:block;
+			z-index:99;
+			top:5px;
+			right: 5px;
+			color: #ff8e25;
+			.ic-ln{
+				display:none;
+				font-size: 16px;
+			}
+		}
+		.plane{
+			display:none;
+			height: 22px;
+			position: absolute;
+			font-weight: bolder;
+			display:block;
+			z-index:99;
+			top:5px;
+			right: 10px;
+			color: #ff8e25;
+			.ic-ln{
+				display:none;
+				font-size: 16px;
+			}
+		}
+	}
+	.content_box{
+		// position: absolute;
+		width:4000px;
+		background: #ddd;
+		overflow: hidden;
+	}
+
+	.height100{
+		height: 100%;
+	}
+	.content_box2{
+		position: relative;
+		text-align: center;
+		float: left;
+		line-height: 70px;
+		font-size: 14px;
+		// font-weight: bold;
+		color: #444444;
+		height: 70px;
+		cursor: pointer;
+		background: white;
+		border: 1px solid #e2e2e2;
+		span{
+			font-size: 12px;
+			color: #999999;
+			font-weight: normal;
+		}
+		p{
+			color: #999999;
+			font-weight: normal;
+		}
+		.airPort{
+			top: 6px;
+			left: 6px;
+			position: absolute;
+			line-height: 20px;
+			color: #666666;
+			font-size: 16px;
+		}
+	}
+	.content_box2_rel{
+		line-height: 20px;
+	}
+	.boxHead{
+		position: relative;
+		background: #eaedf2;
+		height: 50px;
+		border: 1px solid #e2e2e2;
+		// line-height: 65px;
+		font-weight: normal;
+		p{
+			font-size: 10px;
+		}
+	}
+	
+	.slide_btn{
+		color: white;
+		cursor: pointer;
+		z-index: 99;
+		padding: 14px 5px;
+		background: rgba(0,0,0,.3 );	
+	}
+	.slide_right{
+		position: absolute;
+		right: 0;
+		top:50%;
+		margin-top: -20px;
+	}
+	.slide_left{
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -20px;
+	}
+	.main_box{
+		box-sizing: border-box;
+		// border-right: 1px solid #e2e2e2; 
+		 max-width:375px;//為什麼是375(iphone的寬)!!!我要搞清楚
+		 // max-width:768px;//為什麼是375(iphone的寬)!!!我要搞清楚
+		 
+		overflow: hidden;
+	}
+	.select{
+		box-sizing:border-box;
+		background: #fff9e3;
+		border: 2px solid #fe8e8b;
+	}
+	.hight_light{
+		background: #f7f7f7;
+	}
+	.headTitle{
+		position: absolute;
+		height: 20px;
+		line-height: 20px;
+		font-weight: bold;
+	}
+	.titleGo{
+		bottom: 2px;
+		left: 2px;
+	}
+	.titleBack{
+		right: 2px;
+		top: 2px;
+	}
+	.year{
+		position: absolute;
+		font-weight: bolder;
+		display:block;
+		z-index:99;
+		top:-20px;
+		right: 5px;
+		color: #259e7b;
+	}
+	.year1{
+		position: absolute;
+		font-weight: bolder;
+		// display:block;
+		line-height: 20px;
+		z-index:99;
+		top:5px;
+		right: 5px;
+		color: #259e7b;
+	}
+	.cheap{
+		display: block;
+		font-size: 12px;
+		position: absolute;
+		top: 6px;
+		left: 10px;
+		line-height: 20px;
+		color: #ff8f25;  
+	}
+	.tri{
+		position: absolute;
+		top: 0;
+		left: -0.5px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 20px 20px 0 0;
+		border-color: #ff8e25 transparent transparent transparent;
+	}
+	.mt_20{
+		width: 100%;
+		height: 20px;
+	}
+	.test{
+		background: red;
+	}
+	.hide{
+		display: none!important;
+	}
+	.relSelect{
+		.airPort{
+			color: #ff8e25;
+		}
+		p{
+			color: #ff8e25;
+		}
+		
+		.plane{
+			
+			.ic-ln{
+				display:block;}
+		}
+		.plane1{
+		
+			.ic-ln{
+				display:block;}
+		}
+	}
+	.marginT_20{
+		width: 100%;
+		height: 20px;
+	}
+	.marginT_25{
+		width: 100%;
+		height: 25px;
+	}  
+	// style on phone device
+	@media screen and (min-width: $screen-tablet) {
+	.main_box{
+		max-width: 768px;
+		// border-left:1px solid #e2e2e2;
+	}
+	.grayBox{
+		font-size: 14px;
+	}
+		// style on tablet device
+	}
+	@media screen and (min-width: $screen-desktop) {
+	.main_box{
+		max-width: 960px;
+		// border-left:1px solid #e2e2e2;
+	}
+	// .year1{
+	// 	top: -20px;
+	// }
+	.grayBox{
+		line-height: 70px;
+	}
+		// style on desktop device
+	
+	}
+	@media screen and (min-width: $screen-lg-desktop) {
+	
+	.main_box{
+		max-width:1200px;
+		// border-left:1px solid #e2e2e2;
+	}
+
+		// style on desktop device
+	}
+	&.#{$classname}_modifier {
+		
+	}
+	& > .#{$classname}_child {
+		
+	}
+	& .#{$classname}_descendant {
+
+	}
+}

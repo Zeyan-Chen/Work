@@ -1,0 +1,34 @@
+{
+  "name": "@magaele/frzTable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "develop": "cross-env NODE_ENV=develop webpack",
+    "publish": "cross-env NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "vash": "^0.12.4",
+    "render-template-loader": "^1.0.0",
+    "webpack": "^3.0.0",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}
