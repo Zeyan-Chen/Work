@@ -54,6 +54,13 @@ body {
   color: white;
 }
 
+#Fztable .default .next.hidden,
+#Fztable .default .prev.hidden,
+#Fztable .rel .next.hidden,
+#Fztable .rel .prev.hidden {
+  display: none;
+}
+
 #Fztable .default .next,
 #Fztable .rel .next {
   right: 0;

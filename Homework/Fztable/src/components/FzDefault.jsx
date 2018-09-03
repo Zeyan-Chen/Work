@@ -10,9 +10,11 @@ class FzDefault extends Component {
       rowDate: props.dataList.rowDate, //　行程表 上排
       contentDate: props.dataList.data, //　行程表 Data
 
+      // 100 * 7 / 1
       itemULW:
         (100 * props.dataList.rowDate.length) / props.dataList.count.show, // Ul　寬度計算
-      itemLIW: 100 / props.dataList.rowDate.length, // li　寬度計算
+      itemLIW: 100 / props.dataList.count.show, // li　寬度計算
+      // 100 / 7
 
       sliderIndex: 0, // 目前的　index
       sliderLiLen: props.dataList.columnDate.length, // slider 裡有幾個　li
@@ -29,54 +31,31 @@ class FzDefault extends Component {
 
   // 輪播
   slider = e => {
-    // 取小數點第 5 位
-    let roundDecimal = function(val, precision) {
-      return (
-        Math.round(Math.round(val * Math.pow(10, (precision || 0) + 1)) / 10) /
-        Math.pow(10, precision || 0)
-      );
-    };
-    let elSlider = document.querySelector(".default .slider-move");
-    let index = this.state.sliderIndex;
-    let sliderLILen = this.state.sliderLiLen;
-    let slide = this.state.slide;
-    let move;
-
     if (e.target.classList.contains("next")) {
-      // console.log("next");
-      this.setState({ sliderIndex: ++index });
-      if (index * slide >= sliderLILen) {
-        console.log("超過了");
-        this.setState({ sliderIndex: (index = 0) });
-      }
-
-      if (sliderLILen - index * slide < 3) {
-        // slide = 1;
-        // alert("下個超過");
-      }
-      console.log(index * slide, sliderLILen);
+      this.setState({
+        sliderLeft: (this.state.sliderLeft +=
+          this.state.itemLIW * this.state.slide)
+      });
+      this.setState({ sliderIndex: ++this.state.sliderIndex });
     } else {
-      this.setState({ sliderIndex: --index });
-      if (index < 0) {
-        this.setState({ sliderIndex: (index = sliderLILen - 1) });
-      }
+      this.setState({
+        sliderLeft: (this.state.sliderLeft -=
+          this.state.itemLIW * this.state.slide)
+      });
+      this.setState({ sliderIndex: --this.state.sliderIndex });
     }
 
+    let last = this.state.itemULW - this.state.itemLIW * this.state.show;
+    console.log("前進的寬度:" + this.state.sliderLeft);
     console.log(
-      "移動多少:" +
-        roundDecimal(this.state.itemULW, 4) / this.state.sliderLiLen,
-      "slide:" + slide,
-      "index:" + index
+      "到底:" + (this.state.itemULW - this.state.itemLIW * this.state.show)
     );
 
-    move =
-      (roundDecimal(this.state.itemULW, 4) / this.state.sliderLiLen) *
-      slide *
-      index *
-      -1;
-
-    this.setState({ sliderLeft: (this.state.sliderLeft = move) }); // 紀錄目前 left　的位置
-    elSlider.style.left = move + "%";
+    if (this.state.sliderLeft >= last) {
+      console.log("超過了");
+      this.setState({ sliderLeft: (this.state.sliderLeft = last) });
+      document.querySelector(".next").classList.add("hidden");
+    }
   };
 
   componentDidMount() {
@@ -133,8 +112,6 @@ class FzDefault extends Component {
       elClicked = e.target;
     }
 
-    console.log(elClicked);
-
     //　每次點擊就優先把底下的 li class [active, activeThis] 都刪掉
     let allLi = document.querySelectorAll(
       `.${this.state.styleName} .slider-move li`
@@ -168,6 +145,7 @@ class FzDefault extends Component {
       }
     }
 
+    // 只要有加上　activeThis 的　class active 就拿掉
     if (document.querySelector(".activeThis").classList.contains("active")) {
       document.querySelector(".activeThis").classList.remove("active");
     }
@@ -198,7 +176,7 @@ class FzDefault extends Component {
             style={{
               transition: "all " + this.state.speed + "s ease",
               left:
-                this.state.ifPC == true ? 0 + "%" : this.state.sliderLeft + "%"
+                this.state.ifPC == true ? 0 + "%" : -this.state.sliderLeft + "%"
             }}
           >
             {/* <ul style={{ width: this.state.itemULW + "%" }}> */}

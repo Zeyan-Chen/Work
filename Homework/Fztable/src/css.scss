@@ -49,6 +49,9 @@ body {
       z-index: 1;
       font-size: 20px;
       color: white;
+      &.hidden {
+        display: none;
+      }
     }
     .next {
       right: 0;
