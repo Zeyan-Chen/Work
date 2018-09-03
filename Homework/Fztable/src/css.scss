@@ -49,6 +49,7 @@ body {
       z-index: 1;
       font-size: 20px;
       color: white;
+      cursor: pointer;
       &.hidden {
         display: none;
       }

@@ -55,6 +55,15 @@ class FzDefault extends Component {
       console.log("超過了");
       this.setState({ sliderLeft: (this.state.sliderLeft = last) });
       document.querySelector(".next").classList.add("hidden");
+    } else {
+      document.querySelector(".next").classList.remove("hidden");
+    }
+
+    if (this.state.sliderLeft <= 0) {
+      this.setState({ sliderLeft: (this.state.sliderLeft = 0) });
+      document.querySelector(".prev").classList.add("hidden");
+    } else {
+      document.querySelector(".prev").classList.remove("hidden");
     }
   };
 
@@ -152,13 +161,22 @@ class FzDefault extends Component {
   };
 
   render() {
+    console.log(this.state.sliderLeft);
+
     return (
       <div className={this.state.styleName}>
         <div
           className="fas fa-angle-right next"
           onClick={e => this.slider(e)}
         />
-        <div className="fas fa-angle-left prev" onClick={e => this.slider(e)} />
+        <div
+          onClick={e => this.slider(e)}
+          className={
+            this.state.sliderLeft === 0
+              ? "fas fa-angle-right prev hidden"
+              : "fas fa-angle-right prev"
+          }
+        />
         <div className="left">
           <div className="BackAndGo">
             <span>去程</span>
@@ -213,21 +231,6 @@ class FzDefault extends Component {
                     );
                   })}
                 </ul>
-
-                // <ul
-                //   key={i}
-                //   style={{ width: (100 * 7) / this.state.show + "%" }}
-                // >
-                //   {/* {this.createLi(tags)} */}
-                //   {tags.value.map((index, i) => {
-                //     return (
-                //       <li style={{ width: 100 / 7 + "%" }} key={i}>
-                //         {index}
-                //       </li>
-                //     );
-                //     // width: calc(100%/7);
-                //   })}
-                // </ul>
               );
             })}
           </div>

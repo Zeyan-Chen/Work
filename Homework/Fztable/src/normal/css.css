@@ -53,6 +53,7 @@ body {
   z-index: 1;
   font-size: 20px;
   color: white;
+  cursor: pointer;
 }
 
 #Fztable .default .next.hidden,
