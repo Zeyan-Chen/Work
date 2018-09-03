@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
+  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
 }
 
 #Fztable {
@@ -16,7 +16,8 @@ body {
   margin: 0 auto;
 }
 
-#Fztable .default, #Fztable .rel {
+#Fztable .default,
+#Fztable .rel {
   position: relative;
   width: 100%;
   margin: auto;
@@ -28,7 +29,8 @@ body {
 }
 
 #Fztable .default .next,
-#Fztable .default .prev, #Fztable .rel .next,
+#Fztable .default .prev,
+#Fztable .rel .next,
 #Fztable .rel .prev {
   width: 25px;
   height: 50px;
@@ -52,43 +54,51 @@ body {
   color: white;
 }
 
-#Fztable .default .next, #Fztable .rel .next {
+#Fztable .default .next,
+#Fztable .rel .next {
   right: 0;
 }
 
-#Fztable .default .prev, #Fztable .rel .prev {
-  left: 80px;
+#Fztable .default .prev,
+#Fztable .rel .prev {
+  left: 100px;
 }
 
-#Fztable .default .left .BackAndGo, #Fztable .rel .left .BackAndGo {
-  width: 80px;
+#Fztable .default .left .BackAndGo,
+#Fztable .rel .left .BackAndGo {
+  width: 100px;
   height: 65px;
   outline: 1px solid #e2e2e2;
   position: relative;
 }
 
-#Fztable .default .left .BackAndGo span, #Fztable .rel .left .BackAndGo span {
+#Fztable .default .left .BackAndGo span,
+#Fztable .rel .left .BackAndGo span {
   position: absolute;
 }
 
-#Fztable .default .left .BackAndGo span:nth-child(1), #Fztable .rel .left .BackAndGo span:nth-child(1) {
+#Fztable .default .left .BackAndGo span:nth-child(1),
+#Fztable .rel .left .BackAndGo span:nth-child(1) {
   bottom: 5px;
   left: 5px;
 }
 
-#Fztable .default .left .BackAndGo span:nth-child(2), #Fztable .rel .left .BackAndGo span:nth-child(2) {
+#Fztable .default .left .BackAndGo span:nth-child(2),
+#Fztable .rel .left .BackAndGo span:nth-child(2) {
   top: 5px;
   right: 5px;
 }
 
-#Fztable .default .left > ul li, #Fztable .rel .left > ul li {
-  width: 80px;
+#Fztable .default .left > ul li,
+#Fztable .rel .left > ul li {
+  width: 100px;
   height: 65px;
   line-height: 65px;
   outline: 1px solid #e2e2e2;
 }
 
-#Fztable .default .right, #Fztable .rel .right {
+#Fztable .default .right,
+#Fztable .rel .right {
   position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -96,19 +106,46 @@ body {
   overflow: hidden;
 }
 
-#Fztable .default .right .slider-move, #Fztable .rel .right .slider-move {
+#Fztable .default .right .slider-move,
+#Fztable .rel .right .slider-move {
   position: relative;
 }
 
-#Fztable .default .right .slider-move > ul, #Fztable .rel .right .slider-move > ul {
+#Fztable .default .right .slider-move .gray,
+#Fztable .rel .right .slider-move .gray {
+  color: gray;
+}
+
+#Fztable .default .right .slider-move > ul,
+#Fztable .rel .right .slider-move > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#Fztable .default .right .slider-move > ul li, #Fztable .rel .right .slider-move > ul li {
+#Fztable .default .right .slider-move > ul li,
+#Fztable .rel .right .slider-move > ul li {
+  cursor: pointer;
   height: 65px;
+  line-height: 65px;
   outline: 1px solid #e2e2e2;
+}
+
+#Fztable .default .right .slider-move .rowStyle li,
+#Fztable .rel .right .slider-move .rowStyle li {
+  cursor: auto;
+}
+
+#Fztable .default .rowStyle,
+#Fztable .default .BackAndGo,
+#Fztable .rel .rowStyle,
+#Fztable .rel .BackAndGo {
+  background-color: #eaeef4;
+}
+
+#Fztable .default .columnStyle,
+#Fztable .rel .columnStyle {
+  background-color: #eee;
 }
 
 @media screen and (min-width: 768px) {
@@ -116,7 +153,8 @@ body {
     width: 90%;
   }
   #Fztable .default .right ul,
-  #Fztable .default .right li, #Fztable .rel .right ul,
+  #Fztable .default .right li,
+  #Fztable .rel .right ul,
   #Fztable .rel .right li {
     width: auto;
     -webkit-box-flex: 1;
@@ -124,9 +162,42 @@ body {
             flex: 1;
   }
   #Fztable .default .next,
-  #Fztable .default .prev, #Fztable .rel .next,
+  #Fztable .default .prev,
+  #Fztable .rel .next,
   #Fztable .rel .prev {
     display: none;
   }
+}
+
+#Fztable .sale {
+  position: relative;
+}
+
+#Fztable .sale:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 11px 11px 11px;
+  border-color: transparent transparent #ff8e24 transparent;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#Fztable .sale:after {
+  content: "最便宜";
+  font-size: 14px;
+  height: 25px;
+  line-height: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #ff8e24;
+  position: absolute;
+  top: -3px;
+  left: 25px;
 }
 /*# sourceMappingURL=css.css.map */

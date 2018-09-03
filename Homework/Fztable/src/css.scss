@@ -8,6 +8,7 @@ $bgc-column-month: #eee;
 $bgc-activeThis: #fff9e3;
 $bgc-active: #f7f7f7;
 $line-color-activeThis: #fe8b88;
+$sale-color: #ff8e24;
 * {
   list-style: none;
   box-sizing: border-box;
@@ -16,16 +17,16 @@ $line-color-activeThis: #fe8b88;
 }
 
 body {
-  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
+  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體",
+    "Microsoft YaHei";
 }
-
-
 
 // mobile
 ##{$classname} {
   width: 100%;
   margin: 0 auto; // mobile
-  .default, .rel {
+  .default,
+  .rel {
     position: relative;
     width: 100%;
     margin: auto;
@@ -53,11 +54,11 @@ body {
       right: 0;
     }
     .prev {
-      left: 80px;
+      left: 100px;
     }
     .left {
       .BackAndGo {
-        width: 80px;
+        width: 100px;
         height: 65px; // width: $table-inside-width;
         // height: $table-inside-heigth;
         outline: 1px solid $color-line;
@@ -74,9 +75,9 @@ body {
           }
         }
       } // BackAndGo end
-      >ul {
+      > ul {
         li {
-          width: 80px;
+          width: 100px;
           height: 65px;
           line-height: 65px; // width: $table-inside-width;
           // height: $table-inside-heigth;
@@ -89,22 +90,40 @@ body {
       flex: 1;
       overflow: hidden; // min-width: 600px;
       .slider-move {
+        .gray {
+          color: gray;
+        }
         position: relative;
         // transition: all 1s ease-in-out;
-        >ul {
+        > ul {
           display: flex;
           li {
+            cursor: pointer;
             height: 65px;
+            line-height: 65px;
             outline: 1px solid $color-line; // flex: 1;
           }
         } // right ul end
+        .rowStyle {
+          li {
+            cursor: auto;
+          }
+        }
       }
+    }
+    .rowStyle,
+    .BackAndGo {
+      background-color: $bgc-top-month;
+    }
+    .columnStyle {
+      background-color: $bgc-column-month;
     }
   } // default end
   // pc
   @media screen and (min-width: $screen-tablet) {
     width: 90%;
-    .default, .rel {
+    .default,
+    .rel {
       .right {
         ul,
         li {
@@ -116,6 +135,33 @@ body {
       .prev {
         display: none;
       }
+    }
+  }
+  // 最便宜　class
+  .sale {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 11px 11px 11px;
+      border-color: transparent transparent $sale-color transparent;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      content: "最便宜";
+      font-size: 14px;
+      height: 25px;
+      line-height: 25px;
+      flex: 1;
+      color: $sale-color;
+      position: absolute;
+      top: -3px;
+      left: 25px;
     }
   }
 }

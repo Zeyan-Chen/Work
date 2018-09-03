@@ -6,24 +6,23 @@ class FzDefault extends Component {
     super(props);
     console.log(props);
     this.state = {
-      columnDate: props.dataList.columnDate,
-      rowDate: props.dataList.rowDate,
-      contentDate: props.dataList.data,
+      columnDate: props.dataList.columnDate, //　行程表 左側欄
+      rowDate: props.dataList.rowDate, //　行程表 上排
+      contentDate: props.dataList.data, //　行程表 Data
 
       itemULW:
-        (100 * props.dataList.rowDate.length) / props.dataList.count.show,
-      itemLIW: 100 / props.dataList.rowDate.length,
+        (100 * props.dataList.rowDate.length) / props.dataList.count.show, // Ul　寬度計算
+      itemLIW: 100 / props.dataList.rowDate.length, // li　寬度計算
 
-      sliderIndex: 0,
-      sliderLiLen: props.dataList.columnDate.length,
+      sliderIndex: 0, // 目前的　index
+      sliderLiLen: props.dataList.columnDate.length, // slider 裡有幾個　li
 
-      styleName: props.className,
-
-      show: props.dataList.count.show,
-      slide: props.dataList.count.slide,
-      speed: props.dataList.speed,
-
-      ifPC: true
+      styleName: props.className, // 目前用哪個　layout
+      show: props.dataList.count.show, // M　版顯示多少格
+      slide: props.dataList.count.slide, // 移動多少格
+      speed: props.dataList.speed, // 移動多少速度
+      ifPC: true, // 是否　pc 狀態
+      sliderLeft: 0 // slider left 移動多少
     };
     // this.windowSizeCheck = this.windowSizeCheck.bind(this);
   }
@@ -46,60 +45,42 @@ class FzDefault extends Component {
     if (e.target.classList.contains("next")) {
       // console.log("next");
       this.setState({ sliderIndex: ++index });
-      console.log(index * slide, sliderLILen);
       if (index * slide >= sliderLILen) {
         console.log("超過了");
         this.setState({ sliderIndex: (index = 0) });
       }
+
+      if (sliderLILen - index * slide < 3) {
+        // slide = 1;
+        // alert("下個超過");
+      }
+      console.log(index * slide, sliderLILen);
     } else {
-      // console.log("prev");
       this.setState({ sliderIndex: --index });
       if (index < 0) {
         this.setState({ sliderIndex: (index = sliderLILen - 1) });
       }
     }
 
+    console.log(
+      "移動多少:" +
+        roundDecimal(this.state.itemULW, 4) / this.state.sliderLiLen,
+      "slide:" + slide,
+      "index:" + index
+    );
+
     move =
       (roundDecimal(this.state.itemULW, 4) / this.state.sliderLiLen) *
       slide *
       index *
       -1;
+
+    this.setState({ sliderLeft: (this.state.sliderLeft = move) }); // 紀錄目前 left　的位置
     elSlider.style.left = move + "%";
   };
 
-  // windowSizeCheck(thisWindow) {
-  //   let elSliderUL = document.querySelectorAll(".slider-move ul");
-  //   let elSliderLI = document.querySelectorAll(".slider-move li");
-  //   if (thisWindow.innerWidth > 768) {
-  //     // console.log("目前為 PC 狀態");
-  //     for (let i = 0; i < elSliderUL.length; i++) {
-  //       elSliderUL[i].removeAttribute("style");
-  //     }
-
-  //     for (let i = 0; i < elSliderLI.length; i++) {
-  //       elSliderLI[i].removeAttribute("style");
-  //     }
-  //   } else {
-  //     console.log("目前為 Mobile 狀態");
-  //     console.log(this.state.itemULW[0]);
-
-  //     // for (let i = 0; i < elSliderUL.length; i++) {
-  //     //   elSliderUL[i].setAttribute(
-  //     //     "style",
-  //     //     "width: " + this.state.itemULW + "%"
-  //     //   );
-  //     // }
-
-  //     // for (let i = 0; i < elSliderLI.length; i++) {
-  //     //   elSliderLI[i].setAttribute(
-  //     //     "style",
-  //     //     "width: " + this.state.itemLIW + "%"
-  //     //   );
-  //     // }
-  //   }
-  // }
-
   componentDidMount() {
+    // 初始判定螢幕目前的狀態
     let self = this;
     if (window.innerWidth > 768) {
       self.setState({ ifPC: true });
@@ -124,6 +105,7 @@ class FzDefault extends Component {
     // console.log(self.state.ifPC);
   }
 
+  // 回傳各種值
   getValue() {
     const { ifPC } = this.state;
     let ulW = ifPC ? "auto" : this.state.itemULW + "%";
@@ -131,21 +113,50 @@ class FzDefault extends Component {
     return { ulW, liW };
   }
 
+  // 被點擊時，十字 focus
+  whenclicked = (e, index) => {
+    console.log(e, index);
+
+    // let rowTd = e.target.parentNode.childNodes;
+    // let tableAllTd = document.querySelectorAll("tbody tr td");
+    // let tableAllTr = document.querySelectorAll("tbody tr");
+    // // 清除所有 activeThis，active
+    // for (let i = 0; i < tableAllTd.length; i++) {
+    //   tableAllTd[i].classList.remove("activeThis");
+    //   tableAllTd[i].classList.remove("active");
+    // }
+    // // row 除了 activeThis 其餘加入 active
+    // for (let i = 0; i < rowTd.length; i++) {
+    //   if (
+    //     rowTd[i].classList.value !== "activeThis" &&
+    //     rowTd[i].tagName !== "TH"
+    //   ) {
+    //     rowTd[i].classList.add("active");
+    //   }
+    // }
+    // // column，加上 active
+    // for (let i = 0; i < tableAllTr.length; i++) {
+    //   tableAllTr[i].childNodes[index + 1].classList.add("active");
+    // }
+    // // 點到的先加 activeThis
+    // e.target.classList.remove("active"); // 自己本身移掉 active
+    // e.target.classList.add("activeThis"); // 自己加上 active
+  };
+
   render() {
     return (
       <div className={this.state.styleName}>
-        <div className="fas fa-angle-right next" onClick={e => this.slider(e)}>
-          {/* <i className="fas fa-angle-right" /> */}
-        </div>
-        <div className="fas fa-angle-left prev" onClick={e => this.slider(e)}>
-          {/* <i className="fas fa-angle-left" /> */}
-        </div>
+        <div
+          className="fas fa-angle-right next"
+          onClick={e => this.slider(e)}
+        />
+        <div className="fas fa-angle-left prev" onClick={e => this.slider(e)} />
         <div className="left">
           <div className="BackAndGo">
             <span>去程</span>
             <span>回程</span>
           </div>
-          <ul>
+          <ul className="columnStyle">
             {this.state.columnDate.map((tags, i) => {
               return <li key={i}>{tags}</li>;
             })}
@@ -156,11 +167,12 @@ class FzDefault extends Component {
             className="slider-move"
             style={{
               transition: "all " + this.state.speed + "s ease",
-              left: 0 + "%"
+              left:
+                this.state.ifPC == true ? 0 + "%" : this.state.sliderLeft + "%"
             }}
           >
             {/* <ul style={{ width: this.state.itemULW + "%" }}> */}
-            <ul style={{ width: this.getValue().ulW }}>
+            <ul className="rowStyle" style={{ width: this.getValue().ulW }}>
               {this.state.rowDate.map((tags, i) => {
                 return (
                   <li style={{ width: this.getValue().liW }} key={i}>
@@ -173,10 +185,22 @@ class FzDefault extends Component {
             {this.state.contentDate.map((tags, i) => {
               return (
                 <ul key={i} style={{ width: this.getValue().ulW }}>
-                  {tags.value.map((index, i) => {
+                  {tags.value.map((value, i) => {
                     return (
-                      <li style={{ width: this.getValue().liW }} key={i}>
-                        {index}
+                      <li
+                        style={{ width: this.getValue().liW }}
+                        key={i}
+                        className={value == 12300 ? "sale" : null}
+                        onClick={e => this.whenclicked(e, i)}
+                      >
+                        {!isNaN(value) ? (
+                          <span>
+                            ${value}
+                            <span className="gray">起</span>
+                          </span>
+                        ) : (
+                          <span className="gray">{value}</span>
+                        )}
                       </li>
                     );
                   })}
