@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
+  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
 }
 
 #Fztable {
@@ -24,8 +24,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  outline: 1px solid #e2e2e2;
   text-align: center;
+  border-top: 1px solid #e2e2e2;
+  border-left: 1px solid #e2e2e2;
 }
 
 #Fztable .default .next,
@@ -75,7 +76,8 @@ body {
 #Fztable .rel .left .BackAndGo {
   width: 100px;
   height: 65px;
-  outline: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
   position: relative;
 }
 
@@ -101,7 +103,8 @@ body {
   width: 100px;
   height: 65px;
   line-height: 65px;
-  outline: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
 }
 
 #Fztable .default .right,
@@ -135,7 +138,8 @@ body {
   cursor: pointer;
   height: 65px;
   line-height: 65px;
-  outline: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
 }
 
 #Fztable .default .right .slider-move > ul li.active,

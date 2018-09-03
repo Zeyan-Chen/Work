@@ -34,7 +34,7 @@ const defaultList = {
   ],
   count: {
     // M版時每次點擊往前往後移動幾格儲存格
-    slide: 7, // [number]
+    slide: 2, // [number]
     // M版時一個畫面show幾格儲存格
     show: 2 // [number]
   },

@@ -17,8 +17,7 @@ $sale-color: #ff8e24;
 }
 
 body {
-  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體",
-    "Microsoft YaHei";
+  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
 }
 
 // mobile
@@ -31,8 +30,9 @@ body {
     width: 100%;
     margin: auto;
     display: flex;
-    outline: 1px solid $color-line;
     text-align: center;
+    border-top: 1px solid $color-line;
+    border-left: 1px solid $color-line;
     .next,
     .prev {
       width: 25px;
@@ -64,7 +64,9 @@ body {
         width: 100px;
         height: 65px; // width: $table-inside-width;
         // height: $table-inside-heigth;
-        outline: 1px solid $color-line;
+        // outline: 1px solid $color-line;
+        border-bottom: 1px solid $color-line;
+        border-right: 1px solid $color-line;
         position: relative;
         span {
           position: absolute;
@@ -78,13 +80,14 @@ body {
           }
         }
       } // BackAndGo end
-      > ul {
+      >ul {
         li {
           width: 100px;
           height: 65px;
           line-height: 65px; // width: $table-inside-width;
-          // height: $table-inside-heigth;
-          outline: 1px solid $color-line;
+          border-bottom: 1px solid $color-line;
+          border-right: 1px solid $color-line; // height: $table-inside-heigth;
+          // outline: 1px solid $color-line;
         }
       }
     } // left end
@@ -96,15 +99,15 @@ body {
         .gray {
           color: gray;
         }
-        position: relative;
-        // transition: all 1s ease-in-out;
-        > ul {
-          display: flex;
+        position: relative; // transition: all 1s ease-in-out;
+        >ul {
+          display: flex; // border-bottom: 1px solid $color-line;
           li {
             cursor: pointer;
             height: 65px;
             line-height: 65px;
-            outline: 1px solid $color-line; // flex: 1;
+            border-bottom: 1px solid $color-line;
+            border-right: 1px solid $color-line;
             &.active {
               background-color: $bgc-active;
             }
@@ -146,8 +149,7 @@ body {
         display: none;
       }
     }
-  }
-  // 最便宜　class
+  } // 最便宜　class
   .sale {
     position: relative;
     &:before {
