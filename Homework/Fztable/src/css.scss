@@ -102,6 +102,13 @@ body {
             height: 65px;
             line-height: 65px;
             outline: 1px solid $color-line; // flex: 1;
+            &.active {
+              background-color: $bgc-active;
+            }
+            &.activeThis {
+              border: 1px solid $line-color-activeThis;
+              background-color: $bgc-activeThis;
+            }
           }
         } // right ul end
         .rowStyle {

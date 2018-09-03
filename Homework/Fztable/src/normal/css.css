@@ -131,6 +131,17 @@ body {
   outline: 1px solid #e2e2e2;
 }
 
+#Fztable .default .right .slider-move > ul li.active,
+#Fztable .rel .right .slider-move > ul li.active {
+  background-color: #f7f7f7;
+}
+
+#Fztable .default .right .slider-move > ul li.activeThis,
+#Fztable .rel .right .slider-move > ul li.activeThis {
+  border: 1px solid #fe8b88;
+  background-color: #fff9e3;
+}
+
 #Fztable .default .right .slider-move .rowStyle li,
 #Fztable .rel .right .slider-move .rowStyle li {
   cursor: auto;

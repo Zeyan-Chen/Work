@@ -115,32 +115,62 @@ class FzDefault extends Component {
 
   // 被點擊時，十字 focus
   whenclicked = (e, index) => {
-    console.log(e, index);
+    let elClicked; // 被按到的那個
+    let rowFocus; // 被按到的那排，橫排
+    let columnFocus; // 被按到的那直行，直排
 
-    // let rowTd = e.target.parentNode.childNodes;
-    // let tableAllTd = document.querySelectorAll("tbody tr td");
-    // let tableAllTr = document.querySelectorAll("tbody tr");
-    // // 清除所有 activeThis，active
-    // for (let i = 0; i < tableAllTd.length; i++) {
-    //   tableAllTd[i].classList.remove("activeThis");
-    //   tableAllTd[i].classList.remove("active");
-    // }
-    // // row 除了 activeThis 其餘加入 active
-    // for (let i = 0; i < rowTd.length; i++) {
-    //   if (
-    //     rowTd[i].classList.value !== "activeThis" &&
-    //     rowTd[i].tagName !== "TH"
-    //   ) {
-    //     rowTd[i].classList.add("active");
-    //   }
-    // }
-    // // column，加上 active
-    // for (let i = 0; i < tableAllTr.length; i++) {
-    //   tableAllTr[i].childNodes[index + 1].classList.add("active");
-    // }
-    // // 點到的先加 activeThis
-    // e.target.classList.remove("active"); // 自己本身移掉 active
-    // e.target.classList.add("activeThis"); // 自己加上 active
+    // 判斷點到進來的格式
+    if (e.target.nodeName !== "LI") {
+      if (e.target.nodeName == "SPAN") {
+        elClicked = e.target.parentNode; // li
+        if (e.target.nodeName == "SPAN") {
+          if (e.target.classList.contains("gray")) {
+            elClicked = e.target.parentNode.parentNode; // li
+          }
+        }
+      }
+    } else {
+      elClicked = e.target;
+    }
+
+    console.log(elClicked);
+
+    //　每次點擊就優先把底下的 li class [active, activeThis] 都刪掉
+    let allLi = document.querySelectorAll(
+      `.${this.state.styleName} .slider-move li`
+    );
+    for (let i = 0; i < allLi.length; i++) {
+      if (
+        allLi[i].classList.contains("active") ||
+        allLi[i].classList.contains("activeThis")
+      ) {
+        allLi[i].classList.remove("active");
+        allLi[i].classList.remove("activeThis");
+      }
+    }
+    elClicked.classList.add("activeThis"); // 點擊到的 el 加上 activethis
+
+    // 橫排的　focus
+    rowFocus = elClicked.parentNode.childNodes;
+    for (let i = 0; i < rowFocus.length; i++) {
+      // 除了　activethis 以外其他都加上　active
+      if (!rowFocus[i].classList.contains("activeThis")) {
+        rowFocus[i].classList.add("active");
+      }
+    }
+
+    // 直排的　focus
+    let columnUL = elClicked.parentNode.parentNode.childNodes;
+    for (let i = 0; i < columnUL.length; i++) {
+      columnFocus = columnUL[i].childNodes[index];
+      if (!columnUL[i].classList.contains("rowStyle")) {
+        columnFocus.classList.add("active");
+      }
+    }
+
+    if (document.querySelector(".activeThis").classList.contains("active")) {
+      document.querySelector(".activeThis").classList.remove("active");
+    }
   };
 
   render() {
@@ -199,7 +229,7 @@ class FzDefault extends Component {
                             <span className="gray">起</span>
                           </span>
                         ) : (
-                          <span className="gray">{value}</span>
+                          <span>{value}</span>
                         )}
                       </li>
                     );

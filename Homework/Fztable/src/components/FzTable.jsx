@@ -17,14 +17,12 @@ class FzTable extends Component {
 
   render() {
     return (
-      // <div>
       <React.Fragment>
         <h1>style: default</h1>
         <FzDefault dataList={this.state.default.dataList} className="default" />
         <h1>style: rel</h1>
-        <FzDefault dataList={this.state.rel.dataList} className="rel" />
+        <FzRel dataList={this.state.rel.dataList} className="rel" />
       </React.Fragment>
-      // </div>
     );
   }
 }
