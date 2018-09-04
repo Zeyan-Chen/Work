@@ -31,37 +31,43 @@ class FzDefault extends Component {
 
   // 輪播
   slider = e => {
+    let sliderLeft = this.state.sliderLeft;
+    let itemULW = this.state.itemULW;
+    let itemLIW = this.state.itemLIW;
+    let slide = this.state.slide;
+    let show = this.state.show;
+    let clickNumber = this.state.sliderIndex;
+
+    // next，prev
     if (e.target.classList.contains("next")) {
+      let move = (sliderLeft += itemLIW * slide);
       this.setState({
-        sliderLeft: (this.state.sliderLeft +=
-          this.state.itemLIW * this.state.slide)
+        sliderLeft: move
       });
-      this.setState({ sliderIndex: ++this.state.sliderIndex });
+
+      this.setState({ sliderIndex: ++clickNumber });
     } else {
       this.setState({
-        sliderLeft: (this.state.sliderLeft -=
-          this.state.itemLIW * this.state.slide)
+        sliderLeft: (sliderLeft -= itemLIW * slide)
       });
-      this.setState({ sliderIndex: --this.state.sliderIndex });
+      this.setState({ sliderIndex: --clickNumber });
     }
 
     // 計算移動到最底的寬度
-    let last = this.state.itemULW - this.state.itemLIW * this.state.show;
-    console.log("前進的寬度:" + this.state.sliderLeft);
-    console.log(
-      "到底:" + (this.state.itemULW - this.state.itemLIW * this.state.show)
-    );
+    let last = itemULW - itemLIW * show;
+    console.log("前進的寬度:" + sliderLeft);
+    console.log("到底:" + last);
 
-    if (this.state.sliderLeft >= last) {
+    if (sliderLeft >= last) {
       console.log("超過了");
-      this.setState({ sliderLeft: (this.state.sliderLeft = last) });
+      this.setState({ sliderLeft: (sliderLeft = last) });
       document.querySelector(".next").classList.add("hidden");
     } else {
       document.querySelector(".next").classList.remove("hidden");
     }
 
-    if (this.state.sliderLeft <= 0) {
-      this.setState({ sliderLeft: (this.state.sliderLeft = 0) });
+    if (sliderLeft <= 0) {
+      this.setState({ sliderLeft: (sliderLeft = 0) });
       document.querySelector(".prev").classList.add("hidden");
     } else {
       document.querySelector(".prev").classList.remove("hidden");
@@ -79,27 +85,12 @@ class FzDefault extends Component {
 
     // 當螢幕寬度大於 768 時把 style 全部刪掉，小於時則全部 + style
     window.addEventListener("resize", function(e) {
-      // self.windowSizeCheck(e);
-      // let elSliderUL = document.querySelectorAll(".slider-move ul");
-      // let elSliderLI = document.querySelectorAll(".slider-move li");
       if (e.target.innerWidth > 768) {
         self.setState({ ifPC: true });
       } else {
         self.setState({ ifPC: false });
       }
-      self.getValue().ulW;
-      self.getValue().liW;
-      // console.log(self.state.ifPC);
-    }); // window end
-    // console.log(self.state.ifPC);
-  }
-
-  // 回傳各種值
-  getValue() {
-    const { ifPC } = this.state;
-    let ulW = ifPC ? "auto" : this.state.itemULW + "%";
-    let liW = ifPC ? "auto" : this.state.itemLIW + "%";
-    return { ulW, liW };
+    });
   }
 
   // 被點擊時，十字 focus
@@ -110,9 +101,9 @@ class FzDefault extends Component {
 
     // 判斷點到進來的格式
     if (e.target.nodeName !== "LI") {
-      if (e.target.nodeName == "SPAN") {
+      if (e.target.nodeName === "SPAN") {
         elClicked = e.target.parentNode; // li
-        if (e.target.nodeName == "SPAN") {
+        if (e.target.nodeName === "SPAN") {
           if (e.target.classList.contains("gray")) {
             elClicked = e.target.parentNode.parentNode; // li
           }
@@ -162,8 +153,6 @@ class FzDefault extends Component {
   };
 
   render() {
-    console.log(this.state.sliderLeft);
-
     return (
       <div className={this.state.styleName}>
         <div
@@ -193,16 +182,27 @@ class FzDefault extends Component {
           <div
             className="slider-move"
             style={{
-              transition: "all " + this.state.speed + "s ease",
-              left:
-                this.state.ifPC == true ? 0 + "%" : -this.state.sliderLeft + "%"
+              transition: this.state.ifPC
+                ? null
+                : "all " + this.state.speed + "s ease",
+              left: this.state.ifPC ? null : -this.state.sliderLeft + "%"
             }}
           >
             {/* <ul style={{ width: this.state.itemULW + "%" }}> */}
-            <ul className="rowStyle" style={{ width: this.getValue().ulW }}>
+            <ul
+              className="rowStyle"
+              style={{
+                width: this.state.ifPC ? null : this.state.itemULW + "%"
+              }}
+            >
               {this.state.rowDate.map((tags, i) => {
                 return (
-                  <li style={{ width: this.getValue().liW }} key={i}>
+                  <li
+                    style={{
+                      width: this.state.ifPC ? null : this.state.itemLIW + "%"
+                    }}
+                    key={i}
+                  >
                     {tags}
                   </li>
                 );
@@ -211,13 +211,22 @@ class FzDefault extends Component {
 
             {this.state.contentDate.map((tags, i) => {
               return (
-                <ul key={i} style={{ width: this.getValue().ulW }}>
+                <ul
+                  key={i}
+                  style={{
+                    width: this.state.ifPC ? null : this.state.itemULW + "%"
+                  }}
+                >
                   {tags.value.map((value, i) => {
                     return (
                       <li
-                        style={{ width: this.getValue().liW }}
+                        style={{
+                          width: this.state.ifPC
+                            ? null
+                            : this.state.itemLIW + "%"
+                        }}
                         key={i}
-                        className={value == 12300 ? "sale" : null}
+                        className={value === 12300 ? "sale" : null}
                         onClick={e => this.whenclicked(e, i)}
                       >
                         {!isNaN(value) ? (

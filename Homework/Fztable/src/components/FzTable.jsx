@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "../style/css.min.css";
 import FzDefault from "./FzDefault";
-import FzRel from "./FzRel";
+// import FzRel from "./FzRel";
 
 class FzTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
       default: {
-        dataList: props.defaultList,
-        item: { itemULW: 100, itemLIW: 100 }
+        dataList: props.defaultList
       },
       rel: { dataList: props.relList }
     };
@@ -21,7 +20,7 @@ class FzTable extends Component {
         <h1>style: default</h1>
         <FzDefault dataList={this.state.default.dataList} className="default" />
         <h1>style: rel</h1>
-        <FzRel dataList={this.state.rel.dataList} className="rel" />
+        {/* <FzRel dataList={this.state.rel.dataList} className="rel" /> */}
       </React.Fragment>
     );
   }
