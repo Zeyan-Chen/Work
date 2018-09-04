@@ -45,6 +45,7 @@ class FzDefault extends Component {
       this.setState({ sliderIndex: --this.state.sliderIndex });
     }
 
+    // 計算移動到最底的寬度
     let last = this.state.itemULW - this.state.itemLIW * this.state.show;
     console.log("前進的寬度:" + this.state.sliderLeft);
     console.log(
@@ -154,7 +155,7 @@ class FzDefault extends Component {
       }
     }
 
-    // 只要有加上　activeThis 的　class active 就拿掉
+    // 只要有加上　activeThis 的 active 就拿掉
     if (document.querySelector(".activeThis").classList.contains("active")) {
       document.querySelector(".activeThis").classList.remove("active");
     }
@@ -173,8 +174,8 @@ class FzDefault extends Component {
           onClick={e => this.slider(e)}
           className={
             this.state.sliderLeft === 0
-              ? "fas fa-angle-right prev hidden"
-              : "fas fa-angle-right prev"
+              ? "fas fa-angle-left prev hidden"
+              : "fas fa-angle-left prev"
           }
         />
         <div className="left">
