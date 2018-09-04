@@ -16,36 +16,12 @@ class FzTable extends Component {
 
   render() {
     return (
-      // <React.Fragment>
-      <div>
+      <React.Fragment>
         <h1>style: default</h1>
         <FzDefault dataList={this.state.default.dataList} />
         <h1>style: rel</h1>
         <FzRel dataList={this.state.rel.dataList} />
-      </div>
-      //</React.Fragment> */}
-      // React.createElement(
-      //   FzDefault,
-      //   {
-      //     dataList: this.state.default.dataList,
-      //     className: "default"
-      //   },
-      //   React.createElement(FzRel, {
-      //     dataList: this.state.rel.dataList,
-      //     className: "rel"
-      //   })
-      // )
-
-      // FzDefault,
-      // {
-      //   dataList: this.state.default.dataList,
-      //   className: "default"
-      // },
-      // FzRel,
-      // {
-      //   dataList: this.state.rel.dataList,
-      //   className: "rel"
-      // }
+      </React.Fragment>
     );
   }
 }

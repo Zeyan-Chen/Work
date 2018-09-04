@@ -4,7 +4,7 @@ class FzRel extends Component {
   // 從 FzTable.jsx 收到的值傳進 state
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
     this.state = {
       columnDate: props.dataList.columnDate, //　行程表 左側欄
       rowDate: props.dataList.rowDate, //　行程表 上排

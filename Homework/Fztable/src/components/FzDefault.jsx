@@ -4,7 +4,7 @@ class FzDefault extends Component {
   // 從 FzTable.jsx 收到的值傳進 state
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
     this.state = {
       columnDate: props.dataList.columnDate, //　行程表 左側欄
       rowDate: props.dataList.rowDate, //　行程表 上排
@@ -102,7 +102,12 @@ class FzDefault extends Component {
   }
 
   // 被點擊時，十字 focus
-  whenclicked = (e, index) => {
+  whenclicked = (e, index, value) => {
+    // console.log(value);
+    // if (value == "--" || value == "查看") {
+    //   return false;
+    // }
+
     let elClicked; // 被按到的那個
     let rowFocus; // 被按到的那排，橫排
     let columnFocus; // 被按到的那直行，直排
@@ -196,7 +201,6 @@ class FzDefault extends Component {
               left: this.state.ifPC ? null : -this.state.sliderLeft + "%"
             }}
           >
-            {/* <ul style={{ width: this.state.itemULW + "%" }}> */}
             <ul
               className="rowStyle"
               style={{
@@ -235,7 +239,7 @@ class FzDefault extends Component {
                         }}
                         key={i}
                         className={value === "12300" ? "sale" : null}
-                        onClick={e => this.whenclicked(e, i)}
+                        onClick={e => this.whenclicked(e, i, value)}
                       >
                         {!isNaN(value) ? (
                           <span>
@@ -243,7 +247,7 @@ class FzDefault extends Component {
                             <span className="gray">起</span>
                           </span>
                         ) : (
-                          <span>{value}</span>
+                          <span className="gray">{value}</span>
                         )}
                       </li>
                     );
