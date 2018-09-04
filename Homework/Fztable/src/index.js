@@ -5,6 +5,7 @@ import FzTable from "./components/FzTable";
 import registerServiceWorker from "./registerServiceWorker";
 
 const defaultList = {
+  styleName: "default",
   rowDate: [
     "12/30(六)",
     "12/31(日)",
@@ -34,9 +35,9 @@ const defaultList = {
   ],
   count: {
     // M版時每次點擊往前往後移動幾格儲存格
-    slide: 3, // [number]
+    slide: 2, // [number]
     // M版時一個畫面show幾格儲存格
-    show: 3 // [number]
+    show: 2 // [number]
   },
   // 設定花多久時間移動完成
   speed: 0.6, // [number]
@@ -47,11 +48,31 @@ const defaultList = {
 };
 
 const relList = {
-  rowDate: ["東京成田", "東京羽田", "大阪關西", "大阪關西", "大阪關西"],
-  columnDate: ["TPE", "HKG", "PVG"],
+  styleName: "rel",
+  rowDate: [
+    { chiness: "東京成田", english: "NRT" },
+    { chiness: "東京羽田", english: "HND" },
+    { chiness: "大阪關西", english: "KIX" },
+    { chiness: "", english: "" },
+    { chiness: "", english: "" }
+  ],
+  columnDate: [
+    {
+      chiness: "桃園國際機場",
+      english: "TPE"
+    },
+    {
+      chiness: "赤臘角機場",
+      english: "HKG"
+    },
+    {
+      chiness: "上海浦東機場",
+      english: "PVG"
+    }
+  ],
   data: [
     { value: ["15568", "15568", "15568", "--", "--"] },
-    { value: ["15568", "15568", "15568", "--", "--"] },
+    { value: ["15568", "12300", "15568", "--", "--"] },
     { value: ["15568", "15568", "15568", "--", "--"] }
   ],
   count: {

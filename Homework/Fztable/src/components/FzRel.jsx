@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class FzDefault extends Component {
+class FzRel extends Component {
   // 從 FzTable.jsx 收到的值傳進 state
   constructor(props) {
     super(props);
@@ -102,23 +102,23 @@ class FzDefault extends Component {
   }
 
   // 被點擊時，十字 focus
-  whenclicked = (e, index) => {
-    let elClicked; // 被按到的那個
-    let rowFocus; // 被按到的那排，橫排
-    let columnFocus; // 被按到的那直行，直排
+  whenclicked = (e, index, value) => {
+    // 點到的值為 -- 就不做了
+    if (value === "--") {
+      return false;
+    }
 
-    // 判斷點到進來的格式
-    if (e.target.nodeName !== "LI") {
+    let elClicked; // 被按到的那個
+    // // 判斷點到進來的格式
+    if (e.target.nodeName === "SPAN") {
+      elClicked = e.target.parentNode; // li
       if (e.target.nodeName === "SPAN") {
-        elClicked = e.target.parentNode; // li
-        if (e.target.nodeName === "SPAN") {
-          if (e.target.classList.contains("gray")) {
-            elClicked = e.target.parentNode.parentNode; // li
-          }
+        if (e.target.classList.contains("gray")) {
+          elClicked = e.target.parentNode.parentNode; // li
         }
       }
     } else {
-      elClicked = e.target;
+      elClicked = e.target; // li
     }
 
     //　每次點擊就優先把底下的 li class [active, activeThis] 都刪掉
@@ -126,38 +126,52 @@ class FzDefault extends Component {
       `.${this.state.styleName} .slider-move li`
     );
     for (let i = 0; i < allLi.length; i++) {
-      if (
-        allLi[i].classList.contains("active") ||
-        allLi[i].classList.contains("activeThis")
-      ) {
-        allLi[i].classList.remove("active");
+      if (allLi[i].classList.contains("activeThis")) {
         allLi[i].classList.remove("activeThis");
       }
     }
-    elClicked.classList.add("activeThis"); // 點擊到的 el 加上 activethis
 
-    // 橫排的　focus
-    rowFocus = elClicked.parentNode.childNodes;
-    for (let i = 0; i < rowFocus.length; i++) {
-      // 除了　activethis 以外其他都加上　active
-      if (!rowFocus[i].classList.contains("activeThis")) {
-        rowFocus[i].classList.add("active");
+    // 一進來先移除飛機 class
+    let allAirplaneClass = document.querySelectorAll(".fa-plane");
+    for (let i = 0; i < allAirplaneClass.length; i++) {
+      allAirplaneClass[i].classList.remove("fa-plane");
+      allAirplaneClass[i].parentNode.classList.remove("focuscolor");
+    }
+
+    // 點擊到的 el 加上 activethis
+    elClicked.classList.add("activeThis");
+
+    // 橫排加飛機
+    let elRowLI = document.querySelectorAll(
+      `.${this.state.styleName} .rowStyle li`
+    );
+    let rowAirplane = document.createElement("I");
+    rowAirplane.setAttribute("class", "fas fa-plane");
+    elRowLI[index].appendChild(rowAirplane);
+    elRowLI[index].classList.add("focuscolor");
+
+    // 直排加飛機
+    let columnIndex; // 直排有 activeThis index
+    let elColumnLI = document.querySelectorAll(
+      `.${this.state.styleName} .columnStyle li`
+    );
+    let elSliderUL = document.querySelectorAll(
+      `.${this.state.styleName} .slider-move ul`
+    );
+
+    // 算出目前直排點到的 index
+    for (let i = 0; i < elSliderUL.length; i++) {
+      for (let y = 0; y < elSliderUL[i].childNodes.length; y++) {
+        if (elSliderUL[i].childNodes[y].classList.contains("activeThis")) {
+          columnIndex = i;
+          break;
+        }
       }
     }
-
-    // 直排的　focus
-    let columnUL = elClicked.parentNode.parentNode.childNodes;
-    for (let i = 0; i < columnUL.length; i++) {
-      columnFocus = columnUL[i].childNodes[index];
-      if (!columnUL[i].classList.contains("rowStyle")) {
-        columnFocus.classList.add("active");
-      }
-    }
-
-    // 只要有加上　activeThis 的 active 就拿掉
-    if (document.querySelector(".activeThis").classList.contains("active")) {
-      document.querySelector(".activeThis").classList.remove("active");
-    }
+    let columnAirplane = document.createElement("I");
+    columnAirplane.setAttribute("class", "fas fa-plane");
+    elColumnLI[columnIndex - 1].appendChild(columnAirplane);
+    elColumnLI[columnIndex - 1].classList.add("focuscolor");
   };
 
   render() {
@@ -177,12 +191,22 @@ class FzDefault extends Component {
         />
         <div className="left">
           <div className="BackAndGo">
-            <span>去程</span>
-            <span>回程</span>
+            <span>
+              <i className="fas fa-arrow-down" />
+              出發地
+            </span>
+            <span>
+              目的地 <i className="fas fa-arrow-right" />
+            </span>
           </div>
           <ul className="columnStyle">
             {this.state.columnDate.map((tags, i) => {
-              return <li key={i}>{tags}</li>;
+              return (
+                <li key={i}>
+                  <h3>{tags.english}</h3>
+                  <p>{tags.chiness}</p>
+                </li>
+              );
             })}
           </ul>
         </div>
@@ -206,12 +230,19 @@ class FzDefault extends Component {
               {this.state.rowDate.map((tags, i) => {
                 return (
                   <li
+                    key={i}
                     style={{
                       width: this.state.ifPC ? null : this.state.itemLIW + "%"
                     }}
-                    key={i}
                   >
-                    {tags}
+                    <h3>{tags.english}</h3>
+                    <p
+                      className={
+                        tags.chiness === "" ? "gray disableStyle" : null
+                      }
+                    >
+                      {tags.chiness === "" ? "請選擇目的地" : tags.chiness}
+                    </p>
                   </li>
                 );
               })}
@@ -235,15 +266,18 @@ class FzDefault extends Component {
                         }}
                         key={i}
                         className={value === "12300" ? "sale" : null}
-                        onClick={e => this.whenclicked(e, i)}
+                        onClick={e => this.whenclicked(e, i, value)}
                       >
+                        <span>{value === "--" ? null : "中華航空公司"}</span>
                         {!isNaN(value) ? (
                           <span>
                             ${value}
                             <span className="gray">起</span>
                           </span>
                         ) : (
-                          <span>{value}</span>
+                          <span className={value === "--" ? "gray" : null}>
+                            {value}
+                          </span>
                         )}
                       </li>
                     );
@@ -258,4 +292,4 @@ class FzDefault extends Component {
   }
 }
 
-export default FzDefault;
+export default FzRel;

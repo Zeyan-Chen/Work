@@ -17,7 +17,25 @@ $sale-color: #ff8e24;
 }
 
 body {
-  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
+  font-family: Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體",
+    "Microsoft YaHei";
+}
+
+%TopLeftStyle {
+  border-bottom: 1px solid $color-line;
+  border-right: 1px solid $color-line;
+  position: relative;
+  span {
+    position: absolute;
+    &:nth-child(1) {
+      bottom: 5px;
+      left: 5px;
+    }
+    &:nth-child(2) {
+      top: 5px;
+      right: 5px;
+    }
+  }
 }
 
 // mobile
@@ -54,44 +72,7 @@ body {
         display: none;
       }
     }
-    .next {
-      right: 0;
-    }
-    .prev {
-      left: 100px;
-    }
-    .left {
-      .BackAndGo {
-        width: 100px;
-        height: 65px; // width: $table-inside-width;
-        // height: $table-inside-heigth;
-        // outline: 1px solid $color-line;
-        border-bottom: 1px solid $color-line;
-        border-right: 1px solid $color-line;
-        position: relative;
-        span {
-          position: absolute;
-          &:nth-child(1) {
-            bottom: 5px;
-            left: 5px;
-          }
-          &:nth-child(2) {
-            top: 5px;
-            right: 5px;
-          }
-        }
-      } // BackAndGo end
-      >ul {
-        li {
-          width: 100px;
-          height: 65px;
-          line-height: 65px; // width: $table-inside-width;
-          border-bottom: 1px solid $color-line;
-          border-right: 1px solid $color-line; // height: $table-inside-heigth;
-          // outline: 1px solid $color-line;
-        }
-      }
-    } // left end
+
     .right {
       position: relative;
       flex: 1;
@@ -101,22 +82,8 @@ body {
           color: gray;
         }
         position: relative; // transition: all 1s ease-in-out;
-        >ul {
+        > ul {
           display: flex; // border-bottom: 1px solid $color-line;
-          li {
-            cursor: pointer;
-            height: 65px;
-            line-height: 65px;
-            border-bottom: 1px solid $color-line;
-            border-right: 1px solid $color-line;
-            &.active {
-              background-color: $bgc-active;
-            }
-            &.activeThis {
-              border: 1px solid $line-color-activeThis;
-              background-color: $bgc-activeThis;
-            }
-          }
         } // right ul end
         .rowStyle {
           li {
@@ -133,6 +100,133 @@ body {
       background-color: $bgc-column-month;
     }
   } // default end
+  .default {
+    .BackAndGo {
+      width: 100px;
+      height: 65px;
+      @extend %TopLeftStyle;
+    } // BackAndGo end
+    .left {
+      > ul {
+        li {
+          width: 100px;
+          height: 65px;
+          line-height: 65px; // width: $table-inside-width;
+          border-bottom: 1px solid $color-line;
+          border-right: 1px solid $color-line; // height: $table-inside-heigth;
+          // outline: 1px solid $color-line;
+        }
+      }
+    } // left end
+    .right {
+      li {
+        cursor: pointer;
+        height: 65px;
+        line-height: 65px;
+        border-bottom: 1px solid $color-line;
+        border-right: 1px solid $color-line;
+        &.active {
+          background-color: $bgc-active;
+        }
+        &.activeThis {
+          border: 1px solid $line-color-activeThis;
+          background-color: $bgc-activeThis;
+        }
+      }
+    }
+    .next {
+      right: 0;
+    }
+    .prev {
+      left: 100px;
+    }
+  } // default end
+
+  .rel {
+    .BackAndGo {
+      width: 150px;
+      height: 65px;
+      @extend %TopLeftStyle;
+    }
+    .left {
+      > ul {
+        li {
+          width: 150px;
+          height: 65px;
+          border-bottom: 1px solid $color-line;
+          border-right: 1px solid $color-line; // height: $table-inside-heigth;
+          // outline: 1px solid $color-line;
+        }
+      }
+    } // left end
+    .right {
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        height: 65px;
+        border-bottom: 1px solid $color-line;
+        border-right: 1px solid $color-line;
+        &.active {
+          background-color: $bgc-active;
+        }
+        &.activeThis {
+          border: 1px solid $line-color-activeThis;
+          background-color: $bgc-activeThis;
+        }
+      }
+    }
+    .columnStyle {
+      text-align: left;
+      li {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 10px;
+        p {
+          margin-top: 5px;
+        }
+      }
+      .focuscolor {
+        color: $sale-color;
+      }
+    }
+    .rowStyle {
+      li {
+        position: relative;
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        padding: 0 10px;
+      }
+      .focuscolor {
+        color: $sale-color;
+      }
+    }
+    .fa-plane {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 12px;
+      color: $sale-color;
+    }
+    .next {
+      right: 0;
+    }
+    .prev {
+      left: 150px;
+    }
+    .disableStyle {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  } // rel end
   // pc
   @media screen and (min-width: $screen-tablet) {
     width: 90%;
@@ -178,52 +272,3 @@ body {
     }
   }
 }
-
-// ##{$classname} {
-//   // outline: 1px solid #f00;
-//   table {
-//     width: 80%;
-//     margin: auto;
-//     text-align: center;
-//     border-collapse: collapse;
-//     tr {
-//       height: 64px;
-//       th,
-//       td {
-//         outline: 1px solid $color-line;
-//       }
-//       td {
-//         cursor: pointer;
-//         &.activeThis {
-//           outline: 1px solid $line-color-activeThis;
-//           background-color: $bgc-activeThis;
-//         }
-//         &.active {
-//           background-color: $bgc-active;
-//         }
-//       }
-//     }
-//     thead {
-//       background-color: $bgc-top-month;
-//     }
-//     tbody {
-//       th {
-//         background-color: $bgc-column-month;
-//       }
-//     }
-//     .BackAndGo {
-//       position: relative;
-//       span {
-//         position: absolute;
-//         &:nth-child(1) {
-//           bottom: 5px;
-//           left: 5px;
-//         }
-//         &:nth-child(2) {
-//           top: 5px;
-//           right: 5px;
-//         }
-//       }
-//     }
-//   }
-// }
