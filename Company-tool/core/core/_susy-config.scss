@@ -1,0 +1,21 @@
+// -------------------------------------
+// Susy 設定
+// -------------------------------------
+$susy: (
+	flow: ltr,
+	math: fluid,
+	output: float,
+	gutter-position: inside-static,
+	container: auto,
+	container-position: center,
+	columns: $grid-columns,
+	gutters: 1/4,
+	column-width: 40px,
+	global-box-sizing: border-box,
+	use-custom: (
+		background-image: true,
+		background-options: false,
+		box-sizing: true,
+		clearfix: true
+	)
+);

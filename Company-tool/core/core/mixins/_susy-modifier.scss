@@ -1,0 +1,68 @@
+// **************************************
+// Susy Modifier
+// 
+// **************************************
+
+@mixin span( $span ) {
+	$inspect: $span;
+	$span: parse-span($span);
+	$output: span-math($span);
+	$nesting: susy-get(span, $span);
+	$clear: susy-get(clear, $span);
+
+	$box: susy-get(box-sizing, $span);
+	$content-box: if(susy-get(global-box-sizing) != 'border-box', true, false);
+	$box: $box or if(is-inside($span) and $content-box, border-box, null);
+
+	@if $clear == break {
+		@include break;
+	} @else if $clear == nobreak {
+		@include nobreak;
+	}
+
+	@include susy-inspect(span, $inspect);
+	@include output((box-sizing: $box));
+	@include float-span-output($output...);
+
+	@if valid-columns($nesting, silent) {
+		@include nested($span) { @content; }
+	} @else {
+		@content;
+	}
+	// 指定为相对位置，结合将来的left和right，是为了实现pull和push功能
+	position: relative;
+	// 使div不至于因为没有内容而收缩
+	min-height: 1px;
+};
+@mixin container( $layout: $susy ) {
+	$inspect    : $layout;
+	$layout     : parse-grid($layout);
+
+	$_width     : get-container-width($layout);
+	$_justify   : parse-container-position(susy-get(container-position, $layout));
+	$_property  : if(susy-get(math, $layout) == static, width, max-width);
+
+	$_box       : susy-get(box-sizing, $layout);
+
+	@if $_box {
+		@include output((box-sizing: $_box));
+	}
+
+	@include susy-inspect(container, $inspect);
+	@include float-container($_width, $_justify, $_property);
+	@include show-grid($layout);
+
+	
+	padding-left:  floor(($gutter / 2));
+	padding-right: ceil(($gutter / 2));
+	// 直接為container設定每個斷點的max-width寬
+	@include susy-breakpoint($screen-tablet) {
+		max-width: $container-sm;
+	};
+	@include susy-breakpoint($screen-desktop) {
+		max-width: $container-md;
+	};
+	@include susy-breakpoint($screen-lg-desktop) {
+		max-width: $container-lg;
+	};
+};

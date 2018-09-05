@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>JS Bin</title>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+(function($) {
+'use strict';
+    var ModuleName = 'lbx_lnop';
+
+    var Module = function ( ele, options ) {
+        this.ele = ele;
+        this.$ele = $(ele);
+        this.option = options;
+    };
+
+    Module.prototype.func = function () {
+        console.log('this is a prototype function!!!');
+    };
+
+    Module.prototype.method = function () {
+        console.log('this is a prototype function!!!');
+    };
+
+    $.fn[ModuleName] = function ( methods, options ) {
+        return this.each(function() {
+            var opts = $.extend( {}, ( typeof methods === 'object' && options ), ( typeof options === 'object' && options ) );
+            var module = new Module(this, opts);
+            // Do something to each element here.
+        });
+    };
+
+})(jQuery);
+</script>
+<a href="">123</a>
+<a href="">456</a>
+
+<script type="text/javascript">
+$(function() {
+	$( "a" ).lbx_lnop();
+});
+</script>
+</body>
+
+</html>

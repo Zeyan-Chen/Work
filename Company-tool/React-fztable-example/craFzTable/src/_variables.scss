@@ -1,0 +1,135 @@
+// **************************************
+// 
+// Root Variables 
+// 
+// **************************************
+
+// -------------------------------------
+// 色彩變數
+// -------------------------------------
+
+// Light Gray
+$light-gray-lighter    : #f4f4f4;
+$light-gray-light      : #e3e3e3;
+$light-gray            : #d2d2d2;
+$light-gray-dark       : #c1c1c1;
+$light-gray-darker     : #bbb;
+// Dark Gray
+$dark-gray-lighter     : #999;
+$dark-gray-light       : #666;
+$dark-gray             : #444;
+$dark-gray-dark        : #222;
+$dark-gray-darker      : #111;
+
+
+// -------------------------------------
+// 基本設置
+// -------------------------------------
+
+// body背景色
+$body-bg               : #fff;
+// 文字基本色
+$text-color            : $dark-gray;
+// 一般連結顏色
+$link-color            : #0077b3;
+// 連結Hover顏色
+$link-hover-color      : $link-color;
+// 連結預設有底線
+$link-decoration       : none;
+// 連結Hover無底線
+$link-hover-decoration : underline;
+// 分隔線（hr）顏色
+$hr-border             : #b9b9b9;
+
+// 字型設計
+$font-family-base      : Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
+$font-family-heading   : Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "微軟雅黑體", "Microsoft YaHei";
+
+// -------------------------------------
+// 字級大小設定
+// -------------------------------------
+
+// 基礎大小為16
+$font-size-base        : 16px;
+// ~32px
+$font-size-xxx-large   : ceil(($font-size-base * 2));
+// ~28px
+$font-size-xx-large    : ceil(($font-size-base * 1.75));
+// ~24px
+$font-size-x-large     : ceil(($font-size-base * 1.5));
+// ~20px
+$font-size-large       : ceil(($font-size-base * 1.25));
+// ~16px
+$font-size-medium      : $font-size-base;
+// ~14px 
+$font-size-smedium	   : ceil(($font-size-base * 0.875));
+// ~13px
+$font-size-small       : ceil(($font-size-base * 0.8125));
+// ~10px
+$font-size-x-small     : ceil(($font-size-base * 0.625));
+
+// -------------------------------------
+// HTML 字級指定
+// -------------------------------------
+
+// 基本字級 14px
+$font-size-body        : $font-size-smedium;
+
+// 行高設定
+$line-height-base      : 1.5;
+$line-height-computed  : 20px;
+
+// 標題字型與字級設定
+$font-size-h1          : $font-size-xx-large;
+$font-size-h2          : $font-size-x-large;
+$font-size-h3          : $font-size-large;
+$font-size-h4          : $font-size-medium;
+$font-size-h5          : $font-size-small;
+$font-size-h6          : $font-size-small;
+
+$headings-small-color : inherit;
+$headings-font-family : $font-family-heading;
+$headings-font-weight : 600;
+$headings-line-height : 1.5;
+$headings-color       : inherit;
+
+$text-muted           : $dark-gray;
+
+// -------------------------------------
+// Layout 變數
+// -------------------------------------
+
+$grid-columns         : 24;
+$grid-gutter-width    : 10px;
+
+$screen-xs            : 320px !default;
+$screen-xs-min        : $screen-xs !default;
+
+$screen-sm            : 768px !default;
+$screen-sm-min        : $screen-sm !default;
+
+$screen-md            : 980px !default;
+$screen-md-min        : $screen-md !default;
+
+$screen-lg            : 1280px !default;
+$screen-lg-min        : $screen-lg !default;
+
+// Container 大小
+$container-sm         : $screen-sm-min !default;
+$container-md         : 960px !default;
+$container-lg         : 1200px !default;
+
+$screen-xs-max		  : ($screen-sm-min - 1) !default;
+$screen-sm-max		  : ($screen-md-min - 1) !default;
+$screen-md-max		  : ($screen-lg-min - 1) !default;
+
+
+// 給Media Query 或 Breakpoint 設定用的變數
+$screen-phone		  : $screen-xs-min !default;
+$screen-tablet		  : $screen-sm-min !default;
+$screen-desktop		  : $screen-md-min !default;
+$screen-lg-desktop	  : $screen-lg-min !default;
+
+$screen-phone-max		  : $screen-xs-max !default;
+$screen-tablet-max		  : $screen-sm-max !default;
+$screen-desktop-max		  : $screen-md-max !default;

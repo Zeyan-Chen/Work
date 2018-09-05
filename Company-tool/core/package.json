@@ -1,0 +1,40 @@
+{
+  "name": "@magaele/core",
+  "version": "1.0.0",
+  "description": "A low-level css toolkit supported base style, class library, sass mixins",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "develop": "cross-env NODE_ENV=develop webpack",
+    "publish": "cross-env NODE_ENV=production webpack"
+  },
+  "keywords": [
+    "css",
+    "library"
+  ],
+  "author": "jivecheng",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.5.2",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "imports-loader": "^0.7.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.0.0",
+    "webpack-shell-plugin": "^0.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.liontech.com.tw/core.git"
+  },
+  "dependencies": {
+    "cross-storage": "^1.0.0",
+    "es6-promise": "^4.1.1",
+    "extend": "^3.0.1"
+  }
+}

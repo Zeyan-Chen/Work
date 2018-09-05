@@ -1,0 +1,4 @@
+@function resource-path ($dir1) {
+	$path: if(global-variable-exists(global-resource-path),$global-resource-path +'/' + $dir1,'.');
+	@return $path;
+}
