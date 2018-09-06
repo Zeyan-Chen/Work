@@ -1,0 +1,31 @@
+// **************************************
+// Core
+// **************************************
+// 如果是Ruby環境
+// @import "susy";
+// 如果是node.js使用bower套件管理環境
+// @import "lib/susy/sass/susy";
+// -------------------------------------
+// 戴入設計資源庫CSS Mixins
+// -------------------------------------
+@import "core/mixins";
+// -------------------------------------
+// 戴入設計資源庫核心變數與樣式
+// -------------------------------------
+@import "core/variables";
+/* @if THEME=='uplantravel' **
+	@import "core/themes/uplantravel.scss";
+/* @endif */
+:global {
+@import "core/normalize";
+@import "core/base";
+@import "core/print";
+@import "core/typography";
+@import "core/utility";
+@import "core/responsive-utilities";
+@import "core/grid";
+}
+// -------------------------------------
+// Susy 設定載入
+// -------------------------------------
+@import "core/susy-config";

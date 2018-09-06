@@ -16,7 +16,6 @@ class Calender extends Component {
     return (
       <div>
         <CalenderModule />
-        {/* <h1>123</h1> */}
         {/* <input
           type="text"
           value={this.state.inputValue}

@@ -1,0 +1,15 @@
+@function list-slice($list, $start, $end: length($list)) {
+	@if $start > length($list) {
+		@return ();
+	}
+	$new-list: ();
+	@for $i from $start through $end {
+		$new-list: append($new-list, nth($list, $i), list-separator($list));
+	}
+	@return $new-list;
+}
+@function get-theme($map, $keys...) {
+	@return if(length($keys) == 1,
+		map-get($map, nth($keys, 1)),
+		get-theme(map-get($map, nth($keys, 1)), list-slice($keys, 2)...));
+}

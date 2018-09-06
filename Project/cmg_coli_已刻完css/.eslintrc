@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint-config-alloy/react",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-void": "off",
+    "space-before-function-paren": ["error", "always"]
+  }
+}

@@ -1,0 +1,151 @@
+/**
+ * Import core mixins, variables, or others
+ */
+@import "../core/core/mixins";
+@import "../core/core/variables";
+/**
+ * Define your classname
+ */
+$classname: "cmg_coli";
+/*
+ * Start your css code
+ */
+.#{$classname} {
+  display: block;
+
+  .btn-1 {
+    width: 72px;
+    height: 24px;
+    border-radius: 3px;
+    background-color: #ff615d;
+    line-height: 24px;
+    text-align: center;
+    font-family: MicrosoftJhengHei;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(34, 34, 34, 0.2);
+    // background-color: var(--grapefruit);
+  }
+
+  .btn-2 {
+    width: 35px;
+    height: 24px;
+    border-radius: 3px;
+    background-color: #ff8400;
+    color: #fff;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    // background-color: var(--pumpkin-orange);
+  }
+
+  .title {
+    width: 132px;
+    height: 46px;
+    position: relative;
+    h1 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      padding: 0;
+    }
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      background-color: #ffe0e0;
+      border-radius: 50%;
+    }
+  }
+
+  .gray {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #222222;
+  }
+
+  ul {
+    padding: 0;
+    li {
+      // outline: 1px solid #f00;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      border-bottom: 1px solid #dddddd;
+      font-size: 16px;
+      padding: 0 10px;
+      &:first-child {
+        border-top: 1px solid #dddddd;
+      }
+      &:nth-child(even) {
+        background-color: #f4f3ea;
+      }
+      .left {
+        // outline: 1px solid blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        * {
+          margin-right: 5px;
+        }
+        .text {
+          font-family: MicrosoftJhengHei;
+          font-size: 16px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          color: #222222;
+        }
+      }
+      .right {
+        // outline: 1px solid blue;
+        display: flex;
+        align-items: center;
+        .price {
+          font-family: Verdana;
+          font-size: 18px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          text-align: right;
+          color: #e10500;
+          // color: var(--red);
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  // style on phone device
+  @media screen and (min-width: $screen-tablet) {
+    // style on tablet device
+  }
+  @media screen and (min-width: $screen-desktop) {
+    // style on desktop device
+  }
+  @media screen and (min-width: $screen-lg-desktop) {
+    // style on desktop device
+  }
+
+  &_modifier {
+  }
+  & > .#{$classname}_child {
+  }
+  & .#{$classname}_descendant {
+  }
+}

@@ -1,0 +1,32 @@
+/**
+ * Import core mixins, variables, or others
+ */
+@import "../core/core/mixins";
+@import "../core/core/variables";
+/**
+ * Define your classname
+ */
+$classname: "lig_cpic";
+/*
+ * Start your css code
+ */
+.#{$classname} {
+  display: block;
+  // style on phone device
+  @media screen and (min-width: $screen-tablet) {
+    // style on tablet device
+  }
+  @media screen and (min-width: $screen-desktop) {
+    // style on desktop device
+  }
+  @media screen and (min-width: $screen-lg-desktop) {
+    // style on desktop device
+  }
+
+  &_modifier {
+  }
+  & > .#{$classname}_child {
+  }
+  & .#{$classname}_descendant {
+  }
+}
