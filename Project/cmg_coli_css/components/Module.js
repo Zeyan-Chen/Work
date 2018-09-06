@@ -41,7 +41,7 @@ let Module = props => {
       targetBlank: true, // 連結另開 [bool]
       label: "主打星", // 產品標籤 [string]
       newest: false, // 最新 [bool]
-      price: 3222 // 產品價格 [number]
+      price: 98973 // 產品價格 [number]
     },
     {
       title: "大橋頭營運長孫總裁",
@@ -65,7 +65,7 @@ let Module = props => {
       targetBlank: true, // 連結另開 [bool]
       label: "現省2000", // 產品標籤 [string]
       newest: false, // 最新 [bool]
-      price: 3222 // 產品價格 [number]
+      price: 12379 // 產品價格 [number]
     },
     {
       title: "天母分布部門地區裝總裁",
