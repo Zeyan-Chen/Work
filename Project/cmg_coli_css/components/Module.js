@@ -13,6 +13,18 @@ let Module = props => {
     return `$${x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   };
 
+  // data push
+  // let data = [];
+  // let dataFormat = {
+  //   title: "絕美江南紹興古鎮日無購物無自費自", // 產品標題 [string]
+  //   href: "", // 產品連結 [string]
+  //   targetBlank: true, // 連結另開 [bool]
+  //   label: "夏季旅展", // 產品標籤 [string]
+  //   newest: true, // 最新 [bool]
+  //   price: 99999999 // 產品價格 [number]
+  // };
+  // data.push(dataFormat);
+
   // data
   let data = [
     {
@@ -76,7 +88,7 @@ let Module = props => {
       href: "", // 產品連結 [string]
       targetBlank: true, // 連結另開 [bool]
       label: "北疆特價", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
+      newest: true, // 最新 [bool]
       price: 3222 // 產品價格 [number]
     }
   ];
@@ -92,7 +104,7 @@ let Module = props => {
           {data.map((tags, i) => {
             if (i <= 3) {
               return (
-                <li>
+                <li key={i}>
                   <div className="inside-left">
                     <div className="btn-1">{tags.label}</div>
                     {tags.newest ? <div className="btn-2">NEW</div> : null}
@@ -112,7 +124,7 @@ let Module = props => {
           {data.map((tags, i) => {
             if (i > 3) {
               return (
-                <li>
+                <li key={i}>
                   <div className="inside-left">
                     <div className="btn-1">{tags.label}</div>
                     {tags.newest ? <div className="btn-2">NEW</div> : null}
