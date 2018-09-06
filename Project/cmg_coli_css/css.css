@@ -7,19 +7,21 @@
 /*
  * Start your css code
  */
-.cmg_coli {
+.cmg_coli > *:after {
+  content: "";
   display: block;
+  clear: both;
 }
 
 .cmg_coli .btn-1 {
-  width: 72px;
-  height: 24px;
+  width: 58px;
+  height: 18px;
   border-radius: 3px;
   background-color: #ff615d;
-  line-height: 24px;
+  line-height: 18px;
   text-align: center;
   font-family: MicrosoftJhengHei;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -29,13 +31,13 @@
 }
 
 .cmg_coli .btn-2 {
-  width: 35px;
-  height: 24px;
+  width: 33px;
+  height: 18px;
   border-radius: 3px;
   background-color: #ff8400;
   color: #fff;
-  font-size: 12px;
-  line-height: 24px;
+  font-size: 10px;
+  line-height: 18px;
   text-align: center;
 }
 
@@ -63,17 +65,20 @@
   border-radius: 50%;
 }
 
-.cmg_coli .gray {
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: normal;
-  color: #222222;
+.cmg_coli .left-content,
+.cmg_coli .right-content {
+  float: left;
 }
 
 .cmg_coli ul {
   padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.cmg_coli ul:last-child {
+  margin-right: 0;
 }
 
 .cmg_coli ul li {
@@ -98,7 +103,13 @@
   background-color: #f4f3ea;
 }
 
-.cmg_coli ul li .left {
+.cmg_coli ul li .flag {
+  outline: 1px solid red;
+  width: 8px;
+  height: 13px;
+}
+
+.cmg_coli ul li .inside-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,13 +121,13 @@
           align-items: center;
 }
 
-.cmg_coli ul li .left * {
+.cmg_coli ul li .inside-left * {
   margin-right: 5px;
 }
 
-.cmg_coli ul li .left .text {
+.cmg_coli ul li .inside-left .text {
   font-family: MicrosoftJhengHei;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -125,7 +136,11 @@
   color: #222222;
 }
 
-.cmg_coli ul li .right {
+.cmg_coli ul li .inside-left .text.red {
+  color: #e10500;
+}
+
+.cmg_coli ul li .inside-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,9 +149,9 @@
           align-items: center;
 }
 
-.cmg_coli ul li .right .price {
+.cmg_coli ul li .inside-right .price {
   font-family: Verdana;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -145,5 +160,32 @@
   text-align: right;
   color: #e10500;
   margin-right: 5px;
+}
+
+@media screen and (min-width: 980px) {
+  .cmg_coli ul {
+    width: calc(50% - 5px);
+  }
+  .cmg_coli ul .left-content,
+  .cmg_coli ul .right-content {
+    float: none;
+  }
+  .cmg_coli ul li .inside-left .text {
+    font-size: 16px;
+  }
+  .cmg_coli ul li .inside-right .price {
+    font-size: 18px;
+  }
+  .cmg_coli .btn-1 {
+    width: 72px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .cmg_coli .btn-2 {
+    width: 35px;
+    height: 24px;
+    line-height: 24px;
+  }
 }
 /*# sourceMappingURL=css.css.map */

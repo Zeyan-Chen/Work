@@ -1,1 +1,1 @@
-export { default } from './components/Module.js';
+export { default } from "./components/Module.js";

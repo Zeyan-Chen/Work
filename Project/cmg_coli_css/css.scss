@@ -11,17 +11,24 @@ $classname: "cmg_coli";
  * Start your css code
  */
 .#{$classname} {
-  display: block;
+  // display: block;
+  > * {
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
 
   .btn-1 {
-    width: 72px;
-    height: 24px;
+    width: 58px;
+    height: 18px;
     border-radius: 3px;
     background-color: #ff615d;
-    line-height: 24px;
+    line-height: 18px;
     text-align: center;
     font-family: MicrosoftJhengHei;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
@@ -32,13 +39,13 @@ $classname: "cmg_coli";
   }
 
   .btn-2 {
-    width: 35px;
-    height: 24px;
+    width: 33px;
+    height: 18px;
     border-radius: 3px;
     background-color: #ff8400;
     color: #fff;
-    font-size: 12px;
-    line-height: 24px;
+    font-size: 10px;
+    line-height: 18px;
     text-align: center;
     // background-color: var(--pumpkin-orange);
   }
@@ -65,17 +72,29 @@ $classname: "cmg_coli";
     }
   }
 
-  .gray {
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    color: #222222;
+  // .gray {
+  //   font-size: 12px;
+  //   font-weight: normal;
+  //   font-style: normal;
+  //   font-stretch: normal;
+  //   letter-spacing: normal;
+  //   color: #222222;
+  // }
+
+  .left-content,
+  .right-content {
+    float: left;
   }
 
   ul {
+    // outline: 1px solid blue;
     padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
     li {
       // outline: 1px solid #f00;
       list-style-type: none;
@@ -91,7 +110,12 @@ $classname: "cmg_coli";
       &:nth-child(even) {
         background-color: #f4f3ea;
       }
-      .left {
+      .flag {
+        outline: 1px solid red;
+        width: 8px;
+        height: 13px;
+      }
+      .inside-left {
         // outline: 1px solid blue;
         display: flex;
         justify-content: center;
@@ -101,22 +125,25 @@ $classname: "cmg_coli";
         }
         .text {
           font-family: MicrosoftJhengHei;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: bold;
           font-style: normal;
           font-stretch: normal;
           line-height: 1;
           letter-spacing: normal;
           color: #222222;
+          &.red {
+            color: #e10500;
+          }
         }
       }
-      .right {
+      .inside-right {
         // outline: 1px solid blue;
         display: flex;
         align-items: center;
         .price {
           font-family: Verdana;
-          font-size: 18px;
+          font-size: 14px;
           font-weight: bold;
           font-style: normal;
           font-stretch: normal;
@@ -130,13 +157,42 @@ $classname: "cmg_coli";
       }
     }
   }
-
   // style on phone device
   @media screen and (min-width: $screen-tablet) {
     // style on tablet device
   }
   @media screen and (min-width: $screen-desktop) {
     // style on desktop device
+    ul {
+      .left-content,
+      .right-content {
+        float: none;
+      }
+      li {
+        .inside-left {
+          .text {
+            font-size: 16px;
+          }
+        }
+        .inside-right {
+          .price {
+            font-size: 18px;
+          }
+        }
+      }
+      width: calc(50% - 5px);
+    }
+    .btn-1 {
+      width: 72px;
+      height: 24px;
+      font-size: 12px;
+      line-height: 24px;
+    }
+    .btn-2 {
+      width: 35px;
+      height: 24px;
+      line-height: 24px;
+    }
   }
   @media screen and (min-width: $screen-lg-desktop) {
     // style on desktop device

@@ -2,24 +2,28 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CmgColi from "./index.js";
 import "../core/core.scss";
+
 let props = {
   data: {
     // [object]
-    positionID: "m01", // [string]
-    positionName: "區域名稱", // [string]
-    arrangement: 3, // [number]
+    arrangement: 3, // 排列方式 [number]
     data: [
       // [array]
       {
-        title: "", // [string]
-        href: "", // [string]
-        targetBlank: true, // [bool]
-        label: "", // [string]
-        newest: true // [bool]
+        title: "", // 產品標題 [string]
+        href: "", // 產品連結 [string]
+        targetBlank: true, // 連結另開 [bool]
+        label: "", // 產品標籤 [string]
+        newest: true, // 最新 [bool]
+        price: 3222 // 產品價格 [number]
       }
       // ...
     ],
-    anchorName: "" // [string]
+    more: {
+      name: "", // 看更多-文字 [string]
+      href: "" // 看更多-連結 [string]
+    },
+    anchorName: "" // 錨點名稱 [string]
   }
 };
 ReactDOM.render(
