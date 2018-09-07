@@ -12,6 +12,8 @@ $classname: "cmg_coli";
  */
 .#{$classname} {
   // display: block;
+  outline: 1px solid red;
+
   > * {
     &:after {
       content: "";
@@ -81,13 +83,12 @@ $classname: "cmg_coli";
   //   color: #222222;
   // }
 
-  .left-content,
-  .right-content {
-    float: left;
+  .clear {
+    display: block;
+    clear: both;
   }
 
   ul {
-    // outline: 1px solid blue;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -95,20 +96,37 @@ $classname: "cmg_coli";
     &:last-child {
       margin-right: 0;
     }
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
     li {
       // outline: 1px solid #f00;
       list-style-type: none;
       display: flex;
       justify-content: space-between;
-      height: 50px;
+      // height: 50px;
       border-bottom: 1px solid #dddddd;
       font-size: 16px;
       padding: 0 10px;
+      &.float {
+        float: left;
+      }
       &:first-child {
         border-top: 1px solid #dddddd;
       }
       &:nth-child(even) {
         background-color: #f4f3ea;
+      }
+      &.col-1 {
+        width: 100%;
+      }
+      &.col-2 {
+        width: (100%/2);
+      }
+      &.col-3 {
+        width: (100%/3);
       }
       .flag {
         outline: 1px solid red;
@@ -116,26 +134,43 @@ $classname: "cmg_coli";
         height: 13px;
       }
       .inside-left {
-        // outline: 1px solid blue;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        * {
+        padding: 10px 0;
+        font-family: MicrosoftJhengHei;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        color: #222222;
+        word-wrap: break-word;
+        // justify-content: center;
+        // align-items: center;
+        // outline: 1px solid red;
+        > * {
           margin-right: 5px;
+          float: left;
         }
-        .text {
-          font-family: MicrosoftJhengHei;
-          font-size: 14px;
-          font-weight: bold;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1;
-          letter-spacing: normal;
-          color: #222222;
-          &.red {
-            color: #e10500;
-          }
-        }
+        // .text {
+        //   // width: 100px;
+        //   font-family: MicrosoftJhengHei;
+        //   font-size: 14px;
+        //   font-weight: bold;
+        //   font-style: normal;
+        //   font-stretch: normal;
+        //   line-height: 1;
+        //   letter-spacing: normal;
+        //   color: #222222;
+        //   overflow: hidden;
+        //   text-overflow: ellipsis; // 多的字 ... 取代
+        //   // white-space: nowrap; // 字死都不換行
+        //   display: -webkit-box;
+        //   -webkit-line-clamp: 3;
+
+        //   margin-right: 0;
+
+        //   &.red {
+        //     color: #e10500;
+        //   }
+        // }
       }
       .inside-right {
         // outline: 1px solid blue;
@@ -180,7 +215,6 @@ $classname: "cmg_coli";
           }
         }
       }
-      width: calc(50% - 5px);
     }
     .btn-1 {
       width: 72px;

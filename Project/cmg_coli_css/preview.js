@@ -5,7 +5,7 @@ import "../core/core.scss";
 
 let props = {
   // [object]
-  arrangement: 3, // 排列方式 [number]
+  arrangement: 2, // 排列方式 [number] //設定如果上面寫幾欄就除以幾欄
   data: [
     // [array]
     {
