@@ -103,28 +103,10 @@ class FzDefault extends Component {
 
   // 被點擊時，十字 focus
   whenclicked = (e, index, value) => {
-    // console.log(value);
-    // if (value == "--" || value == "查看") {
-    //   return false;
-    // }
-
     let elClicked; // 被按到的那個
     let rowFocus; // 被按到的那排，橫排
     let columnFocus; // 被按到的那直行，直排
-
-    // 判斷點到進來的格式
-    if (e.target.nodeName !== "LI") {
-      if (e.target.nodeName === "SPAN") {
-        elClicked = e.target.parentNode; // li
-        if (e.target.nodeName === "SPAN") {
-          if (e.target.classList.contains("gray")) {
-            elClicked = e.target.parentNode.parentNode; // li
-          }
-        }
-      }
-    } else {
-      elClicked = e.target;
-    }
+    elClicked = e.currentTarget;
 
     //　每次點擊就優先把底下的 li class [active, activeThis] 都刪掉
     let allLi = document.querySelectorAll(

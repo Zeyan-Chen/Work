@@ -109,17 +109,7 @@ class FzRel extends Component {
     }
 
     let elClicked; // 被按到的那個
-    // // 判斷點到進來的格式
-    if (e.target.nodeName === "SPAN") {
-      elClicked = e.target.parentNode; // li
-      if (e.target.nodeName === "SPAN") {
-        if (e.target.classList.contains("gray")) {
-          elClicked = e.target.parentNode.parentNode; // li
-        }
-      }
-    } else {
-      elClicked = e.target; // li
-    }
+    elClicked = e.currentTarget; // li
 
     //　每次點擊就優先把底下的 li class [active, activeThis] 都刪掉
     let allLi = document.querySelectorAll(
