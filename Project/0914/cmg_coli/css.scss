@@ -92,6 +92,7 @@ $color-liBG: #f4f3ea;
       clear: both;
     }
     li {
+      position: relative;
       list-style-type: none;
       display: flex;
       justify-content: space-between;
@@ -101,6 +102,13 @@ $color-liBG: #f4f3ea;
       float: left;
       font-size: 16px;
       padding: 0 10px;
+      > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
       &.col-1,
       &.col-2,
       &.col-3 {
@@ -162,7 +170,6 @@ $color-liBG: #f4f3ea;
     // style on desktop device
     ul {
       li {
-        // outline: 1px solid red;
         margin-right: 10px;
         .inside-left {
           padding: 13px 0;
@@ -170,7 +177,6 @@ $color-liBG: #f4f3ea;
           overflow: hidden;
           white-space: nowrap; // 字死都不換行
           // text-overflow: ellipsis; // 多的字 ... 取代
-          // margin-right: 20px;
           cursor: pointer;
           height: 50px;
           margin-right: 20px;
@@ -180,6 +186,7 @@ $color-liBG: #f4f3ea;
             font-size: 18px;
           }
         }
+
         &:hover .inside-left {
           color: red;
         }
