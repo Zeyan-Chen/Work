@@ -43,7 +43,8 @@ let Module = props => {
   // data
   let data = [
     {
-      title: "絕美江南紹興古鎮日無購物無自費自安安安大橋頭", // 產品標題 [string]
+      title:
+        "1絕美江南紹興古鎮日無購物無自費安安安安安絕美江南紹興古鎮日無購物無自費安安安安安絕美江南紹興古鎮日無購物無自費安安安安安絕美江南紹興古鎮日無購物無自費安安安安安絕美江南紹興古鎮日無購物無自費安安安安安絕美江南紹興古鎮日無購物無自費安安安安安絕美江南紹興古鎮日無購物無自費安安安安安", // 產品標題 [string]
       href: "", // 產品連結 [string]
       targetBlank: true, // 連結另開 [bool]
       label: "夏季旅展", // 產品標籤 [string]
@@ -51,30 +52,63 @@ let Module = props => {
       price: 9999999 // 產品價格 [number]
     },
     {
-      title: "大俠愛吃漢堡堡",
+      title: "2大俠愛吃漢堡堡",
       href: "", // 產品連結 [string]
       targetBlank: true, // 連結另開 [bool]
       label: "", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
+      newest: true, // 最新 [bool]
       price: 98973 // 產品價格 [number]
     },
     {
-      title: "大橋頭營運長孫總裁",
+      title:
+        "3大橋頭營運長孫總裁大橋頭營運長孫總裁大橋頭營運長孫總裁大橋頭營運長孫總裁大橋頭營運長孫總裁大橋頭營運長孫總裁",
       href: "", // 產品連結 [string]
       targetBlank: true, // 連結另開 [bool]
       label: "最美峽谷", // 產品標籤 [string]
+      newest: false, // 最新 [bool]
+      price: 3222 // 產品價格 [number]
+    },
+    {
+      title: "4天母分布部門地區莊總裁",
+      href: "", // 產品連結 [string]
+      targetBlank: true, // 連結另開 [bool]
+      label: "現省2000", // 產品標籤 [string]
+      newest: false, // 最新 [bool]
+      price: 3222 // 產品價格 [number]
+    },
+    {
+      title: "5士林鵝鑾鼻分布陳總裁",
+      href: "", // 產品連結 [string]
+      targetBlank: true, // 連結另開 [bool]
+      label: "花現青海", // 產品標籤 [string]
+      newest: false, // 最新 [bool]
+      price: 3222 // 產品價格 [number]
+    },
+    {
+      title: "6士林鵝鑾鼻分布陳總裁",
+      href: "", // 產品連結 [string]
+      targetBlank: true, // 連結另開 [bool]
+      label: "花現青海", // 產品標籤 [string]
+      newest: false, // 最新 [bool]
+      price: 3222 // 產品價格 [number]
+    },
+    {
+      title: "7周姊倫御用鋼琴手",
+      href: "", // 產品連結 [string]
+      targetBlank: true, // 連結另開 [bool]
+      label: "花現青海", // 產品標籤 [string]
+      newest: false, // 最新 [bool]
+      price: 3222 // 產品價格 [number]
+    },
+    {
+      title: "869分布",
+      href: "", // 產品連結 [string]
+      targetBlank: true, // 連結另開 [bool]
+      label: "花現青海", // 產品標籤 [string]
       newest: true, // 最新 [bool]
       price: 3222 // 產品價格 [number]
     },
     {
-      title: "天母分布部門地區莊總裁",
-      href: "", // 產品連結 [string]
-      targetBlank: true, // 連結另開 [bool]
-      label: "花現青海", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
-      price: 3222 // 產品價格 [number]
-    },
-    {
       title: "士林鵝鑾鼻分布陳總裁",
       href: "", // 產品連結 [string]
       targetBlank: true, // 連結另開 [bool]
@@ -87,44 +121,10 @@ let Module = props => {
       href: "", // 產品連結 [string]
       targetBlank: true, // 連結另開 [bool]
       label: "花現青海", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
-      price: 3222 // 產品價格 [number]
-    },
-    {
-      title: "士林鵝鑾鼻分布陳總裁",
-      href: "", // 產品連結 [string]
-      targetBlank: true, // 連結另開 [bool]
-      label: "花現青海", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
-      price: 3222 // 產品價格 [number]
-    },
-    {
-      title: "士林鵝鑾鼻分布陳總裁",
-      href: "", // 產品連結 [string]
-      targetBlank: true, // 連結另開 [bool]
-      label: "花現青海", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
-      price: 3222 // 產品價格 [number]
-    },
-    {
-      title: "士林鵝鑾鼻分布陳總裁",
-      href: "", // 產品連結 [string]
-      targetBlank: true, // 連結另開 [bool]
-      label: "花現青海", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
-      price: 3222 // 產品價格 [number]
-    },
-    {
-      title: "士林鵝鑾鼻分布陳總裁",
-      href: "", // 產品連結 [string]
-      targetBlank: true, // 連結另開 [bool]
-      label: "花現青海", // 產品標籤 [string]
-      newest: false, // 最新 [bool]
+      newest: true, // 最新 [bool]
       price: 3222 // 產品價格 [number]
     }
   ];
-
-  console.log(data.length);
 
   // 字上面 check 有無超過預設字數
   function textLenCheck(ifNew, Title) {
@@ -142,44 +142,28 @@ let Module = props => {
     return newValue;
   }
 
-  // function overTwoLine() {
-  //   let leftContent = document.querySelectorAll(
-  //     `.${classes} .hot_recommend .left-content li .inside-left`
-  //   );
-
-  //   for (let i = 0; i < leftContent.length; i++) {
-  //     if (leftContent[i].offsetHeight > 70) {
-  //       console.log("第三行了");
-  //       console.log(leftContent[i].textContent);
-  //       let content = leftContent[i].textContent;
-  //     }
-  //   }
-  // }
-
-  function device() {}
-
-  window.addEventListener("resize", device);
-  // console.log(textLenCheck(data[2].newest, data[2].title));
-
   return (
-    <div styleName={classes}>
+    <div className={classes}>
       <div className="title">
         <div className="circle" />
         <h1>熱門推薦</h1>
       </div>
 
-      {/* <ul className={`col-${props.prop.arrangement}`}>
+      <ul>
         {data.map((tags, i) => {
           return (
-            <li key={i}>
+            <li key={i} className={`col-${props.prop.arrangement}`}>
               <div className="inside-left">
+                {/* <div className=""> */}
                 {tags.label === "" ? (
                   <div className="flag" />
                 ) : (
                   <div className="btn-1">{tags.label}</div>
                 )}
                 {tags.newest ? <div className="btn-2">NEW</div> : null}
-                {textLenCheck(tags.newest, tags.title)}
+                {/* {textLenCheck(tags.newest, tags.title)} */}
+                {/* <p className="text">{tags.title}</p> */}
+                {tags.title}
               </div>
               <div className="inside-right">
                 <div className="price">{price(tags.price)}</div>
@@ -188,7 +172,7 @@ let Module = props => {
             </li>
           );
         })}
-      </ul> */}
+      </ul>
 
       {/* <ul className="right-content">
           {data.map((tags, i) => {
@@ -210,8 +194,10 @@ let Module = props => {
           })}
         </ul> */}
       {/* react for end */}
-      <ul>
-        <li className="col-2">
+
+      {/* 測試用這個 */}
+      {/* <ul>
+        <li className="col-3">
           <div className="inside-left">
             <div className="btn-1">夏季旅展</div>
             <div className="btn-2">NEW</div>
@@ -222,7 +208,7 @@ let Module = props => {
             <span className="gray">起</span>
           </div>
         </li>
-        <li className="col-2">
+        <li className="col-3">
           <div className="inside-left">
             <div className="btn-1">主打星</div>
             <div className="text red">2</div>
@@ -232,8 +218,7 @@ let Module = props => {
             <span className="gray">起</span>
           </div>
         </li>
-        <li className="clear" />
-        <li className="col-2">
+        <li className="col-3">
           <div className="inside-left">
             <div className="btn-1">最美峽谷</div>
             <div className="text">3</div>
@@ -243,7 +228,7 @@ let Module = props => {
             <span className="gray">起</span>
           </div>
         </li>
-        <li className="col-2">
+        <li className="col-3">
           <div className="inside-left">
             <div className="btn-1">花現青海</div>
             <div className="text">4</div>
@@ -253,7 +238,7 @@ let Module = props => {
             <span className="gray">起</span>
           </div>
         </li>
-      </ul>
+      </ul> */}
       {/* <ul className="right-content">
           <li>
             <div className="inside-left">
