@@ -37,5 +37,5 @@ const data = {
   }
 };
 
-ReactDOM.render(<Calendar {...data} />, document.querySelector(".calendar"));
+ReactDOM.render(<Calendar {...data} />, document.querySelector(".container"));
 registerServiceWorker();

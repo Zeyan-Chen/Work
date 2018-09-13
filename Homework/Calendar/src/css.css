@@ -8,12 +8,116 @@
  * Start your css code
  */
 .calendar {
-  outline: 1px solid red;
+  width: 100%;
+  margin: auto;
+}
+
+.calendar * {
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar .sliderMonth {
+  overflow: hidden;
+  position: relative;
+}
+
+.calendar .sliderMonth .next,
+.calendar .sliderMonth .prev {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+  padding: 0 5px;
+  color: #e10500;
+}
+
+.calendar .sliderMonth .next {
+  right: 0;
+}
+
+.calendar .sliderMonth .prev {
+  left: 0;
+}
+
+.calendar .sliderMonth .tab {
+  background-color: #ede9dd;
+  width: 200%;
+  position: relative;
+  font-family: Verdana, Arial;
+}
+
+.calendar .sliderMonth .tab li {
+  width: 16.66667%;
+  float: left;
+  padding: 5px 0 15px 0;
+  font-size: 20px;
+  color: #666;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.calendar .sliderMonth .tab li.active {
+  background-color: #fff;
+  color: red;
+}
+
+.calendar .sliderMonth .tab:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.calendar .week {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.calendar .week:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.calendar .week li {
+  font-family: Verdana, Arial;
+  float: left;
+  padding: 5px 0;
+  width: calc(100% / 7);
+  text-align: center;
+  color: #666;
+  font-weight: bold;
+  border: 1px solid #f4f4f4;
+}
+
+.calendar .contentDates:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.calendar .contentDates li {
+  width: calc(100% / 7);
+  float: left;
+  height: 85px;
+  border: 1px solid #f4f4f4;
 }
 
 @media screen and (min-width: 768px) {
   .calendar {
-    outline: 1px solid blue;
+    width: 700px;
   }
 }
 /*# sourceMappingURL=css.css.map */

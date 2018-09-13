@@ -10,13 +10,107 @@ $classname: "calendar";
 /*
  * Start your css code
  */
+$tab-bg-color: #ede9dd;
+$tab-color: #666;
 
 .#{$classname} {
-  outline: 1px solid red;
+  width: 100%;
+  margin: auto;
+  * {
+    list-style-type: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .sliderMonth {
+    overflow: hidden;
+    position: relative;
+    .next,
+    .prev {
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      font-size: 25px;
+      padding: 0 5px;
+      color: #e10500;
+    }
+    .next {
+      right: 0;
+    }
+    .prev {
+      left: 0;
+    }
+    .tab {
+      background-color: $tab-bg-color;
+      width: (100% * 6/3);
+      position: relative;
+      font-family: Verdana, Arial;
+
+      li {
+        width: (100%/6);
+        float: left;
+        padding: 5px 0 15px 0;
+        font-size: 20px;
+        color: $tab-color;
+        text-align: center;
+        margin-top: 5px;
+        &.active {
+          background-color: #fff;
+          color: red;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    } // tab end
+  } // sliderMonth end
+
+  .week {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li {
+      font-family: Verdana, Arial;
+      float: left;
+      padding: 5px 0;
+      width: calc(100% / 7);
+      text-align: center;
+      color: #666;
+      font-weight: bold;
+      border: 1px solid rgb(244, 244, 244);
+    }
+  } // week end
+
+  .contentDates {
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li {
+      width: calc(100% / 7);
+      float: left;
+      height: 85px;
+      border: 1px solid rgb(244, 244, 244);
+    }
+  }
+
   // style on phone device
   @media screen and (min-width: $screen-tablet) {
     // style on tablet device
-    outline: 1px solid blue;
+    width: 700px;
   }
   @media screen and (min-width: $screen-desktop) {
     // style on desktop device
