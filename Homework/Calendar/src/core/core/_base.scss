@@ -1,0 +1,105 @@
+// **************************************
+// Base基本樣式 base.less
+// 
+// **************************************
+
+// -------------------------------------
+// box-sizing 盒子模型設定
+// -------------------------------------
+
+* {
+	@include box-sizing(border-box);
+}
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+// -------------------------------------
+// Body reset
+// -------------------------------------
+
+#{compatible-detect(html)} {
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#{compatible-detect(body)} {
+	font-family: $font-family-base;
+	font-size: $font-size-body;
+	line-height: $line-height-base;
+	color: $text-color;
+	background-color: $body-bg;
+}
+// -------------------------------------
+// Reset fonts for relevant elements
+// -------------------------------------
+
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+
+// -------------------------------------
+// Links
+// -------------------------------------
+
+
+a {
+	color: $link-color;
+	text-decoration: $link-decoration;
+
+	&:hover,
+	&:focus {
+		color: $link-hover-color;
+		text-decoration: $link-hover-decoration;
+	}
+
+	&:focus {
+		@include tab-focus;
+	}
+}
+
+
+
+// -------------------------------------
+// Figures
+// We reset this here because previously Normalize had no `figure` margins. This ensures we don't break anyone's use of the element.
+// -------------------------------------
+
+
+figure {
+	margin: 0;
+}
+
+// -------------------------------------
+// Images
+// -------------------------------------
+
+img {
+	vertical-align: middle;
+}
+
+// -------------------------------------
+// Horizontal rules
+// -------------------------------------
+
+hr {
+  margin-top:    $line-height-computed / 2;
+  margin-bottom: $line-height-computed / 2;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}
+
+// -------------------------------------
+// iOS "clickable elements" fix for role="button"
+// -------------------------------------
+
+
+[role="button"] {
+  cursor: pointer;
+}

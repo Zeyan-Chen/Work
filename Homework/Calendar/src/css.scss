@@ -1,0 +1,34 @@
+/**
+ * Import core mixins, variables, or others
+ */
+@import "./core/core/mixins";
+@import "./core/core/variables";
+/**
+ * Define your classname
+ */
+$classname: "calendar";
+/*
+ * Start your css code
+ */
+
+.#{$classname} {
+  outline: 1px solid red;
+  // style on phone device
+  @media screen and (min-width: $screen-tablet) {
+    // style on tablet device
+    outline: 1px solid blue;
+  }
+  @media screen and (min-width: $screen-desktop) {
+    // style on desktop device
+  }
+  @media screen and (min-width: $screen-lg-desktop) {
+    // style on desktop device
+  }
+
+  &_modifier {
+  }
+  & > .#{$classname}_child {
+  }
+  & .#{$classname}_descendant {
+  }
+}

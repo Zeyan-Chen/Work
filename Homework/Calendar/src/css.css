@@ -1,0 +1,19 @@
+/**
+ * Import core mixins, variables, or others
+ */
+/**
+ * Define your classname
+ */
+/*
+ * Start your css code
+ */
+.calendar {
+  outline: 1px solid red;
+}
+
+@media screen and (min-width: 768px) {
+  .calendar {
+    outline: 1px solid blue;
+  }
+}
+/*# sourceMappingURL=css.css.map */

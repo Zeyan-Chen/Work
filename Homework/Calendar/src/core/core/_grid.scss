@@ -1,0 +1,57 @@
+// **************************************
+// Grid
+// 
+// **************************************
+
+.container {
+	@include container-fixed;
+
+	@media (min-width: $screen-tablet) {
+		max-width: $container-sm;
+	}
+	@media (min-width: $screen-desktop) {
+		max-width: $container-md;
+	}
+	@media (min-width: $screen-lg-desktop) {
+		max-width: $container-lg;
+	}
+}
+// 將所有的screen預設的container的初始寬定位在960，如果裝置screen大於1280，使用的container寬為1200
+.container-md {
+	@include container-fixed;
+	width: $container-md;
+
+	@media (min-width: $screen-lg-desktop) {
+		width: $container-lg;
+	}
+}
+// 將所有的screen預設的container的初始寬定位在1200，如果裝置screen大於1280，使用的container寬為1200
+.container-lg {
+	@include container-fixed;
+	width: $container-lg;
+}
+// 100% 的流動container
+.container-fluid {
+	@include container-fixed;
+}
+
+.row {
+	@include make-row;
+
+}
+
+@include make-grid-columns;
+
+@include make-grid(xs);
+
+@media (min-width: $screen-sm-min) {
+	@include make-grid(sm);
+}
+
+@media (min-width: $screen-md-min) {
+	@include make-grid(md);
+}
+
+@media (min-width: $screen-lg-min) {
+	@include make-grid(lg);
+}

@@ -1,0 +1,4 @@
+@function compatible-detect ($tagName, $replaceName: '&') {
+	$element : if(global-variable-exists(global-compatible) and $global-compatible, $replaceName, $tagName);
+	@return $element;
+}
