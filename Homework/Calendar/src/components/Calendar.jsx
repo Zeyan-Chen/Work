@@ -5,12 +5,22 @@ class Calendar extends Component {
     super(props);
     this.state = {};
   }
+
+  whenClicked(e) {
+    console.log(e);
+  }
   render() {
     return (
       <div className="calendar">
         <div className="sliderMonth">
-          <div className="fas fa-caret-right next" />
-          <div className="fas fa-caret-left prev" />
+          <div
+            className="fas fa-caret-right next"
+            onClick={e => this.whenClicked(e)}
+          />
+          <div
+            className="fas fa-caret-left prev"
+            onClick={e => this.whenClicked(e)}
+          />
           <ul className="tab">
             <li>2018 10月</li>
             <li className="active">2018 11月</li>
