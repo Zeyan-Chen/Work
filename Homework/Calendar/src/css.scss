@@ -1,129 +1,250 @@
 /**
  * Import core mixins, variables, or others
  */
-@import "./core/core/mixins";
-@import "./core/core/variables";
+@import './core/core/mixins';
+@import './core/core/variables';
 /**
  * Define your classname
  */
-$classname: "calendar";
+$classname: 'calendar';
 /*
  * Start your css code
  */
 $tab-bg-color: #ede9dd;
 $tab-color: #666;
+$sign-text-color: #24a07c;
 
-.#{$classname} {
-  width: 100%;
-  margin: auto;
-  * {
-    list-style-type: none;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  .sliderMonth {
+body {
+    font-family: Verdana, Arial, Microsoft JhengHei, Microsoft YaHei;
+}
+
+%sliderMonth {
     overflow: hidden;
     position: relative;
     .next,
     .prev {
-      position: absolute;
-      bottom: 0;
-      top: 0;
-      margin: auto;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      font-size: 25px;
-      padding: 0 5px;
-      color: #e10500;
-      cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        padding: 0 5px;
+        color: #e10500;
+        cursor: pointer;
     }
     .next {
-      right: 0;
+        right: 0;
     }
     .prev {
-      left: 0;
+        left: 0;
     }
     .tab {
-      background-color: $tab-bg-color;
-      width: (100% * 6/3);
-      position: relative;
-      font-family: Verdana, Arial;
+        background-color: $tab-bg-color;
+        width: (100% * 6/3);
+        position: relative;
+        font-family: Verdana, Arial;
 
-      li {
-        width: (100%/6);
-        float: left;
-        padding: 5px 0 15px 0;
-        font-size: 20px;
-        color: $tab-color;
-        text-align: center;
-        margin-top: 5px;
-        &.active {
-          background-color: #fff;
-          color: red;
+        li {
+            width: (100%/6);
+            float: left;
+            padding: 5px 0 15px 0;
+            font-size: 17px;
+            color: $tab-color;
+            text-align: center;
+            margin-top: 5px;
+            &.active {
+                background-color: #fff;
+                color: red;
+            }
         }
-      }
-      &:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
     } // tab end
-  } // sliderMonth end
+} // sliderMonth end
 
-  .week {
-    border-collapse: collapse;
-    border-spacing: 0;
+.#{$classname} {
     width: 100%;
-
-    &:after {
-      content: "";
-      display: block;
-      clear: both;
+    margin: auto;
+    * {
+        list-style-type: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
-    li {
-      font-family: Verdana, Arial;
-      float: left;
-      padding: 5px 0;
-      width: calc(100% / 7);
-      text-align: center;
-      color: #666;
-      font-weight: bold;
-      border: 1px solid rgb(244, 244, 244);
+    .header {
+        margin: 15px 0;
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .switchBtn {
+            float: right;
+            cursor: pointer;
+            text-align: right;
+            span {
+                color: #0077b3;
+                border-bottom: 1px dashed #999;
+                font-size: 14px;
+            }
+            i {
+                color: #999;
+                margin-right: 15px;
+            }
+        }
     }
-  } // week end
+    &.default {
+        .sliderMonth {
+            @extend %sliderMonth;
+        }
 
-  .contentDates {
-    &:after {
-      content: "";
-      display: block;
-      clear: both;
+        .week {
+            width: 100%;
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            li {
+                font-size: 13px;
+                float: left;
+                padding: 5px 0;
+                width: calc(100% / 7);
+                text-align: center;
+                color: #666;
+                font-weight: bold;
+                border-top: 1px solid rgb(244, 244, 244);
+                border-bottom: 1px solid rgb(244, 244, 244);
+                border-right: 1px solid rgb(244, 244, 244);
+            }
+            li:first-child {
+                border-left: 1px solid rgb(244, 244, 244);
+            }
+        } // week end
+
+        .contentDates {
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            li {
+                position: relative;
+                width: calc(100% / 7);
+                float: left;
+                height: 90px;
+                padding: 0 3px;
+                border-bottom: 1px solid rgb(244, 244, 244);
+                border-right: 1px solid rgb(244, 244, 244);
+                font-size: 12px;
+                .guaranteedLabel {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background-color: #66bb3c;
+                    color: white;
+                    padding: 5px 10px;
+                }
+                .dataContent {
+                    position: absolute;
+                    bottom: 0;
+                    line-height: 1.4;
+                    letter-spacing: 1.5px;
+                    color: #666;
+                    .sign {
+                        color: $sign-text-color;
+                    }
+                    .price {
+                        color: #e10500;
+                    }
+                }
+                &.disable {
+                    background-color: #f8f8f8;
+                }
+                &:hover {
+                    // border: 2px solid #66bb3c;
+                    background-color: #fff9e3;
+                    cursor: pointer;
+                }
+                &:hover.disable {
+                    cursor: default;
+                    background-color: #f8f8f8;
+                }
+            }
+        } // conteneDates
     }
-    li {
-      width: calc(100% / 7);
-      float: left;
-      height: 85px;
-      border: 1px solid rgb(244, 244, 244);
+
+    &.line {
+        .sliderMonth {
+            @extend %sliderMonth;
+        }
+        .contentDates {
+            margin-top: 1px;
+            li {
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 3px;
+                border-bottom: 1px solid rgb(244, 244, 244);
+                border-left: 1px solid rgb(244, 244, 244);
+                border-right: 1px solid rgb(244, 244, 244);
+                &:hover {
+                    cursor: pointer;
+                    outline: 1px solid #66bb3c;
+                    background-color: #fff9e3;
+                }
+                .left {
+                    display: flex;
+                    justify-content: center;
+                    color: #666;
+                    .day {
+                        text-align: center;
+                    }
+                    .availablePosition {
+                        font-size: 14px;
+                        span:nth-child(1) {
+                            margin-right: 30px;
+                        }
+                    }
+                }
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: right;
+                    .sign {
+                        color: #24a07c;
+                    }
+                    .price {
+                        margin-top: 5px;
+                        color: #e10500;
+                    }
+                }
+            }
+        }
     }
-  }
 
-  // style on phone device
-  @media screen and (min-width: $screen-tablet) {
-    // style on tablet device
-    width: 700px;
-  }
-  @media screen and (min-width: $screen-desktop) {
-    // style on desktop device
-  }
-  @media screen and (min-width: $screen-lg-desktop) {
-    // style on desktop device
-  }
+    // style on phone device
+    @media screen and (min-width: $screen-tablet) {
+        // style on tablet device
+        width: 700px;
+    }
+    @media screen and (min-width: $screen-desktop) {
+        // style on desktop device
+    }
+    @media screen and (min-width: $screen-lg-desktop) {
+        // style on desktop device
+    }
 
-  &_modifier {
-  }
-  & > .#{$classname}_child {
-  }
-  & .#{$classname}_descendant {
-  }
+    &_modifier {
+    }
+    & > .#{$classname}_child {
+    }
+    & .#{$classname}_descendant {
+    }
 }

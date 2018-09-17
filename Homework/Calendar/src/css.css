@@ -7,26 +7,18 @@
 /*
  * Start your css code
  */
-.calendar {
-  width: 100%;
-  margin: auto;
+body {
+  font-family: Verdana, Arial, Microsoft JhengHei, Microsoft YaHei;
 }
 
-.calendar * {
-  list-style-type: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.calendar .sliderMonth {
+.calendar.default .sliderMonth, .calendar.line .sliderMonth {
   overflow: hidden;
   position: relative;
 }
 
-.calendar .sliderMonth .next,
-.calendar .sliderMonth .prev {
+.calendar.default .sliderMonth .next, .calendar.line .sliderMonth .next,
+.calendar.default .sliderMonth .prev,
+.calendar.line .sliderMonth .prev {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -44,76 +36,233 @@
   cursor: pointer;
 }
 
-.calendar .sliderMonth .next {
+.calendar.default .sliderMonth .next, .calendar.line .sliderMonth .next {
   right: 0;
 }
 
-.calendar .sliderMonth .prev {
+
+.calendar.default .sliderMonth .prev,
+.calendar.line .sliderMonth .prev {
   left: 0;
 }
 
-.calendar .sliderMonth .tab {
+.calendar.default .sliderMonth .tab, .calendar.line .sliderMonth .tab {
   background-color: #ede9dd;
   width: 200%;
   position: relative;
   font-family: Verdana, Arial;
 }
 
-.calendar .sliderMonth .tab li {
+.calendar.default .sliderMonth .tab li, .calendar.line .sliderMonth .tab li {
   width: 16.66667%;
   float: left;
   padding: 5px 0 15px 0;
-  font-size: 20px;
+  font-size: 17px;
   color: #666;
   text-align: center;
   margin-top: 5px;
 }
 
-.calendar .sliderMonth .tab li.active {
+.calendar.default .sliderMonth .tab li.active, .calendar.line .sliderMonth .tab li.active {
   background-color: #fff;
   color: red;
 }
 
-.calendar .sliderMonth .tab:after {
-  content: "";
+.calendar.default .sliderMonth .tab:after, .calendar.line .sliderMonth .tab:after {
+  content: '';
   display: block;
   clear: both;
 }
 
-.calendar .week {
-  border-collapse: collapse;
-  border-spacing: 0;
+.calendar {
+  width: 100%;
+  margin: auto;
+}
+
+.calendar * {
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar .header {
+  margin: 15px 0;
+}
+
+.calendar .header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.calendar .header .switchBtn {
+  float: right;
+  cursor: pointer;
+  text-align: right;
+}
+
+.calendar .header .switchBtn span {
+  color: #0077b3;
+  border-bottom: 1px dashed #999;
+  font-size: 14px;
+}
+
+.calendar .header .switchBtn i {
+  color: #999;
+  margin-right: 15px;
+}
+
+.calendar.default .week {
   width: 100%;
 }
 
-.calendar .week:after {
-  content: "";
+.calendar.default .week:after {
+  content: '';
   display: block;
   clear: both;
 }
 
-.calendar .week li {
-  font-family: Verdana, Arial;
+.calendar.default .week li {
+  font-size: 13px;
   float: left;
   padding: 5px 0;
   width: calc(100% / 7);
   text-align: center;
   color: #666;
   font-weight: bold;
-  border: 1px solid #f4f4f4;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  border-right: 1px solid #f4f4f4;
 }
 
-.calendar .contentDates:after {
-  content: "";
+.calendar.default .week li:first-child {
+  border-left: 1px solid #f4f4f4;
+}
+
+.calendar.default .contentDates:after {
+  content: '';
   display: block;
   clear: both;
 }
 
-.calendar .contentDates li {
+.calendar.default .contentDates li {
+  position: relative;
   width: calc(100% / 7);
   float: left;
-  height: 85px;
-  border: 1px solid #f4f4f4;
+  height: 90px;
+  padding: 0 3px;
+  border-bottom: 1px solid #f4f4f4;
+  border-right: 1px solid #f4f4f4;
+  font-size: 12px;
+}
+
+.calendar.default .contentDates li .guaranteedLabel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #66bb3c;
+  color: white;
+  padding: 5px 10px;
+}
+
+.calendar.default .contentDates li .dataContent {
+  position: absolute;
+  bottom: 0;
+  line-height: 1.4;
+  letter-spacing: 1.5px;
+  color: #666;
+}
+
+.calendar.default .contentDates li .dataContent .sign {
+  color: #24a07c;
+}
+
+.calendar.default .contentDates li .dataContent .price {
+  color: #e10500;
+}
+
+.calendar.default .contentDates li.disable {
+  background-color: #f8f8f8;
+}
+
+.calendar.default .contentDates li:hover {
+  background-color: #fff9e3;
+  cursor: pointer;
+}
+
+.calendar.default .contentDates li:hover.disable {
+  cursor: default;
+  background-color: #f8f8f8;
+}
+
+.calendar.line .contentDates {
+  margin-top: 1px;
+}
+
+.calendar.line .contentDates li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px 3px;
+  border-bottom: 1px solid #f4f4f4;
+  border-left: 1px solid #f4f4f4;
+  border-right: 1px solid #f4f4f4;
+}
+
+.calendar.line .contentDates li:hover {
+  cursor: pointer;
+  outline: 1px solid #66bb3c;
+  background-color: #fff9e3;
+}
+
+.calendar.line .contentDates li .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #666;
+}
+
+.calendar.line .contentDates li .left .day {
+  text-align: center;
+}
+
+.calendar.line .contentDates li .left .availablePosition {
+  font-size: 14px;
+}
+
+.calendar.line .contentDates li .left .availablePosition span:nth-child(1) {
+  margin-right: 30px;
+}
+
+.calendar.line .contentDates li .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right;
+}
+
+.calendar.line .contentDates li .right .sign {
+  color: #24a07c;
+}
+
+.calendar.line .contentDates li .right .price {
+  margin-top: 5px;
+  color: #e10500;
 }
 
 @media screen and (min-width: 768px) {
