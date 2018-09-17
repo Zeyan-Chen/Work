@@ -12,6 +12,9 @@ class Calendar extends Component {
 
     whenClicked(e) {
         console.log(e.target);
+        if (e.target.classList.contains('next')) {
+            alert('右');
+        } else [alert('左')];
     }
 
     switchStyle() {

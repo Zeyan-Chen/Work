@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CalenderLine extends Component {
+class LineStyle extends Component {
     state = {};
     render() {
         return (
@@ -92,4 +92,4 @@ class CalenderLine extends Component {
     }
 }
 
-export default CalenderLine;
+export default LineStyle;

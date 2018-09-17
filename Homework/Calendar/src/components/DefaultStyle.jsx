@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CalendarDefault extends Component {
+class DefaultStyle extends Component {
     state = {};
     render() {
         return (
@@ -156,4 +156,4 @@ class CalendarDefault extends Component {
     }
 }
 
-export default CalendarDefault;
+export default DefaultStyle;
