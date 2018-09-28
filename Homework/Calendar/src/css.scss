@@ -46,10 +46,10 @@ body {
         width: (100% * 6/3);
         position: relative;
         font-family: Verdana, Arial;
+        display: flex;
 
         li {
-            width: (100%/6);
-            float: left;
+            width: (100% / 6);
             padding: 5px 0 15px 0;
             font-size: 17px;
             color: $tab-color;
@@ -59,11 +59,6 @@ body {
                 background-color: #fff;
                 color: red;
             }
-        }
-        &:after {
-            content: '';
-            display: block;
-            clear: both;
         }
     } // tab end
 } // sliderMonth end

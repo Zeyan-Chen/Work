@@ -51,11 +51,13 @@ body {
   width: 200%;
   position: relative;
   font-family: Verdana, Arial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .calendar.default .sliderMonth .tab li, .calendar.line .sliderMonth .tab li {
   width: 16.66667%;
-  float: left;
   padding: 5px 0 15px 0;
   font-size: 17px;
   color: #666;
@@ -66,12 +68,6 @@ body {
 .calendar.default .sliderMonth .tab li.active, .calendar.line .sliderMonth .tab li.active {
   background-color: #fff;
   color: red;
-}
-
-.calendar.default .sliderMonth .tab:after, .calendar.line .sliderMonth .tab:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .calendar {

@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
-import DefaultStyle from './DefaultStyle';
-import LineStyle from './LineStyle';
+// import DefaultStyle from './DefaultStyle';
+// import LineStyle from './LineStyle';
+import MonthContent from './MonthContent';
+// import ContentData from './ContentDate';
 
 class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            style: 'line'
+            style: 'default'
         };
     }
 
-    whenClicked(e) {
-        console.log(e.target);
-        if (e.target.classList.contains('next')) {
-            alert('右');
-        } else [alert('左')];
-    }
+    componentDidMount() {}
 
-    switchStyle() {
+    switchStyle = () => {
         if (this.state.style === 'default') {
             this.setState({ style: 'line' });
         } else {
             this.setState({ style: 'default' });
         }
-    }
+    };
 
     render() {
         return (
@@ -35,12 +32,7 @@ class Calendar extends Component {
                 }
             >
                 <div className="header">
-                    <div
-                        className="switchBtn"
-                        onClick={() => {
-                            this.switchStyle();
-                        }}
-                    >
+                    <div className="switchBtn" onClick={this.switchStyle}>
                         <i className="fas fa-calendar-alt" />
                         <span>
                             {this.state.style === 'default'
@@ -49,30 +41,10 @@ class Calendar extends Component {
                         </span>
                     </div>
                 </div>
-                <div className="sliderMonth">
-                    <div
-                        className="fas fa-caret-right next"
-                        onClick={e => this.whenClicked(e)}
-                    />
-                    <div
-                        className="fas fa-caret-left prev"
-                        onClick={e => this.whenClicked(e)}
-                    />
-                    <ul className="tab">
-                        <li>2018 10月</li>
-                        <li className="active">2018 11月</li>
-                        <li>2018 12月</li>
-                        <li>2018 01月</li>
-                        <li>2018 02月</li>
-                        <li>2018 03月</li>
-                    </ul>
-                </div>
-
-                {this.state.style === 'default' ? (
-                    <DefaultStyle />
-                ) : this.state.style === 'line' ? (
-                    <LineStyle />
-                ) : null}
+                <MonthContent
+                    {...this.props}
+                    CalendarStyle={this.state.style}
+                />
             </div>
         );
     }
