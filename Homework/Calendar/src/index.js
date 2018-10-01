@@ -20,7 +20,7 @@ let data = {
 
     // 輸入一開始要在哪一個月份 [string] YYYYMM，若輸入的年月沒有資料，
     // 就要找相近的年月，若前一個月後一個月都有資料，就顯示資料比數比較多的那一個月
-    initYearMonth: '201801',
+    initYearMonth: '201812',
     // 設定各資料的key
     dataKeySetting: {
         // 保證出團

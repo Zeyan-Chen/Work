@@ -64,15 +64,15 @@ class MonthDate extends Component {
 class Disable extends Component {
     render() {
         let disables = []; // 放 disable li 的容器
-        let disableDIV;
+        let disableLI;
         let ifFirstDayZero; // 第一天是否為 0
         this.props.firsday === 0
             ? (ifFirstDayZero = 7)
             : (ifFirstDayZero = this.props.firsday); // 如果第一天為 0 時，就傳 7 天 disable
 
         for (let i = 0; i < ifFirstDayZero; i++) {
-            disableDIV = <li key={i} className="disable" />;
-            disables.push(disableDIV);
+            disableLI = <li key={i} className="disable" />;
+            disables.push(disableLI);
         }
         return disables; // render 出來 disable li
     }
@@ -81,7 +81,6 @@ class Disable extends Component {
 class ContentData extends Component {
     constructor(props) {
         super(props);
-        this.RefConteneDate = React.createRef();
         this.state = { year: null, month: null };
     }
 
@@ -96,12 +95,6 @@ class ContentData extends Component {
         let nextMonth = new Date(year, month, 0);
         return nextMonth.getDate();
     }
-
-    // getFirstAndMonthLen(year, month) {
-    //     let firstDay = this.getFirstDay(year, month); // 取得每個月第一天哪一天
-    //     let monthLen = this.getMonthLen(year, month); // 取的每個月長度
-    //     return { firstDay: firstDay, monthLen: monthLen };
-    // }
 
     handlePropsDate(year, month, propsData) {
         const { dataSource } = propsData;
@@ -121,7 +114,6 @@ class ContentData extends Component {
 
     render() {
         const { year, month, data } = this.props;
-
         return (
             <React.Fragment>
                 <ul className="week">
@@ -133,7 +125,7 @@ class ContentData extends Component {
                     <li>星期五</li>
                     <li>星期六</li>
                 </ul>
-                <ul className="contentDates" ref={this.RefConteneDate}>
+                <ul className="contentDates">
                     <Disable firsday={this.getFirstDay(year, month)} />
                     <MonthDate
                         monthLen={this.getMonthLen(year, month)}
@@ -141,7 +133,8 @@ class ContentData extends Component {
                         month={month}
                         matchDays={this.handlePropsDate(year, month, data)}
                     />
-                    {/* 這是 example <li>
+                    {/* 這是 HTML example
+                     <li>
                         01
                         <div className="guaranteedLabel">成團</div>
                         <div className="dataContent">

@@ -8,11 +8,9 @@ class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            style: 'default'
+            style: 'line'
         };
     }
-
-    componentDidMount() {}
 
     switchStyle = () => {
         if (this.state.style === 'default') {
@@ -43,6 +41,7 @@ class Calendar extends Component {
                 </div>
                 <MonthContent
                     {...this.props}
+                    // test={this.props}
                     CalendarStyle={this.state.style}
                 />
             </div>

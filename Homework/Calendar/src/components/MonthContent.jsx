@@ -6,14 +6,13 @@ import LineStyle from './LineStyle';
 class MonthContent extends Component {
     constructor(props) {
         super(props);
-
         this.sliderRef = React.createRef();
+
         this.state = {
             nowIndex: 1,
             totallW: null, // Month slider 整體的寬
             liW: null, // Month slider 一個 li 的寬
             move: 0, // Month slider 移動
-            nowActiveMonth: null,
             year: null,
             month: null
         };
@@ -27,24 +26,17 @@ class MonthContent extends Component {
         });
     }
 
-    // 畫面渲染完畢
+    // 畫面渲染完畢，只要setstate他會直接執行這函式一次
     componentDidMount() {
-        let tabLi = this.sliderRef.current.children;
+        const tabLi = this.sliderRef.current.children;
         for (let i = 0; i < tabLi.length; i++) {
             if (tabLi[i].classList.contains('active')) {
                 this.setState({ nowIndex: i });
                 break;
             }
         }
-        this.setState({
-            totallW: 100 * tabLi.length,
-            liW: tabLi[0].clientWidth,
-            nowActiveMonth: tabLi[this.state.nowIndex].innerHTML
-        });
+        tabLi[1].classList.add('active');
     }
-
-    // 資料更新前
-    componentWillUpdate() {}
 
     // 資料更新後
     componentDidUpdate() {
@@ -62,6 +54,8 @@ class MonthContent extends Component {
         // console.log('下一月');
         const tab = this.sliderRef.current;
         // 哪個月份 active 狀態
+        let totallW = 100 * tab.childNodes.length;
+        let liW = tab.childNodes[0].clientWidth;
         this.setState(currentState => {
             if (currentState.nowIndex >= tab.children.length - 1) {
                 return {
@@ -79,24 +73,23 @@ class MonthContent extends Component {
 
         // 月份 slider 移動
         this.setState(currentState => {
-            if (
-                currentState.move >= this.state.totallW ||
-                currentState.nowIndex === 1
-            ) {
+            if (currentState.move >= totallW || currentState.nowIndex === 1) {
                 return { move: currentState.move };
             } else {
-                return { move: currentState.move + this.state.liW };
+                return { move: currentState.move + liW };
             }
         });
     };
 
     // Month の slider prev
     prev = () => {
+        const tab = this.sliderRef.current;
+        let liW = tab.childNodes[0].clientWidth;
         this.setState(currentState => {
             if (currentState.move <= 0 || currentState.nowIndex === 5) {
                 return { move: currentState.move };
             } else {
-                return { move: currentState.move - this.state.liW };
+                return { move: currentState.move - liW };
             }
         });
 
@@ -153,14 +146,14 @@ class MonthContent extends Component {
         return MonthLi;
     }
 
-    // 處理傳過來的 inintYearMonth Value
+    // 處理 props 傳過來的 inintYearMonth，分年月
     handleInitYearMonth(time) {
         let year = parseInt(time.substr(0, 4), 10); // 後面的 10 是因為 React 規定用 10 進制
         let month = parseInt(time.substr(4), 10);
         return { year: year, month: month };
     }
 
-    // 取得現在月份
+    // 取得目前 slider 月份
     getActiveMonth(index) {
         const tabLI = this.sliderRef.current.childNodes;
         let year = parseInt(tabLI[index].innerHTML.substr(0, 4), 10);
@@ -183,6 +176,8 @@ class MonthContent extends Component {
     }
 
     render() {
+        const { year, month } = this.state;
+
         return (
             <React.Fragment>
                 <div className="sliderMonth">
@@ -199,14 +194,12 @@ class MonthContent extends Component {
                     </ul>
                 </div>
                 {this.props.CalendarStyle === 'default' ? (
-                    <DefaultStyle
-                        data={this.props}
-                        year={this.state.year}
-                        month={this.state.month}
-                    />
+                    <DefaultStyle data={this.props} year={year} month={month} />
                 ) : this.props.CalendarStyle === 'line' ? (
-                    <LineStyle data={this.props} />
-                ) : null}
+                    <LineStyle data={this.props} year={year} month={month} />
+                ) : (
+                    alert('沒有這skin')
+                )}
             </React.Fragment>
         );
     }
