@@ -19,14 +19,14 @@ class MonthDate extends Component {
                 '星期六'
             ];
             if (dataSource[i].date.substr(0, 7) === getNowYearMonth) {
-                let setTime = new Date(dataSource[i].date);
-                let week = weeks[setTime.getDay()];
+                let setTime = new Date(dataSource[i].date); // 幾年幾月幾日 ex: 2018/12/25
+                let week = weeks[setTime.getDay()]; // 把值進去看看取得當天是星期幾
 
-                // 完整的資料等等可以 push 的
+                // 符合資料的 Object
                 let matchObject = {
                     date: dataSource[i].date,
-                    guaranteed: dataSource[i].guaranteed, // 是否出團
                     price: dataSource[i].price, // 價錢
+                    guaranteed: dataSource[i].guaranteed, // 是否出團
                     availableVancancy: dataSource[i].availableVancancy, // 可賣
                     totalVacnacy: dataSource[i].totalVacnacy, // 總出團
                     status: dataSource[i].status, // 目前狀態
@@ -37,19 +37,17 @@ class MonthDate extends Component {
             }
         }
 
-        // 依照星期排序
-        matchMonthArr.sort(function(obj1, obj2) {
+        // 依照日期排序
+        let sortedArr = matchMonthArr.sort(function(obj1, obj2) {
             return obj1.day - obj2.day;
         });
 
         // 過濾重複值
-        matchMonthArr = matchMonthArr.filter((data, index, arr) => {
-            return (
-                arr.map(mapObj => mapObj['date']).indexOf(data.date) === index
-            );
+        let filteredArr = sortedArr.filter((data, index, arr) => {
+            return arr.map(item => item['date']).indexOf(data.date) === index;
         });
 
-        return matchMonthArr;
+        return filteredArr;
     }
 
     // render li
