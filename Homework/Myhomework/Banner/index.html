@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- jQuery CDN -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+</head>
+
+<body>
+  <script src="module.js"></script>
+  <h1>頂天大廣告</h1>
+  <div class="banner">
+    <a class="wrap" href="#">
+      <img class="img transition" src="./imgs/1200x380.png" title="輸入廣告促銷說明文字" alt="輸入廣告促銷說明文字">
+    </a>
+  </div>
+  <!-- <i class="fas fa-caret-up"></i> -->
+  <script type="text/javascript">
+
+    /* ==== start */
+    $('.banner').banner({
+      openAtStart: true, // 設定一開始開合
+      autoToggle: false, // 可以打開 console 看計時器，設定3秒
+      button: {
+        closeText: '收合', // [string]
+        openText: '展開', // [string]
+        class: 'btn' // [string]
+      },
+      transition: true // 設定是否有過場動畫
+    });
+
+    $('.wrap').on('click', function (e) {
+      e.preventDefault();
+    })
+  </script>
+</body>
+
+</html>
